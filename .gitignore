@@ -1,0 +1,10 @@
+# Project-generated data artifacts
+data/
+sim_data/
+outputs/
+figures/
+
+# R session/user files
+.Rhistory
+.RData
+.Ruserdata

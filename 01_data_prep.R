@@ -12,11 +12,6 @@
 #   6) Saves analysis and summary outputs to CSV
 # -----------------------------------------------------------------------------
 
-suppressPackageStartupMessages({
-  library(tidyverse)
-  library(haven)
-})
-
 # Reproducibility: fail early if required packages are missing
 required_pkgs <- c("tidyverse", "haven")
 missing_pkgs <- required_pkgs[!vapply(required_pkgs, requireNamespace, logical(1), quietly = TRUE)]
@@ -28,28 +23,90 @@ if (length(missing_pkgs) > 0) {
   )
 }
 
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(haven)
+})
+
 # Create output directories if they do not already exist
 dir.create("data", showWarnings = FALSE, recursive = TRUE)
 dir.create("outputs", showWarnings = FALSE, recursive = TRUE)
 
 # NHANES 2017-2018 source file URLs (CDC)
-base_url <- "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/"
+# Current CDC direct file endpoint for 2017-2018 cycle:
+# https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/
+base_url <- "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/"
 xpt_urls <- list(
-  DEMO_J = paste0(base_url, "DEMO_J.XPT"),
-  BMX_J  = paste0(base_url, "BMX_J.XPT"),
-  BPX_J  = paste0(base_url, "BPX_J.XPT"),
-  GHB_J  = paste0(base_url, "GHB_J.XPT"),
-  SMQ_J  = paste0(base_url, "SMQ_J.XPT"),
-  INQ_J  = paste0(base_url, "INQ_J.XPT")
+  DEMO_J = paste0(base_url, "DEMO_J.xpt"),
+  BMX_J  = paste0(base_url, "BMX_J.xpt"),
+  BPX_J  = paste0(base_url, "BPX_J.xpt"),
+  GHB_J  = paste0(base_url, "GHB_J.xpt"),
+  SMQ_J  = paste0(base_url, "SMQ_J.xpt"),
+  INQ_J  = paste0(base_url, "INQ_J.xpt")
 )
 
-# Robust XPT reader with explicit error message
+# Alternate endpoint pattern (legacy NHANES path), kept as fallback.
+fallback_base_url <- "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/"
+xpt_fallback_urls <- list(
+  DEMO_J = paste0(fallback_base_url, "DEMO_J.XPT"),
+  BMX_J  = paste0(fallback_base_url, "BMX_J.XPT"),
+  BPX_J  = paste0(fallback_base_url, "BPX_J.XPT"),
+  GHB_J  = paste0(fallback_base_url, "GHB_J.XPT"),
+  SMQ_J  = paste0(fallback_base_url, "SMQ_J.XPT"),
+  INQ_J  = paste0(fallback_base_url, "INQ_J.XPT")
+)
+
+# Robust XPT reader with fallback URL and explicit diagnostics
 read_nhanes_xpt <- function(url, table_name) {
-  tryCatch(
-    haven::read_xpt(url),
-    error = function(e) {
-      stop("Failed to read ", table_name, " from URL: ", url, "\nOriginal error: ", e$message)
+  fallback_url <- xpt_fallback_urls[[table_name]]
+  if (is.null(fallback_url)) {
+    stop("No fallback URL configured for table: ", table_name)
+  }
+
+  # Retry wrapper to handle transient network issues
+  read_with_retry <- function(target_url, attempts = 3, sleep_seconds = 1) {
+    last_error <- NULL
+    for (i in seq_len(attempts)) {
+      out <- tryCatch(
+        haven::read_xpt(target_url),
+        error = function(e) {
+          last_error <<- e
+          NULL
+        }
+      )
+      if (!is.null(out)) return(out)
+      if (i < attempts) Sys.sleep(sleep_seconds)
     }
+    stop(last_error)
+  }
+
+  primary <- tryCatch(
+    read_with_retry(url, attempts = 2, sleep_seconds = 1),
+    error = function(e) e
+  )
+
+  if (!inherits(primary, "error")) {
+    return(primary)
+  }
+
+  message("Primary NHANES URL failed for ", table_name, ". Trying alternate CDC endpoint...")
+
+  mirror <- tryCatch(
+    read_with_retry(fallback_url, attempts = 2, sleep_seconds = 1),
+    error = function(e) e
+  )
+
+  if (!inherits(mirror, "error")) {
+    return(mirror)
+  }
+
+  stop(
+    "Failed to read ", table_name, " from both NHANES sources.\n",
+    "Primary URL: ", url, "\n",
+    "Primary error: ", primary$message, "\n",
+    "Fallback URL: ", fallback_url, "\n",
+    "Fallback error: ", mirror$message, "\n",
+    "If you are behind a proxy/firewall, try running from a network with direct HTTPS access."
   )
 }
 
@@ -69,8 +126,23 @@ ghb <- read_nhanes_xpt(xpt_urls$GHB_J, "GHB_J") %>%
 smq <- read_nhanes_xpt(xpt_urls$SMQ_J, "SMQ_J") %>%
   select(SEQN, SMQ020)
 
-inq <- read_nhanes_xpt(xpt_urls$INQ_J, "INQ_J") %>%
-  select(SEQN, INDFMPIR)
+inq_raw <- read_nhanes_xpt(xpt_urls$INQ_J, "INQ_J")
+
+# Income-to-poverty ratio naming can vary by release.
+income_ratio_var <- c("INDFMPIR", "INDFMMPI", "INDFMMPC")
+income_ratio_var <- income_ratio_var[income_ratio_var %in% names(inq_raw)][1]
+if (is.na(income_ratio_var) || length(income_ratio_var) == 0) {
+  stop(
+    "Could not find an income ratio variable in INQ_J. Checked: ",
+    paste(c("INDFMPIR", "INDFMMPI", "INDFMMPC"), collapse = ", ")
+  )
+}
+
+inq <- inq_raw %>%
+  transmute(
+    SEQN,
+    INDFMPIR = .data[[income_ratio_var]]
+  )
 
 # Merge all selected tables by respondent ID
 nhanes_merged <- list(demo, bmx, bpx, ghb, smq, inq) %>%

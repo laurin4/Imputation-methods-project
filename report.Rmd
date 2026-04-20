@@ -1,0 +1,432 @@
+---
+title: "Missing-Data Imputation in NHANES 2017-2018: Controlled Benchmarking and Real-Data Application"
+author: "Data Science in Health Project"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    fig_caption: true
+    df_print: paged
+  pdf_document:
+    toc: true
+    number_sections: true
+fontsize: 11pt
+geometry: margin=1in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center",
+  out.width = "95%"
+)
+```
+
+```{r packages-and-helpers, include=FALSE}
+required_pkgs <- c("dplyr", "readr", "tidyr", "ggplot2", "knitr", "mice", "broom")
+missing_pkgs <- required_pkgs[!vapply(required_pkgs, requireNamespace, logical(1), quietly = TRUE)]
+if (length(missing_pkgs) > 0) {
+  stop(
+    "Missing required package(s): ",
+    paste(missing_pkgs, collapse = ", "),
+    ". Install these packages before rendering."
+  )
+}
+
+library(dplyr)
+library(readr)
+library(tidyr)
+library(ggplot2)
+library(knitr)
+library(mice)
+library(broom)
+
+safe_read_csv <- function(path) {
+  if (!file.exists(path)) {
+    warning("File not found: ", path)
+    return(NULL)
+  }
+  readr::read_csv(path, show_col_types = FALSE)
+}
+
+safe_include_graphic <- function(path) {
+  if (!file.exists(path)) {
+    plot.new()
+    text(0.5, 0.5, paste("Figure not found:\n", path), cex = 1.1)
+  } else {
+    knitr::include_graphics(path)
+  }
+}
+```
+
+# 1 Introduction
+
+Missing data are ubiquitous in observational health studies and may strongly influence both predictive performance and inferential validity. In complex survey datasets such as NHANES, missingness can arise from item nonresponse, laboratory non-completion, or measurement constraints. If not handled rigorously, these mechanisms can produce biased estimates, reduced precision, and potentially misleading substantive conclusions.
+
+This project investigates missing-data handling using two complementary perspectives:
+
+1. **Controlled benchmarking** on complete-case reference data with artificially induced missingness under prespecified mechanisms (MCAR and MAR) and missingness levels (10%, 20%, 30%).
+2. **Real-data application** on NHANES 2017-2018 data, where the true missing values are unknown and conclusions therefore depend on assumptions.
+
+The primary objective is to compare complete-case analysis, single imputation approaches, and multiple imputation with respect to both **imputation accuracy** and **downstream regression inference** for glycated hemoglobin (HbA1c).
+
+# 2 Theory
+
+## 2.1 Missing-data mechanisms
+
+Let \(R\) denote an indicator of missingness and \(Y\) the data matrix partitioned into observed and missing components.
+
+- **MCAR (Missing Completely At Random):**  
+  \(P(R \mid Y_{\text{obs}}, Y_{\text{mis}}) = P(R)\).  
+  Missingness is independent of both observed and unobserved values.
+- **MAR (Missing At Random):**  
+  \(P(R \mid Y_{\text{obs}}, Y_{\text{mis}}) = P(R \mid Y_{\text{obs}})\).  
+  Missingness may depend on observed covariates but not on the unobserved values after conditioning.
+- **MNAR (Missing Not At Random):**  
+  Missingness depends on unobserved values even after conditioning on observed data.
+
+Importantly, MNAR cannot be confirmed from observed data alone; it requires substantive knowledge and sensitivity analysis.
+
+## 2.2 Methods considered
+
+- **Complete-case analysis (CCA):** valid under strong conditions (typically MCAR or specific model structures), but potentially inefficient and biased.
+- **Single imputation methods** (mean/mode, kNN, missForest): often improve sample retention but may understate uncertainty if treated as fixed completed data.
+- **Multiple imputation (MI):** generates multiple plausible completed datasets and combines estimates via Rubin's rules, propagating imputation uncertainty.
+
+## 2.3 Evaluation principles
+
+Two classes of performance criteria are used:
+
+1. **Imputation accuracy** at artificially masked cells:
+   - RMSE and normalized RMSE for numeric variables.
+   - Proportion of falsely classified values (PFC) for categorical variables.
+2. **Inferential performance** in the model  
+   \[
+   \text{hba1c} \sim \text{age} + \text{sex} + \text{bmi} + \text{systolic\_bp} + \text{smoking\_status} + \text{income\_ratio}
+   \]
+   summarized by bias, empirical variability, model-based standard errors, confidence-interval coverage, and interval width.
+
+# 3 Data
+
+The analysis is based on NHANES 2017-2018 and prepared using scripted extraction and cleaning from CDC XPT files. The final analysis variables are:
+
+- `hba1c` (outcome)
+- `age`, `sex`, `bmi`, `systolic_bp`, `smoking_status`, `income_ratio` (predictors)
+
+```{r load-prepared-data}
+nhanes_analysis <- safe_read_csv("data/nhanes_analysis.csv")
+missing_var_summary <- safe_read_csv("outputs/missingness_variable_summary.csv")
+missing_desc <- safe_read_csv("outputs/missingness_descriptive_table.csv")
+pairwise_missing <- safe_read_csv("outputs/pairwise_missingness_table.csv")
+```
+
+```{r data-overview-table}
+if (!is.null(nhanes_analysis)) {
+  data_overview <- tibble::tibble(
+    metric = c("Number of observations", "Number of variables"),
+    value = c(nrow(nhanes_analysis), ncol(nhanes_analysis))
+  )
+  knitr::kable(
+    data_overview,
+    caption = "Overview of the prepared NHANES analysis dataset."
+  )
+}
+```
+
+```{r missingness-summary-table}
+if (!is.null(missing_var_summary)) {
+  knitr::kable(
+    missing_var_summary,
+    caption = "Variable-level missingness summary in the prepared NHANES dataset."
+  )
+}
+```
+
+```{r missingness-descriptive-table}
+if (!is.null(missing_desc)) {
+  knitr::kable(
+    missing_desc,
+    caption = "Global descriptive indicators of missingness."
+  )
+}
+```
+
+```{r fig-missing-pattern, fig.cap="Observed missing-data pattern in the prepared NHANES dataset (from naniar visualization)."}
+safe_include_graphic("figures/missingness_pattern_plot.png")
+```
+
+```{r fig-missing-pct, fig.cap="Percentage of missing values by variable in the prepared NHANES dataset."}
+safe_include_graphic("figures/missingness_by_variable_pct.png")
+```
+
+# 4 Methods
+
+## 4.1 Controlled benchmarking design
+
+A complete-case reference subset was used to induce artificial missingness in predictors at 10%, 20%, and 30% under:
+
+- **MCAR:** random masking.
+- **MAR:** logistic masking probabilities dependent on observed age, sex, and BMI.
+
+For each mechanism-level combination, 100 repetitions were generated, and masked-cell indices with true values were retained for accuracy evaluation.
+
+```{r simulation-manifest}
+sim_manifest <- safe_read_csv("sim_data/simulation_manifest.csv")
+if (!is.null(sim_manifest)) {
+  sim_overview <- sim_manifest %>%
+    group_by(mechanism, missing_rate) %>%
+    summarise(
+      n_repetitions = n(),
+      mean_masked_cells = mean(n_masked_cells),
+      .groups = "drop"
+    )
+
+  knitr::kable(
+    sim_overview,
+    caption = "Simulation design summary by mechanism and missingness level."
+  )
+}
+```
+
+## 4.2 Imputation methods
+
+The following methods were applied to each simulated dataset:
+
+1. Complete-case analysis.
+2. Mean/mode single imputation.
+3. kNN imputation (`VIM::kNN`).
+4. missForest (`missForest::missForest`).
+5. Multiple imputation with `mice` (m = 20), with method mapping by variable type:
+   - numeric: predictive mean matching (`pmm`)
+   - binary factor: logistic regression (`logreg`)
+   - unordered factor: polytomous regression (`polyreg`)
+   - ordered factor: proportional odds model (`polr`)
+
+## 4.3 Downstream inferential model
+
+After imputation, a linear model for HbA1c was fit in each repetition and method. For multiple imputation, estimates were combined using Rubin's rules via `with()` and `pool()`.
+
+## 4.4 Real-data application workflow
+
+For the observed NHANES data, the same substantive model was applied to:
+
+- complete cases only; and
+- a multiple-imputation analysis (20 imputations), yielding pooled coefficients and confidence intervals.
+
+This real-data analysis is interpretive, because true missing values are unknown.
+
+# 5 Results
+
+## 5.1 Controlled benchmarking results
+
+```{r load-evaluation-outputs}
+acc_rep <- safe_read_csv("outputs/imputation_accuracy_by_repetition.csv")
+acc_sum <- safe_read_csv("outputs/imputation_accuracy_summary.csv")
+model_rep <- safe_read_csv("outputs/model_estimates_by_repetition.csv")
+model_sum <- safe_read_csv("outputs/model_performance_summary.csv")
+```
+
+```{r table-accuracy-summary}
+if (!is.null(acc_sum)) {
+  acc_main <- acc_sum %>%
+    filter(metric %in% c("rmse", "nrmse", "pfc")) %>%
+    arrange(metric, variable, mechanism, missing_rate, method)
+
+  knitr::kable(
+    acc_main,
+    caption = "Controlled benchmarking: imputation accuracy summary across repetitions."
+  )
+}
+```
+
+```{r fig-accuracy-numeric, fig.cap="Controlled benchmarking: numeric imputation error (RMSE/NRMSE) across methods, missingness mechanisms, and levels."}
+safe_include_graphic("figures/accuracy_numeric_methods.png")
+```
+
+```{r fig-accuracy-categorical, fig.cap="Controlled benchmarking: categorical imputation error (PFC) across methods, missingness mechanisms, and levels."}
+safe_include_graphic("figures/accuracy_categorical_methods.png")
+```
+
+```{r table-inference-summary}
+if (!is.null(model_sum)) {
+  infer_main <- model_sum %>%
+    filter(term != "(Intercept)") %>%
+    arrange(term, mechanism, missing_rate, method)
+
+  knitr::kable(
+    infer_main,
+    caption = "Controlled benchmarking: downstream inferential performance by method."
+  )
+}
+```
+
+```{r fig-inference-bias, fig.cap="Controlled benchmarking: mean coefficient bias across methods, mechanisms, and missingness levels."}
+safe_include_graphic("figures/inference_bias_methods.png")
+```
+
+```{r fig-inference-coverage, fig.cap="Controlled benchmarking: empirical 95% confidence-interval coverage across methods, mechanisms, and missingness levels."}
+safe_include_graphic("figures/inference_coverage_methods.png")
+```
+
+**Interpretation notes (to be finalized after inspection of output values):**
+
+- In many settings, complete-case analysis is expected to lose efficiency and potentially introduce bias as missingness increases, especially under MAR.
+- Single imputation methods can provide competitive pointwise accuracy in some variables but do not inherently propagate imputation uncertainty in inferential pipelines.
+- Multiple imputation is expected to improve interval calibration (coverage near nominal 95%) when the imputation model is reasonably specified under MAR-like mechanisms.
+
+> **Manual interpretation step:** replace these expectation-oriented bullet points with result-specific statements using the exact values from `outputs/imputation_accuracy_summary.csv` and `outputs/model_performance_summary.csv`.
+
+## 5.2 Real-data application results
+
+The real-data section applies the target model directly to the observed NHANES analysis dataset and contrasts complete-case and multiple-imputation analyses.
+
+```{r real-data-analysis}
+real_cc <- NULL
+real_mi <- NULL
+
+if (!is.null(nhanes_analysis)) {
+  dat <- nhanes_analysis %>%
+    mutate(
+      sex = factor(sex, levels = c("Male", "Female")),
+      smoking_status = factor(smoking_status, levels = c("No", "Yes"))
+    )
+
+  # Complete-case model
+  dat_cc <- dat %>% tidyr::drop_na()
+  if (nrow(dat_cc) > 0) {
+    fit_cc <- lm(hba1c ~ age + sex + bmi + systolic_bp + smoking_status + income_ratio, data = dat_cc)
+    real_cc <- broom::tidy(fit_cc, conf.int = TRUE, conf.level = 0.95) %>%
+      mutate(analysis = "Complete-case")
+  }
+
+  # Multiple imputation model (Rubin pooling)
+  meth <- mice::make.method(dat)
+  for (v in names(dat)) {
+    x <- dat[[v]]
+    if (is.numeric(x)) {
+      meth[v] <- "pmm"
+    } else if (is.factor(x) && nlevels(x) == 2) {
+      meth[v] <- "logreg"
+    } else if (is.factor(x) && is.ordered(x)) {
+      meth[v] <- "polr"
+    } else if (is.factor(x)) {
+      meth[v] <- "polyreg"
+    }
+  }
+  pred <- mice::make.predictorMatrix(dat)
+  diag(pred) <- 0
+
+  imp <- mice::mice(
+    dat,
+    m = 20,
+    method = meth,
+    predictorMatrix = pred,
+    maxit = 10,
+    seed = 20260420,
+    printFlag = FALSE
+  )
+  fit_mi <- with(imp, lm(hba1c ~ age + sex + bmi + systolic_bp + smoking_status + income_ratio))
+  pool_mi <- pool(fit_mi)
+  real_mi <- summary(pool_mi, conf.int = TRUE, conf.level = 0.95) %>%
+    as_tibble() %>%
+    transmute(
+      term,
+      estimate,
+      std.error,
+      conf.low = `2.5 %`,
+      conf.high = `97.5 %`,
+      p.value,
+      analysis = "Multiple imputation (MICE)"
+    )
+}
+```
+
+```{r real-data-model-table}
+if (!is.null(real_cc) || !is.null(real_mi)) {
+  real_results <- bind_rows(real_cc, real_mi) %>%
+    select(analysis, term, estimate, std.error, conf.low, conf.high, p.value) %>%
+    arrange(term, analysis)
+
+  knitr::kable(
+    real_results,
+    digits = 4,
+    caption = "Real-data application: regression estimates from complete-case and multiple-imputation analyses."
+  )
+}
+```
+
+**Interpretation notes (real-data application):**
+
+- Agreement in direction and magnitude between complete-case and MI estimates increases confidence in qualitative findings.
+- Divergence between approaches may indicate sensitivity to missing-data assumptions and/or information loss under complete-case exclusion.
+- MI intervals are often wider or differently centered due to explicit propagation of missing-data uncertainty.
+
+> **Manual interpretation step:** comment on the clinically relevant predictors and whether inferential conclusions change materially between complete-case and MI analyses.
+
+# 6 Discussion
+
+This project highlights how methodological choice in missing-data handling can alter both predictive accuracy and inferential reliability.
+
+From a methodological standpoint:
+
+- **Complete-case analysis** is transparent and simple but can discard substantial information and may be biased when missingness is not plausibly MCAR.
+- **Single imputation methods** can improve apparent numerical accuracy in some settings and maintain sample size, but deterministic single completed datasets generally underrepresent uncertainty in standard errors and confidence intervals.
+- **Multiple imputation** is usually preferable for inference under MAR-type assumptions because it combines within- and between-imputation variability through Rubin's rules.
+
+The controlled benchmarking framework is a strength because true masked values are known; therefore, imputation error and inferential calibration can be assessed directly. However, transferability to real applications depends on how realistic the simulated missingness mechanisms are relative to actual data-generating and nonresponse processes.
+
+Assumptions and limitations include:
+
+1. MAR-generating mechanisms were operationalized using observed age, sex, and BMI; true missingness in NHANES may involve additional latent drivers.
+2. MNAR cannot be diagnosed from observed data alone, and this study does not claim MNAR identification.
+3. Model misspecification in either imputation or analysis stages may affect bias and coverage.
+4. The selected methods and tuning parameters are representative but not exhaustive.
+
+These points motivate sensitivity analyses (e.g., delta-adjustment or pattern-mixture scenarios) as future work.
+
+# 7 Conclusion
+
+A reproducible pipeline was developed to compare missing-data strategies using both controlled simulation and real-data application in NHANES. The benchmarking design enables transparent comparison across mechanisms and missingness levels, while the real-data analysis demonstrates practical implications for substantive inference.
+
+For health-data analyses emphasizing valid uncertainty quantification, multiple imputation should generally be preferred over complete-case and simple single-imputation alternatives when MAR is plausible and imputation models are carefully specified. Nonetheless, conclusions should be accompanied by explicit assumptions, diagnostics, and sensitivity analyses, especially when MNAR cannot be excluded.
+
+# 8 References
+
+- Little, R. J. A., & Rubin, D. B. (2019). *Statistical Analysis with Missing Data* (3rd ed.). Wiley.
+- Rubin, D. B. (1987). *Multiple Imputation for Nonresponse in Surveys*. Wiley.
+- Van Buuren, S. (2018). *Flexible Imputation of Missing Data* (2nd ed.). Chapman & Hall/CRC.
+- Shah, A. D., Bartlett, J. W., Carpenter, J., Nicholas, O., & Hemingway, H. (2014). Comparison of random forest and parametric imputation models for imputing missing data using MICE: A CALIBER study. *American Journal of Epidemiology*, 179(6), 764-774.
+- CDC National Center for Health Statistics. NHANES 2017-2018 Data Documentation, Codebook, and Frequencies. [https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017)
+
+# 9 Appendix
+
+## 9.1 Additional diagnostics table
+
+```{r appendix-additional-table}
+if (!is.null(model_rep)) {
+  appendix_tbl <- model_rep %>%
+    group_by(method, mechanism, missing_rate, term) %>%
+    summarise(
+      mean_estimate = mean(estimate, na.rm = TRUE),
+      sd_estimate = sd(estimate, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    arrange(term, mechanism, missing_rate, method)
+
+  knitr::kable(
+    appendix_tbl,
+    digits = 4,
+    caption = "Appendix table: mean and standard deviation of coefficient estimates across repetitions."
+  )
+}
+```
+
+## 9.2 Reproducibility information
+
+```{r session-info}
+sessionInfo()
+```

@@ -14,17 +14,8 @@
 #   - figures/missingness_by_variable_pct.png
 # -----------------------------------------------------------------------------
 
-suppressPackageStartupMessages({
-  library(dplyr)
-  library(tidyr)
-  library(readr)
-  library(ggplot2)
-  library(naniar)
-  library(VIM)
-})
-
 # ---- Reproducibility checks --------------------------------------------------
-required_pkgs <- c("dplyr", "tidyr", "readr", "ggplot2", "naniar", "VIM")
+required_pkgs <- c("dplyr", "tidyr", "readr", "ggplot2")
 missing_pkgs <- required_pkgs[!vapply(required_pkgs, requireNamespace, logical(1), quietly = TRUE)]
 if (length(missing_pkgs) > 0) {
   stop(
@@ -32,6 +23,24 @@ if (length(missing_pkgs) > 0) {
     paste(missing_pkgs, collapse = ", "),
     ". Install them before running this script."
   )
+}
+
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(tidyr)
+  library(readr)
+  library(ggplot2)
+})
+
+# Optional packages: use when available, otherwise fall back gracefully.
+has_naniar <- requireNamespace("naniar", quietly = TRUE)
+has_vim <- requireNamespace("VIM", quietly = TRUE)
+
+if (!has_naniar) {
+  message("Package 'naniar' not found. Using ggplot fallback for missing-data pattern plot.")
+}
+if (!has_vim) {
+  message("Package 'VIM' not found. Skipping optional VIM summary call.")
 }
 
 input_path <- "data/nhanes_analysis.csv"
@@ -91,22 +100,50 @@ pairwise_missingness <- tidyr::expand_grid(var1 = var_names, var2 = var_names) %
 readr::write_csv(pairwise_missingness, "outputs/pairwise_missingness_table.csv", na = "")
 
 # ---- 3) Missing-data pattern plot -------------------------------------------
-# `naniar::vis_miss()` gives a clear variable-by-observation missingness map.
-plot_missing_pattern <- naniar::vis_miss(
-  nhanes,
-  sort_miss = TRUE,
-  cluster = TRUE,
-  warn_large_data = FALSE
-) +
-  ggplot2::labs(
-    title = "NHANES Missing-Data Pattern",
-    subtitle = "White = observed values, black = missing values"
+# Prefer naniar::vis_miss when available; otherwise use ggplot fallback.
+if (has_naniar) {
+  plot_missing_pattern <- naniar::vis_miss(
+    nhanes,
+    sort_miss = TRUE,
+    cluster = TRUE,
+    warn_large_data = FALSE
   ) +
-  ggplot2::theme_minimal(base_size = 12) +
-  ggplot2::theme(
-    plot.title = element_text(face = "bold"),
-    plot.subtitle = element_text(color = "gray30")
-  )
+    ggplot2::labs(
+      title = "NHANES Missing-Data Pattern",
+      subtitle = "White = observed values, black = missing values"
+    ) +
+    ggplot2::theme_minimal(base_size = 12) +
+    ggplot2::theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30")
+    )
+} else {
+  # Fallback pattern plot: binary observed/missing matrix by row and variable.
+  plot_missing_pattern <- nhanes %>%
+    mutate(.row = row_number()) %>%
+    mutate(across(-.row, ~is.na(.))) %>%
+    pivot_longer(cols = - .row, names_to = "variable", values_to = "is_missing") %>%
+    mutate(
+      missing_flag = if_else(is_missing, "Missing", "Observed"),
+      variable = factor(variable, levels = rev(names(nhanes)))
+    ) %>%
+    ggplot(aes(x = .row, y = variable, fill = missing_flag)) +
+    geom_raster() +
+    scale_fill_manual(values = c("Observed" = "white", "Missing" = "black")) +
+    labs(
+      title = "NHANES Missing-Data Pattern",
+      subtitle = "Fallback plot (naniar not installed)",
+      x = "Observation index",
+      y = NULL,
+      fill = NULL
+    ) +
+    theme_minimal(base_size = 12) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      panel.grid = element_blank()
+    )
+}
 
 ggsave(
   filename = "figures/missingness_pattern_plot.png",
@@ -141,10 +178,11 @@ ggsave(
   dpi = 300
 )
 
-# ---- Optional VIM call (for package requirement / compatibility checks) -----
-# This call is wrapped in a non-printing object to avoid opening graphics
-# devices in non-interactive batch runs while still using VIM functionality.
-vim_summary <- VIM::aggr(nhanes, plot = FALSE, sortVars = TRUE)
+# ---- Optional VIM call (for compatibility checks) ----------------------------
+# Non-interactive and optional: only run when package is available.
+if (has_vim) {
+  vim_summary <- VIM::aggr(nhanes, plot = FALSE, sortVars = TRUE)
+}
 
 # ---- 5) Small descriptive table for reporting --------------------------------
 descriptive_table <- tibble::tibble(
