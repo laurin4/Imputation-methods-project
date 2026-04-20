@@ -3,6 +3,7 @@ data/
 sim_data/
 outputs/
 figures/
+imputed_data/
 
 # R session/user files
 .Rhistory
