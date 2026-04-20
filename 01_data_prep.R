@@ -28,6 +28,22 @@ suppressPackageStartupMessages({
   library(haven)
 })
 
+# ---- Runtime controls for balanced CPU usage --------------------------------
+# Optional environment variables:
+#   FAST_MODE           -> "1" enables practical defaults for quicker runs
+#   MAX_ADULT_ROWS      -> keep only first N adult rows after preprocessing
+#   SAMPLE_ADULT_FRAC   -> random sample fraction in (0, 1], applied before MAX
+fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
+max_adult_rows <- as.integer(Sys.getenv("MAX_ADULT_ROWS", unset = if (fast_mode) "2500" else "0"))
+sample_adult_frac <- as.numeric(Sys.getenv("SAMPLE_ADULT_FRAC", unset = "1"))
+
+if (is.na(max_adult_rows) || max_adult_rows < 0) {
+  stop("MAX_ADULT_ROWS must be a non-negative integer.")
+}
+if (is.na(sample_adult_frac) || sample_adult_frac <= 0 || sample_adult_frac > 1) {
+  stop("SAMPLE_ADULT_FRAC must be in the interval (0, 1].")
+}
+
 # Create output directories if they do not already exist
 dir.create("data", showWarnings = FALSE, recursive = TRUE)
 dir.create("outputs", showWarnings = FALSE, recursive = TRUE)
@@ -190,6 +206,19 @@ nhanes_analysis <- nhanes_merged %>%
     smoking_status = factor(smoking_status, levels = c("No", "Yes"))
   )
 
+# Optional downsampling for faster downstream processing
+if (sample_adult_frac < 1) {
+  set.seed(20260420)
+  n_keep <- max(1L, floor(nrow(nhanes_analysis) * sample_adult_frac))
+  nhanes_analysis <- nhanes_analysis %>%
+    slice_sample(n = n_keep)
+}
+
+if (max_adult_rows > 0 && nrow(nhanes_analysis) > max_adult_rows) {
+  nhanes_analysis <- nhanes_analysis %>%
+    slice_head(n = max_adult_rows)
+}
+
 # Missingness summary for analysis variables
 missingness_summary <- nhanes_analysis %>%
   summarise(across(everything(), ~sum(is.na(.)))) %>%
@@ -208,5 +237,6 @@ readr::write_csv(nhanes_analysis, "data/nhanes_analysis.csv", na = "")
 readr::write_csv(missingness_summary, "outputs/missingness_summary.csv", na = "")
 
 message("Data preparation complete.")
+message("Rows in analysis dataset: ", nrow(nhanes_analysis))
 message("Saved: data/nhanes_analysis.csv")
 message("Saved: outputs/missingness_summary.csv")

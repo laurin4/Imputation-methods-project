@@ -24,17 +24,6 @@
 #   - For single-output methods: imputation_id = 1
 # -----------------------------------------------------------------------------
 
-suppressPackageStartupMessages({
-  library(dplyr)
-  library(tidyr)
-  library(readr)
-  library(purrr)
-  library(stringr)
-  library(VIM)
-  library(missForest)
-  library(mice)
-})
-
 # ---- Reproducibility / defensive checks -------------------------------------
 required_pkgs <- c("dplyr", "tidyr", "readr", "purrr", "stringr", "VIM", "missForest", "mice")
 missing_pkgs <- required_pkgs[!vapply(required_pkgs, requireNamespace, logical(1), quietly = TRUE)]
@@ -42,9 +31,20 @@ if (length(missing_pkgs) > 0) {
   stop(
     "Missing required package(s): ",
     paste(missing_pkgs, collapse = ", "),
-    ". Install them before running this script."
+    ". Install them before running this script, e.g.:\n",
+    "install.packages(c(",
+    paste(sprintf('"%s"', missing_pkgs), collapse = ", "),
+    "))"
   )
 }
+
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(tidyr)
+  library(readr)
+  library(purrr)
+  library(stringr)
+})
 
 input_dir <- "sim_data/datasets"
 output_root <- "imputed_data"
@@ -71,6 +71,46 @@ dataset_files <- list.files(input_dir, pattern = "\\.csv$", full.names = TRUE)
 if (length(dataset_files) == 0) {
   stop("No simulation files found in ", input_dir, ".")
 }
+
+# ---- Runtime controls for faster/debug runs ---------------------------------
+# Optional environment variables:
+#   MAX_FILES           -> process only first N simulation files
+#   METHODS             -> comma-separated subset, e.g. "complete_case,mean_mode,mice"
+#   KNN_K               -> k for VIM::kNN (default 5)
+#   MISSFOREST_NTREE    -> number of trees for missForest (default 100)
+#   MICE_M              -> number of imputations for mice (default 20)
+#   MICE_MAXIT          -> number of mice iterations (default 10)
+max_files <- as.integer(Sys.getenv("MAX_FILES", unset = "0"))
+if (!is.na(max_files) && max_files > 0) {
+  dataset_files <- dataset_files[seq_len(min(max_files, length(dataset_files)))]
+}
+
+methods_env <- Sys.getenv("METHODS", unset = "")
+if (nzchar(methods_env)) {
+  requested_methods <- strsplit(methods_env, ",", fixed = TRUE)[[1]] %>%
+    trimws() %>%
+    unique()
+  invalid_methods <- setdiff(requested_methods, method_names)
+  if (length(invalid_methods) > 0) {
+    stop(
+      "Invalid method(s) in METHODS: ",
+      paste(invalid_methods, collapse = ", "),
+      ". Valid methods are: ",
+      paste(method_names, collapse = ", ")
+    )
+  }
+  method_names <- requested_methods
+}
+
+knn_k <- as.integer(Sys.getenv("KNN_K", unset = "5"))
+missforest_ntree <- as.integer(Sys.getenv("MISSFOREST_NTREE", unset = "100"))
+mice_m <- as.integer(Sys.getenv("MICE_M", unset = "20"))
+mice_maxit <- as.integer(Sys.getenv("MICE_MAXIT", unset = "10"))
+
+if (is.na(knn_k) || knn_k <= 0) stop("KNN_K must be a positive integer.")
+if (is.na(missforest_ntree) || missforest_ntree <= 0) stop("MISSFOREST_NTREE must be a positive integer.")
+if (is.na(mice_m) || mice_m <= 0) stop("MICE_M must be a positive integer.")
+if (is.na(mice_maxit) || mice_maxit <= 0) stop("MICE_MAXIT must be a positive integer.")
 
 # ---- Helper functions --------------------------------------------------------
 
@@ -202,7 +242,7 @@ impute_mean_mode <- function(df) {
 impute_knn <- function(df, k = 5, seed = 1234) {
   set.seed(seed)
   typed <- coerce_analysis_types(df)
-  analysis <- split_metadata_analysis(typed)$analysis
+  analysis <- split_metadata_analysis(typed)$analysis %>% as.data.frame()
 
   imputed <- tryCatch(
     VIM::kNN(
@@ -228,7 +268,7 @@ impute_knn <- function(df, k = 5, seed = 1234) {
 impute_missforest <- function(df, seed = 5678, ntree = 100) {
   set.seed(seed)
   typed <- coerce_analysis_types(df)
-  analysis <- split_metadata_analysis(typed)$analysis
+  analysis <- split_metadata_analysis(typed)$analysis %>% as.data.frame()
 
   mf_out <- tryCatch(
     missForest::missForest(
@@ -309,8 +349,8 @@ impute_mice <- function(df, m = 20, maxit = 10, seed = 91011) {
 
   completed_long <- mice::complete(mice_fit, action = "long", include = FALSE) %>%
     as_tibble() %>%
-    rename(imputation_id = .imp) %>%
-    select(imputation_id, all_of(names(analysis)))
+    rename(imputation_id = ".imp") %>%
+    select(all_of("imputation_id"), all_of(names(analysis)))
 
   # Add simulation metadata for each completed dataset.
   parts <- split_metadata_analysis(typed)
@@ -318,31 +358,39 @@ impute_mice <- function(df, m = 20, maxit = 10, seed = 91011) {
 
   if (ncol(metadata) > 0) {
     completed_long <- completed_long %>%
-      group_by(imputation_id) %>%
+      group_by(.data$imputation_id) %>%
       group_modify(~bind_cols(metadata, .x)) %>%
       ungroup()
   }
 
   completed_long %>%
     mutate(imputation_method = "mice", .after = last_col()) %>%
-    select(any_of(c("repetition", "mechanism", "missing_rate")), all_of(expected_vars), imputation_method, imputation_id)
+    select(
+      any_of(c("repetition", "mechanism", "missing_rate")),
+      all_of(expected_vars),
+      all_of(c("imputation_method", "imputation_id"))
+    )
 }
 
 # ---- Apply all methods to one dataset ---------------------------------------
 apply_all_methods <- function(df, seed_offset = 0L) {
-  out_complete_case <- impute_complete_case(df)
-  out_mean_mode <- impute_mean_mode(df)
-  out_knn <- impute_knn(df, seed = 2000 + seed_offset)
-  out_missforest <- impute_missforest(df, seed = 3000 + seed_offset)
-  out_mice <- impute_mice(df, m = 20, seed = 4000 + seed_offset)
-
-  list(
-    complete_case = out_complete_case,
-    mean_mode = out_mean_mode,
-    knn = out_knn,
-    missforest = out_missforest,
-    mice = out_mice
-  )
+  out <- list()
+  if ("complete_case" %in% method_names) {
+    out$complete_case <- impute_complete_case(df)
+  }
+  if ("mean_mode" %in% method_names) {
+    out$mean_mode <- impute_mean_mode(df)
+  }
+  if ("knn" %in% method_names) {
+    out$knn <- impute_knn(df, k = knn_k, seed = 2000 + seed_offset)
+  }
+  if ("missforest" %in% method_names) {
+    out$missforest <- impute_missforest(df, ntree = missforest_ntree, seed = 3000 + seed_offset)
+  }
+  if ("mice" %in% method_names) {
+    out$mice <- impute_mice(df, m = mice_m, maxit = mice_maxit, seed = 4000 + seed_offset)
+  }
+  out
 }
 
 # ---- Main loop ---------------------------------------------------------------
@@ -359,6 +407,11 @@ for (file_i in seq_along(dataset_files)) {
   )
 
   assert_required_columns(df_in, expected_vars, context = file_name)
+
+  message(
+    "Processing file ", file_i, "/", length(dataset_files), ": ", file_name,
+    " | methods: ", paste(method_names, collapse = ", ")
+  )
 
   method_results <- apply_all_methods(df_in, seed_offset = file_i)
 
@@ -383,4 +436,11 @@ readr::write_csv(imputation_manifest, file.path(output_root, "imputation_manifes
 
 message("Imputation complete.")
 message("Processed simulation files: ", length(dataset_files))
+message("Methods run: ", paste(method_names, collapse = ", "))
+message(
+  "Parameters used: KNN_K=", knn_k,
+  ", MISSFOREST_NTREE=", missforest_ntree,
+  ", MICE_M=", mice_m,
+  ", MICE_MAXIT=", mice_maxit
+)
 message("Saved outputs in: ", output_root, "/")

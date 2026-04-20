@@ -48,6 +48,16 @@ if (!file.exists(input_path)) {
   stop("Input file not found: ", input_path, ". Run 01_data_prep.R first.")
 }
 
+# ---- Runtime controls for balanced CPU usage --------------------------------
+# Optional environment variables:
+#   FAST_MODE            -> "1" enables practical default for plotting speed
+#   MAX_ROWS_EXPLORATION -> use only first N rows for exploration plots/tables
+fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
+max_rows_exploration <- as.integer(Sys.getenv("MAX_ROWS_EXPLORATION", unset = if (fast_mode) "2500" else "0"))
+if (is.na(max_rows_exploration) || max_rows_exploration < 0) {
+  stop("MAX_ROWS_EXPLORATION must be a non-negative integer.")
+}
+
 dir.create("figures", showWarnings = FALSE, recursive = TRUE)
 dir.create("outputs", showWarnings = FALSE, recursive = TRUE)
 
@@ -64,6 +74,11 @@ nhanes <- nhanes %>%
       smoking_status
     }
   )
+
+if (max_rows_exploration > 0 && nrow(nhanes) > max_rows_exploration) {
+  nhanes <- nhanes %>%
+    slice_head(n = max_rows_exploration)
+}
 
 n_obs <- nrow(nhanes)
 
@@ -221,4 +236,5 @@ readr::write_csv(descriptive_table, "outputs/missingness_descriptive_table.csv",
 #   variable's missingness vs observed covariates) to probe MCAR plausibility.
 
 message("Missingness exploration complete.")
+message("Rows used for exploration: ", n_obs)
 message("Saved tables to outputs/ and plots to figures/.")

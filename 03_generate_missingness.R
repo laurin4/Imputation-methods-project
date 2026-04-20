@@ -65,6 +65,23 @@ if (!file.exists(input_path)) {
   stop("Input file not found: ", input_path, ". Run 01_data_prep.R first.")
 }
 
+# ---- Runtime controls for balanced CPU usage --------------------------------
+# Optional environment variables:
+#   FAST_MODE        -> "1" enables quicker defaults
+#   N_REPS           -> override number of repetitions per mechanism x level
+#   REF_MAX_ROWS     -> cap complete-case reference rows used in simulations
+fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
+n_reps_env <- as.integer(Sys.getenv("N_REPS", unset = if (fast_mode) "20" else as.character(n_reps)))
+ref_max_rows <- as.integer(Sys.getenv("REF_MAX_ROWS", unset = if (fast_mode) "2000" else "0"))
+
+if (is.na(n_reps_env) || n_reps_env <= 0) {
+  stop("N_REPS must be a positive integer.")
+}
+if (is.na(ref_max_rows) || ref_max_rows < 0) {
+  stop("REF_MAX_ROWS must be a non-negative integer.")
+}
+n_reps <- n_reps_env
+
 # ---- Utility helpers ---------------------------------------------------------
 
 # Convert rates to labels suitable for filenames and metadata.
@@ -112,14 +129,14 @@ apply_mcar_mask <- function(df, vars_to_mask, missing_rate, seed = NULL) {
 
   sampled_ids <- sample(cell_grid$cell_id, size = n_mask, replace = FALSE)
   mask_index <- cell_grid %>%
-    filter(cell_id %in% sampled_ids) %>%
-    select(row_id, variable)
+    filter(.data$cell_id %in% sampled_ids) %>%
+    select(.data$row_id, .data$variable)
 
   # Capture true values before masking for evaluation.
   mask_index <- mask_index %>%
     mutate(
       true_value = purrr::map2_chr(
-        row_id, variable,
+        .data$row_id, .data$variable,
         ~as.character(df[[.y]][.x])
       )
     )
@@ -167,9 +184,9 @@ apply_mar_mask <- function(df, vars_to_mask, missing_rate, seed = NULL) {
   ) %>%
     left_join(var_coefs, by = "variable") %>%
     mutate(
-      lp_no_intercept = b_age * z_age[row_id] +
-        b_male * sex_male[row_id] +
-        b_bmi * z_bmi[row_id]
+      lp_no_intercept = .data$b_age * z_age[.data$row_id] +
+        .data$b_male * sex_male[.data$row_id] +
+        .data$b_bmi * z_bmi[.data$row_id]
     )
 
   # Intercept calibration to match the desired average masking probability.
@@ -179,7 +196,7 @@ apply_mar_mask <- function(df, vars_to_mask, missing_rate, seed = NULL) {
   alpha <- uniroot(calibrate_intercept, lower = -10, upper = 10)$root
 
   mar_grid <- mar_grid %>%
-    mutate(prob_miss = inv_logit(alpha + lp_no_intercept))
+    mutate(prob_miss = inv_logit(alpha + .data$lp_no_intercept))
 
   # Sample exactly n_target cells weighted by MAR probabilities.
   sampled_rows <- sample(
@@ -191,12 +208,12 @@ apply_mar_mask <- function(df, vars_to_mask, missing_rate, seed = NULL) {
 
   mask_index <- mar_grid %>%
     slice(sampled_rows) %>%
-    select(row_id, variable)
+    select(.data$row_id, .data$variable)
 
   mask_index <- mask_index %>%
     mutate(
       true_value = purrr::map2_chr(
-        row_id, variable,
+        .data$row_id, .data$variable,
         ~as.character(df[[.y]][.x])
       )
     )
@@ -242,7 +259,7 @@ generate_one_simulation <- function(ref_df, mechanism, missing_rate, repetition,
       missing_rate = missing_rate,
       .before = 1
     ) %>%
-    arrange(row_id, variable)
+    arrange(.data$row_id, .data$variable)
 
   list(data = sim_data, mask = mask_table)
 }
@@ -254,6 +271,12 @@ reference_data <- build_reference_data(raw_data, analysis_vars)
 
 if (nrow(reference_data) == 0) {
   stop("Reference dataset has 0 rows after complete-case filtering.")
+}
+
+if (ref_max_rows > 0 && nrow(reference_data) > ref_max_rows) {
+  set.seed(20260420)
+  reference_data <- reference_data %>%
+    slice_sample(n = ref_max_rows)
 }
 
 # ---- Run simulation grid -----------------------------------------------------
@@ -310,4 +333,5 @@ readr::write_csv(simulation_manifest, file.path(output_root, "simulation_manifes
 message("Simulation complete.")
 message("Reference complete-case rows: ", nrow(reference_data))
 message("Generated datasets: ", nrow(sim_grid))
+message("Repetitions per setting: ", n_reps)
 message("Outputs written under: ", output_root, "/")

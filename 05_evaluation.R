@@ -60,12 +60,47 @@ if (!dir.exists("imputed_data")) {
   stop("Missing imputed_data directory. Run 04_imputation_methods.R first.")
 }
 
+# ---- Runtime controls for balanced CPU usage --------------------------------
+# Optional environment variables:
+#   FAST_MODE        -> "1" enables practical defaults for quicker evaluation
+#   MAX_FILES_EVAL   -> evaluate only first N simulation files
+#   METHODS_EVAL     -> comma-separated subset of methods to evaluate
+#   MICE_M_EVAL      -> m for pooled mice inference in evaluation
+#   MICE_MAXIT_EVAL  -> maxit for pooled mice inference in evaluation
+#   SKIP_PLOTS       -> "1" skips plot generation (tables only)
+fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
+max_files_eval <- as.integer(Sys.getenv("MAX_FILES_EVAL", unset = if (fast_mode) "20" else "0"))
+mice_m_eval <- as.integer(Sys.getenv("MICE_M_EVAL", unset = if (fast_mode) "5" else "20"))
+mice_maxit_eval <- as.integer(Sys.getenv("MICE_MAXIT_EVAL", unset = if (fast_mode) "5" else "10"))
+skip_plots <- identical(Sys.getenv("SKIP_PLOTS", unset = "0"), "1")
+
+if (is.na(max_files_eval) || max_files_eval < 0) stop("MAX_FILES_EVAL must be a non-negative integer.")
+if (is.na(mice_m_eval) || mice_m_eval <= 0) stop("MICE_M_EVAL must be a positive integer.")
+if (is.na(mice_maxit_eval) || mice_maxit_eval <= 0) stop("MICE_MAXIT_EVAL must be a positive integer.")
+
 # ---- Configuration -----------------------------------------------------------
 analysis_vars <- c("hba1c", "age", "sex", "bmi", "systolic_bp", "smoking_status", "income_ratio")
 predictor_vars <- c("age", "sex", "bmi", "systolic_bp", "smoking_status", "income_ratio")
 numeric_vars <- c("age", "bmi", "systolic_bp", "income_ratio")
 categorical_vars <- c("sex", "smoking_status")
 methods <- c("complete_case", "mean_mode", "knn", "missforest", "mice")
+
+methods_env <- Sys.getenv("METHODS_EVAL", unset = "")
+if (nzchar(methods_env)) {
+  requested_methods <- strsplit(methods_env, ",", fixed = TRUE)[[1]] %>%
+    trimws() %>%
+    unique()
+  invalid_methods <- setdiff(requested_methods, methods)
+  if (length(invalid_methods) > 0) {
+    stop(
+      "Invalid method(s) in METHODS_EVAL: ",
+      paste(invalid_methods, collapse = ", "),
+      ". Valid methods are: ",
+      paste(methods, collapse = ", ")
+    )
+  }
+  methods <- requested_methods
+}
 
 model_formula <- as.formula("hba1c ~ age + sex + bmi + systolic_bp + smoking_status + income_ratio")
 
@@ -132,15 +167,15 @@ extract_model_stats_lm <- function(df, method_name) {
 
   broom::tidy(fit, conf.int = TRUE, conf.level = 0.95) %>%
     transmute(
-      term,
-      estimate,
-      std.error,
-      conf.low,
-      conf.high
+      term = .data$term,
+      estimate = .data$estimate,
+      std.error = .data$std.error,
+      conf.low = .data$conf.low,
+      conf.high = .data$conf.high
     )
 }
 
-extract_model_stats_mice <- function(df_incomplete, m = 20, seed = 7777) {
+extract_model_stats_mice <- function(df_incomplete, m = 20, maxit = 10, seed = 7777) {
   meth <- mice::make.method(df_incomplete)
   for (v in names(df_incomplete)) {
     x <- df_incomplete[[v]]
@@ -166,7 +201,7 @@ extract_model_stats_mice <- function(df_incomplete, m = 20, seed = 7777) {
       m = m,
       method = meth,
       predictorMatrix = pred,
-      maxit = 10,
+      maxit = maxit,
       seed = seed,
       printFlag = FALSE
     ),
@@ -179,11 +214,11 @@ extract_model_stats_mice <- function(df_incomplete, m = 20, seed = 7777) {
   summary(pooled, conf.int = TRUE, conf.level = 0.95) %>%
     as_tibble() %>%
     transmute(
-      term,
-      estimate,
-      std.error,
-      conf.low = `2.5 %`,
-      conf.high = `97.5 %`
+      term = .data$term,
+      estimate = .data$estimate,
+      std.error = .data$std.error,
+      conf.low = .data$`2.5 %`,
+      conf.high = .data$`97.5 %`
     )
 }
 
@@ -204,6 +239,9 @@ truth_coef <- broom::tidy(truth_model) %>%
 # ---- Discover simulation files ----------------------------------------------
 sim_files <- list.files("sim_data/datasets", pattern = "^sim_.*\\.csv$", full.names = TRUE)
 if (length(sim_files) == 0) stop("No simulation datasets found in sim_data/datasets.")
+if (max_files_eval > 0) {
+  sim_files <- sim_files[seq_len(min(max_files_eval, length(sim_files)))]
+}
 
 # ---- Main evaluation loop ----------------------------------------------------
 accuracy_rows <- list()
@@ -217,6 +255,11 @@ for (sim_path in sim_files) {
   mechanism <- sim_info$mechanism
   missing_rate <- sim_info$missing_rate
   repetition <- sim_info$repetition
+  message(
+    "Evaluating ", basename(sim_path),
+    " (", which(sim_files == sim_path), "/", length(sim_files), ")",
+    " | methods: ", paste(methods, collapse = ", ")
+  )
 
   sim_df <- readr::read_csv(sim_path, show_col_types = FALSE) %>%
     coerce_types()
@@ -353,7 +396,8 @@ for (sim_path in sim_files) {
       # Use Rubin's rules with with() and pool() on the original incomplete data.
       model_tbl <- extract_model_stats_mice(
         df_incomplete = sim_df %>% select(all_of(analysis_vars)),
-        m = 20,
+        m = mice_m_eval,
+        maxit = mice_maxit_eval,
         seed = 900000 + repetition + as.integer(round(missing_rate * 1000))
       )
     } else {
@@ -427,103 +471,109 @@ readr::write_csv(model_by_rep, "outputs/model_estimates_by_repetition.csv", na =
 readr::write_csv(model_summary, "outputs/model_performance_summary.csv", na = "")
 
 # ---- Plots -------------------------------------------------------------------
-acc_num_plot <- accuracy_summary %>%
-  filter(metric %in% c("rmse", "nrmse"), !is.na(mean_value)) %>%
-  ggplot(aes(x = factor(missing_rate), y = mean_value, color = method, group = method)) +
-  geom_point(size = 2) +
-  geom_line(linewidth = 0.8) +
-  facet_grid(metric ~ variable + mechanism, scales = "free_y") +
-  labs(
-    title = "Numeric Imputation Accuracy Across Methods",
-    x = "Missingness level",
-    y = "Average metric across repetitions",
-    color = "Method"
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(
-    plot.title = element_text(face = "bold"),
-    strip.text = element_text(size = 9)
+if (!skip_plots) {
+  acc_num_plot <- accuracy_summary %>%
+    filter(metric %in% c("rmse", "nrmse"), !is.na(mean_value)) %>%
+    ggplot(aes(x = factor(missing_rate), y = mean_value, color = method, group = method)) +
+    geom_point(size = 2) +
+    geom_line(linewidth = 0.8) +
+    facet_grid(metric ~ variable + mechanism, scales = "free_y") +
+    labs(
+      title = "Numeric Imputation Accuracy Across Methods",
+      x = "Missingness level",
+      y = "Average metric across repetitions",
+      color = "Method"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      strip.text = element_text(size = 9)
+    )
+
+  ggsave(
+    filename = "figures/accuracy_numeric_methods.png",
+    plot = acc_num_plot,
+    width = 14,
+    height = 8,
+    dpi = 300
   )
 
-ggsave(
-  filename = "figures/accuracy_numeric_methods.png",
-  plot = acc_num_plot,
-  width = 14,
-  height = 8,
-  dpi = 300
-)
+  acc_cat_plot <- accuracy_summary %>%
+    filter(metric == "pfc", !is.na(mean_value)) %>%
+    ggplot(aes(x = factor(missing_rate), y = mean_value, color = method, group = method)) +
+    geom_point(size = 2) +
+    geom_line(linewidth = 0.8) +
+    facet_grid(variable ~ mechanism, scales = "free_y") +
+    labs(
+      title = "Categorical Imputation Error (PFC) Across Methods",
+      x = "Missingness level",
+      y = "Average PFC across repetitions",
+      color = "Method"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(plot.title = element_text(face = "bold"))
 
-acc_cat_plot <- accuracy_summary %>%
-  filter(metric == "pfc", !is.na(mean_value)) %>%
-  ggplot(aes(x = factor(missing_rate), y = mean_value, color = method, group = method)) +
-  geom_point(size = 2) +
-  geom_line(linewidth = 0.8) +
-  facet_grid(variable ~ mechanism, scales = "free_y") +
-  labs(
-    title = "Categorical Imputation Error (PFC) Across Methods",
-    x = "Missingness level",
-    y = "Average PFC across repetitions",
-    color = "Method"
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(plot.title = element_text(face = "bold"))
+  ggsave(
+    filename = "figures/accuracy_categorical_methods.png",
+    plot = acc_cat_plot,
+    width = 10,
+    height = 6,
+    dpi = 300
+  )
 
-ggsave(
-  filename = "figures/accuracy_categorical_methods.png",
-  plot = acc_cat_plot,
-  width = 10,
-  height = 6,
-  dpi = 300
-)
+  bias_plot <- model_summary %>%
+    filter(term != "(Intercept)") %>%
+    ggplot(aes(x = factor(missing_rate), y = mean_bias, color = method, group = method)) +
+    geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
+    geom_point(size = 1.8) +
+    geom_line(linewidth = 0.7) +
+    facet_grid(term ~ mechanism, scales = "free_y") +
+    labs(
+      title = "Mean Coefficient Bias by Method",
+      x = "Missingness level",
+      y = "Mean bias",
+      color = "Method"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(plot.title = element_text(face = "bold"))
 
-bias_plot <- model_summary %>%
-  filter(term != "(Intercept)") %>%
-  ggplot(aes(x = factor(missing_rate), y = mean_bias, color = method, group = method)) +
-  geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
-  geom_point(size = 1.8) +
-  geom_line(linewidth = 0.7) +
-  facet_grid(term ~ mechanism, scales = "free_y") +
-  labs(
-    title = "Mean Coefficient Bias by Method",
-    x = "Missingness level",
-    y = "Mean bias",
-    color = "Method"
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(plot.title = element_text(face = "bold"))
+  ggsave(
+    filename = "figures/inference_bias_methods.png",
+    plot = bias_plot,
+    width = 11,
+    height = 9,
+    dpi = 300
+  )
 
-ggsave(
-  filename = "figures/inference_bias_methods.png",
-  plot = bias_plot,
-  width = 11,
-  height = 9,
-  dpi = 300
-)
+  coverage_plot <- model_summary %>%
+    filter(term != "(Intercept)") %>%
+    ggplot(aes(x = factor(missing_rate), y = ci_coverage, color = method, group = method)) +
+    geom_hline(yintercept = 0.95, linetype = "dashed", color = "gray50") +
+    geom_point(size = 1.8) +
+    geom_line(linewidth = 0.7) +
+    facet_grid(term ~ mechanism) +
+    coord_cartesian(ylim = c(0, 1)) +
+    labs(
+      title = "95% CI Coverage by Method",
+      x = "Missingness level",
+      y = "Coverage probability",
+      color = "Method"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(plot.title = element_text(face = "bold"))
 
-coverage_plot <- model_summary %>%
-  filter(term != "(Intercept)") %>%
-  ggplot(aes(x = factor(missing_rate), y = ci_coverage, color = method, group = method)) +
-  geom_hline(yintercept = 0.95, linetype = "dashed", color = "gray50") +
-  geom_point(size = 1.8) +
-  geom_line(linewidth = 0.7) +
-  facet_grid(term ~ mechanism) +
-  coord_cartesian(ylim = c(0, 1)) +
-  labs(
-    title = "95% CI Coverage by Method",
-    x = "Missingness level",
-    y = "Coverage probability",
-    color = "Method"
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(plot.title = element_text(face = "bold"))
-
-ggsave(
-  filename = "figures/inference_coverage_methods.png",
-  plot = coverage_plot,
-  width = 11,
-  height = 9,
-  dpi = 300
-)
+  ggsave(
+    filename = "figures/inference_coverage_methods.png",
+    plot = coverage_plot,
+    width = 11,
+    height = 9,
+    dpi = 300
+  )
+}
 
 message("Evaluation complete.")
+message("Files evaluated: ", length(sim_files))
+message("Methods evaluated: ", paste(methods, collapse = ", "))
+message("MICE pooling parameters: m=", mice_m_eval, ", maxit=", mice_maxit_eval)
+if (skip_plots) message("Plot generation skipped (SKIP_PLOTS=1).")
 message("Saved tables to outputs/ and plots to figures/.")
