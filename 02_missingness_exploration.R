@@ -12,6 +12,8 @@
 #   - outputs/missingness_descriptive_table.csv
 #   - figures/missingness_pattern_plot.png
 #   - figures/missingness_by_variable_pct.png
+#   - figures/missingness_pairwise_heatmap.png
+#   - figures/missingness_upset_plot.png (if package UpSetR available)
 # -----------------------------------------------------------------------------
 
 # ---- Reproducibility checks --------------------------------------------------
@@ -35,12 +37,16 @@ suppressPackageStartupMessages({
 # Optional packages: use when available, otherwise fall back gracefully.
 has_naniar <- requireNamespace("naniar", quietly = TRUE)
 has_vim <- requireNamespace("VIM", quietly = TRUE)
+has_upsetr <- requireNamespace("UpSetR", quietly = TRUE)
 
 if (!has_naniar) {
   message("Package 'naniar' not found. Using ggplot fallback for missing-data pattern plot.")
 }
 if (!has_vim) {
   message("Package 'VIM' not found. Skipping optional VIM summary call.")
+}
+if (!has_upsetr) {
+  message("Package 'UpSetR' not found. Skipping UpSet missingness plot.")
 }
 
 input_path <- "data/nhanes_analysis.csv"
@@ -81,6 +87,17 @@ if (max_rows_exploration > 0 && nrow(nhanes) > max_rows_exploration) {
 }
 
 n_obs <- nrow(nhanes)
+
+# Human-readable labels for publication-quality figures
+var_labels <- c(
+  age = "Age (years)",
+  sex = "Sex",
+  bmi = "Body Mass Index (kg/m^2)",
+  hba1c = "HbA1c (%)",
+  income_ratio = "Income-to-poverty ratio",
+  smoking_status = "Current smoking status",
+  systolic_bp = "Systolic blood pressure (mmHg)"
+)
 
 # ---- 1) Summary of missingness per variable ---------------------------------
 missingness_var <- nhanes %>%
@@ -130,7 +147,9 @@ if (has_naniar) {
     ggplot2::theme_minimal(base_size = 12) +
     ggplot2::theme(
       plot.title = element_text(face = "bold"),
-      plot.subtitle = element_text(color = "gray30")
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold")
     )
 } else {
   # Fallback pattern plot: binary observed/missing matrix by row and variable.
@@ -150,13 +169,14 @@ if (has_naniar) {
       subtitle = "Fallback plot (naniar not installed)",
       x = "Observation index",
       y = NULL,
-      fill = NULL
+      fill = "Value status"
     ) +
     theme_minimal(base_size = 12) +
     theme(
       plot.title = element_text(face = "bold"),
       plot.subtitle = element_text(color = "gray30"),
-      panel.grid = element_blank()
+      panel.grid = element_blank(),
+      axis.title.x = element_text(face = "bold")
     )
 }
 
@@ -170,18 +190,31 @@ ggsave(
 
 # ---- 4) Percentage missing by variable plot ---------------------------------
 plot_pct_missing <- missingness_var %>%
-  mutate(variable = reorder(variable, pct_missing)) %>%
+  mutate(
+    variable_label = dplyr::recode(variable, !!!var_labels),
+    variable_label = reorder(variable_label, pct_missing)
+  ) %>%
   ggplot(aes(x = variable, y = pct_missing)) +
-  geom_col(fill = "#2C7FB8", width = 0.75) +
+  geom_col(aes(x = variable_label), fill = "#2C7FB8", width = 0.75) +
+  geom_text(
+    aes(x = variable_label, y = pct_missing, label = sprintf("%.1f%%", pct_missing)),
+    hjust = -0.1,
+    size = 3.4
+  ) +
   coord_flip() +
+  scale_y_continuous(limits = c(0, max(missingness_var$pct_missing) * 1.15)) +
   labs(
     title = "Percentage Missing by Variable",
+    subtitle = "Prepared NHANES analysis dataset",
     x = NULL,
     y = "Missing (%)"
   ) +
   theme_minimal(base_size = 12) +
   theme(
     plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(color = "gray30"),
+    axis.title.y = element_blank(),
+    axis.title.x = element_text(face = "bold"),
     panel.grid.minor = element_blank()
   )
 
@@ -192,6 +225,59 @@ ggsave(
   height = 5,
   dpi = 300
 )
+
+# ---- Additional figure: pairwise missingness heatmap -------------------------
+plot_pairwise_heatmap <- pairwise_missingness %>%
+  mutate(
+    var1_label = dplyr::recode(var1, !!!var_labels),
+    var2_label = dplyr::recode(var2, !!!var_labels),
+    var1_label = factor(var1_label, levels = unique(dplyr::recode(var_names, !!!var_labels))),
+    var2_label = factor(var2_label, levels = rev(unique(dplyr::recode(var_names, !!!var_labels))))
+  ) %>%
+  ggplot(aes(x = var1_label, y = var2_label, fill = pct_both_missing)) +
+  geom_tile(color = "white", linewidth = 0.3) +
+  geom_text(aes(label = sprintf("%.1f", pct_both_missing)), size = 3) +
+  scale_fill_gradient(low = "#F7FBFF", high = "#08306B", name = "Both missing (%)") +
+  labs(
+    title = "Pairwise Missingness Heatmap",
+    subtitle = "Percentage of observations where both variables are missing",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(color = "gray30"),
+    axis.text.x = element_text(angle = 30, hjust = 1),
+    panel.grid = element_blank()
+  )
+
+ggsave(
+  filename = "figures/missingness_pairwise_heatmap.png",
+  plot = plot_pairwise_heatmap,
+  width = 10.5,
+  height = 7.5,
+  dpi = 300
+)
+
+# ---- Optional additional figure: UpSet-style missingness intersections -------
+if (has_upsetr) {
+  upset_input <- nhanes %>%
+    mutate(across(everything(), ~is.na(.))) %>%
+    as.data.frame()
+
+  png("figures/missingness_upset_plot.png", width = 1200, height = 700, res = 120)
+  UpSetR::upset(
+    upset_input,
+    nsets = ncol(upset_input),
+    nintersects = 20,
+    order.by = "freq",
+    mb.ratio = c(0.6, 0.4),
+    mainbar.y.label = "Intersection size",
+    sets.x.label = "Missing count per variable"
+  )
+  dev.off()
+}
 
 # ---- Optional VIM call (for compatibility checks) ----------------------------
 # Non-interactive and optional: only run when package is available.

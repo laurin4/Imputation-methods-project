@@ -23,6 +23,10 @@
 #   - figures/accuracy_categorical_methods.png
 #   - figures/inference_bias_methods.png
 #   - figures/inference_coverage_methods.png
+#   - figures/accuracy_numeric_boxplots.png
+#   - figures/accuracy_categorical_boxplots.png
+#   - figures/inference_se_vs_empiricalsd.png
+#   - figures/inference_ciwidth_methods.png
 # -----------------------------------------------------------------------------
 
 suppressPackageStartupMessages({
@@ -84,6 +88,22 @@ predictor_vars <- c("age", "sex", "bmi", "systolic_bp", "smoking_status", "incom
 numeric_vars <- c("age", "bmi", "systolic_bp", "income_ratio")
 categorical_vars <- c("sex", "smoking_status")
 methods <- c("complete_case", "mean_mode", "knn", "missforest", "mice")
+
+method_labels <- c(
+  complete_case = "Complete-case",
+  mean_mode = "Mean/mode",
+  knn = "kNN",
+  missforest = "missForest",
+  mice = "MICE"
+)
+variable_labels <- c(
+  age = "Age (years)",
+  bmi = "Body Mass Index (kg/m^2)",
+  systolic_bp = "Systolic blood pressure (mmHg)",
+  income_ratio = "Income-to-poverty ratio",
+  sex = "Sex",
+  smoking_status = "Current smoking status"
+)
 
 methods_env <- Sys.getenv("METHODS_EVAL", unset = "")
 if (nzchar(methods_env)) {
@@ -472,22 +492,55 @@ readr::write_csv(model_summary, "outputs/model_performance_summary.csv", na = ""
 
 # ---- Plots -------------------------------------------------------------------
 if (!skip_plots) {
+  accuracy_summary_plot <- accuracy_summary %>%
+    mutate(
+      method = dplyr::recode(method, !!!method_labels),
+      variable = dplyr::recode(variable, !!!variable_labels),
+      mechanism = factor(mechanism, levels = c("MCAR", "MAR")),
+      missing_rate_label = paste0(as.integer(100 * missing_rate), "%")
+    )
+
+  accuracy_by_rep_plot <- accuracy_by_rep %>%
+    mutate(
+      method = dplyr::recode(method, !!!method_labels),
+      variable = dplyr::recode(variable, !!!variable_labels),
+      mechanism = factor(mechanism, levels = c("MCAR", "MAR")),
+      missing_rate_label = paste0(as.integer(100 * missing_rate), "%")
+    )
+
+  model_summary_plot <- model_summary %>%
+    mutate(
+      method = dplyr::recode(method, !!!method_labels),
+      mechanism = factor(mechanism, levels = c("MCAR", "MAR")),
+      missing_rate_label = paste0(as.integer(100 * missing_rate), "%")
+    )
+
   acc_num_plot <- accuracy_summary %>%
     filter(metric %in% c("rmse", "nrmse"), !is.na(mean_value)) %>%
-    ggplot(aes(x = factor(missing_rate), y = mean_value, color = method, group = method)) +
+    mutate(
+      method = dplyr::recode(method, !!!method_labels),
+      variable = dplyr::recode(variable, !!!variable_labels),
+      mechanism = factor(mechanism, levels = c("MCAR", "MAR")),
+      missing_rate_label = paste0(as.integer(100 * missing_rate), "%")
+    ) %>%
+    ggplot(aes(x = missing_rate_label, y = mean_value, color = method, group = method)) +
     geom_point(size = 2) +
     geom_line(linewidth = 0.8) +
     facet_grid(metric ~ variable + mechanism, scales = "free_y") +
     labs(
       title = "Numeric Imputation Accuracy Across Methods",
-      x = "Missingness level",
-      y = "Average metric across repetitions",
+      subtitle = "Lower values indicate better imputation quality",
+      x = "Artificial missingness level",
+      y = "Mean error across repetitions",
       color = "Method"
     ) +
     theme_minimal(base_size = 11) +
     theme(
       plot.title = element_text(face = "bold"),
-      strip.text = element_text(size = 9)
+      plot.subtitle = element_text(color = "gray30"),
+      strip.text = element_text(size = 9),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold")
     )
 
   ggsave(
@@ -498,20 +551,26 @@ if (!skip_plots) {
     dpi = 300
   )
 
-  acc_cat_plot <- accuracy_summary %>%
+  acc_cat_plot <- accuracy_summary_plot %>%
     filter(metric == "pfc", !is.na(mean_value)) %>%
-    ggplot(aes(x = factor(missing_rate), y = mean_value, color = method, group = method)) +
+    ggplot(aes(x = missing_rate_label, y = mean_value, color = method, group = method)) +
     geom_point(size = 2) +
     geom_line(linewidth = 0.8) +
     facet_grid(variable ~ mechanism, scales = "free_y") +
     labs(
       title = "Categorical Imputation Error (PFC) Across Methods",
-      x = "Missingness level",
-      y = "Average PFC across repetitions",
+      subtitle = "PFC = proportion falsely classified (lower is better)",
+      x = "Artificial missingness level",
+      y = "Mean PFC across repetitions",
       color = "Method"
     ) +
     theme_minimal(base_size = 11) +
-    theme(plot.title = element_text(face = "bold"))
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold")
+    )
 
   ggsave(
     filename = "figures/accuracy_categorical_methods.png",
@@ -521,21 +580,27 @@ if (!skip_plots) {
     dpi = 300
   )
 
-  bias_plot <- model_summary %>%
+  bias_plot <- model_summary_plot %>%
     filter(term != "(Intercept)") %>%
-    ggplot(aes(x = factor(missing_rate), y = mean_bias, color = method, group = method)) +
+    ggplot(aes(x = missing_rate_label, y = mean_bias, color = method, group = method)) +
     geom_hline(yintercept = 0, linetype = "dashed", color = "gray50") +
     geom_point(size = 1.8) +
     geom_line(linewidth = 0.7) +
     facet_grid(term ~ mechanism, scales = "free_y") +
     labs(
       title = "Mean Coefficient Bias by Method",
-      x = "Missingness level",
+      subtitle = "Bias = estimate - reference coefficient",
+      x = "Artificial missingness level",
       y = "Mean bias",
       color = "Method"
     ) +
     theme_minimal(base_size = 11) +
-    theme(plot.title = element_text(face = "bold"))
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold")
+    )
 
   ggsave(
     filename = "figures/inference_bias_methods.png",
@@ -545,9 +610,9 @@ if (!skip_plots) {
     dpi = 300
   )
 
-  coverage_plot <- model_summary %>%
+  coverage_plot <- model_summary_plot %>%
     filter(term != "(Intercept)") %>%
-    ggplot(aes(x = factor(missing_rate), y = ci_coverage, color = method, group = method)) +
+    ggplot(aes(x = missing_rate_label, y = ci_coverage, color = method, group = method)) +
     geom_hline(yintercept = 0.95, linetype = "dashed", color = "gray50") +
     geom_point(size = 1.8) +
     geom_line(linewidth = 0.7) +
@@ -555,17 +620,146 @@ if (!skip_plots) {
     coord_cartesian(ylim = c(0, 1)) +
     labs(
       title = "95% CI Coverage by Method",
-      x = "Missingness level",
+      subtitle = "Dashed line indicates nominal 95% coverage target",
+      x = "Artificial missingness level",
       y = "Coverage probability",
       color = "Method"
     ) +
     theme_minimal(base_size = 11) +
-    theme(plot.title = element_text(face = "bold"))
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold")
+    )
 
   ggsave(
     filename = "figures/inference_coverage_methods.png",
     plot = coverage_plot,
     width = 11,
+    height = 9,
+    dpi = 300
+  )
+
+  # Additional plot: distribution of numeric metrics across repetitions
+  acc_num_box <- accuracy_by_rep_plot %>%
+    filter(metric %in% c("rmse", "nrmse"), !is.na(value), method != "Complete-case") %>%
+    ggplot(aes(x = method, y = value, fill = method)) +
+    geom_boxplot(outlier.alpha = 0.25, width = 0.75) +
+    facet_grid(metric + mechanism ~ variable + missing_rate_label, scales = "free_y") +
+    labs(
+      title = "Distribution of Numeric Imputation Error Across Repetitions",
+      subtitle = "Boxplots show variability and robustness of each method",
+      x = "Method",
+      y = "Error metric value",
+      fill = "Method"
+    ) +
+    theme_minimal(base_size = 10.5) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold"),
+      axis.text.x = element_text(angle = 20, hjust = 1),
+      legend.position = "none"
+    )
+
+  ggsave(
+    filename = "figures/accuracy_numeric_boxplots.png",
+    plot = acc_num_box,
+    width = 14,
+    height = 9,
+    dpi = 300
+  )
+
+  # Additional plot: distribution of categorical PFC across repetitions
+  acc_cat_box <- accuracy_by_rep_plot %>%
+    filter(metric == "pfc", !is.na(value), method != "Complete-case") %>%
+    ggplot(aes(x = method, y = value, fill = method)) +
+    geom_boxplot(outlier.alpha = 0.25, width = 0.75) +
+    facet_grid(mechanism ~ variable + missing_rate_label, scales = "free_y") +
+    labs(
+      title = "Distribution of Categorical Error (PFC) Across Repetitions",
+      subtitle = "Lower PFC indicates better classification recovery",
+      x = "Method",
+      y = "PFC",
+      fill = "Method"
+    ) +
+    theme_minimal(base_size = 10.5) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold"),
+      axis.text.x = element_text(angle = 20, hjust = 1),
+      legend.position = "none"
+    )
+
+  ggsave(
+    filename = "figures/accuracy_categorical_boxplots.png",
+    plot = acc_cat_box,
+    width = 12,
+    height = 7,
+    dpi = 300
+  )
+
+  # Additional plot: model-based SE vs empirical SD
+  se_vs_empirical <- model_summary_plot %>%
+    filter(term != "(Intercept)") %>%
+    ggplot(aes(x = empirical_sd, y = mean_model_se, color = method)) +
+    geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "gray50") +
+    geom_point(alpha = 0.9, size = 2.2) +
+    facet_grid(mechanism ~ missing_rate_label) +
+    labs(
+      title = "Model-Based SE vs Empirical SD",
+      subtitle = "Points near diagonal indicate calibrated uncertainty",
+      x = "Empirical SD of estimates across repetitions",
+      y = "Mean model-based standard error",
+      color = "Method"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold")
+    )
+
+  ggsave(
+    filename = "figures/inference_se_vs_empiricalsd.png",
+    plot = se_vs_empirical,
+    width = 10.5,
+    height = 6.8,
+    dpi = 300
+  )
+
+  # Additional plot: average CI width by method
+  ci_width_plot <- model_summary_plot %>%
+    filter(term != "(Intercept)") %>%
+    ggplot(aes(x = method, y = avg_ci_width, fill = method)) +
+    geom_col(position = "dodge", width = 0.75) +
+    facet_grid(term ~ mechanism + missing_rate_label, scales = "free_y") +
+    labs(
+      title = "Average 95% CI Width by Method",
+      subtitle = "Wider intervals indicate more conservative uncertainty estimates",
+      x = "Method",
+      y = "Average CI width",
+      fill = "Method"
+    ) +
+    theme_minimal(base_size = 10.5) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "gray30"),
+      axis.title.x = element_text(face = "bold"),
+      axis.title.y = element_text(face = "bold"),
+      axis.text.x = element_text(angle = 20, hjust = 1),
+      legend.position = "none"
+    )
+
+  ggsave(
+    filename = "figures/inference_ciwidth_methods.png",
+    plot = ci_width_plot,
+    width = 14,
     height = 9,
     dpi = 300
   )
