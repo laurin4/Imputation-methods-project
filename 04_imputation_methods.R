@@ -61,28 +61,45 @@ numeric_vars <- c("hba1c", "age", "bmi", "systolic_bp", "income_ratio")
 
 for (m in method_names) {
   dir.create(file.path(output_root, m), recursive = TRUE, showWarnings = FALSE)
+  old_files <- list.files(file.path(output_root, m), pattern = "\\.csv$", full.names = TRUE)
+  if (length(old_files) > 0) file.remove(old_files)
 }
 
 if (!dir.exists(input_dir)) {
   stop("Input directory not found: ", input_dir, ". Run 03_generate_missingness.R first.")
 }
 
-dataset_files <- list.files(input_dir, pattern = "\\.csv$", full.names = TRUE)
+manifest_path <- "sim_data/simulation_manifest.csv"
+if (!file.exists(manifest_path)) {
+  stop("Missing simulation manifest: ", manifest_path, ". Run 03_generate_missingness.R first.")
+}
+sim_manifest <- readr::read_csv(manifest_path, show_col_types = FALSE)
+if (!all(c("dataset_file", "mechanism") %in% names(sim_manifest))) {
+  stop("simulation_manifest.csv must contain columns: dataset_file, mechanism")
+}
+dataset_files <- sim_manifest$dataset_file %>% unique()
 if (length(dataset_files) == 0) {
-  stop("No simulation files found in ", input_dir, ".")
+  stop("No simulation files listed in ", manifest_path, ".")
 }
 
 # ---- Runtime controls for faster/debug runs ---------------------------------
 # Optional environment variables:
-#   MAX_FILES           -> process only first N simulation files
+#   MAX_FILES_PER_MECH  -> process first N files per mechanism (balanced subset)
 #   METHODS             -> comma-separated subset, e.g. "complete_case,mean_mode,mice"
 #   KNN_K               -> k for VIM::kNN (default 5)
 #   MISSFOREST_NTREE    -> number of trees for missForest (default 100)
 #   MICE_M              -> number of imputations for mice (default 20)
 #   MICE_MAXIT          -> number of mice iterations (default 10)
-max_files <- as.integer(Sys.getenv("MAX_FILES", unset = "0"))
-if (!is.na(max_files) && max_files > 0) {
-  dataset_files <- dataset_files[seq_len(min(max_files, length(dataset_files)))]
+max_files_per_mech <- as.integer(Sys.getenv("MAX_FILES_PER_MECH", unset = "0"))
+if (is.na(max_files_per_mech) || max_files_per_mech < 0) {
+  stop("MAX_FILES_PER_MECH must be a non-negative integer.")
+}
+if (max_files_per_mech > 0) {
+  dataset_files <- sim_manifest %>%
+    group_by(mechanism) %>%
+    slice_head(n = max_files_per_mech) %>%
+    ungroup() %>%
+    pull(dataset_file)
 }
 
 methods_env <- Sys.getenv("METHODS", unset = "")
@@ -103,9 +120,9 @@ if (nzchar(methods_env)) {
 }
 
 knn_k <- as.integer(Sys.getenv("KNN_K", unset = "5"))
-missforest_ntree <- as.integer(Sys.getenv("MISSFOREST_NTREE", unset = "100"))
-mice_m <- as.integer(Sys.getenv("MICE_M", unset = "20"))
-mice_maxit <- as.integer(Sys.getenv("MICE_MAXIT", unset = "10"))
+missforest_ntree <- as.integer(Sys.getenv("MISSFOREST_NTREE", unset = "40"))
+mice_m <- as.integer(Sys.getenv("MICE_M", unset = "8"))
+mice_maxit <- as.integer(Sys.getenv("MICE_MAXIT", unset = "5"))
 
 if (is.na(knn_k) || knn_k <= 0) stop("KNN_K must be a positive integer.")
 if (is.na(missforest_ntree) || missforest_ntree <= 0) stop("MISSFOREST_NTREE must be a positive integer.")

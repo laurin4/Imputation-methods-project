@@ -61,18 +61,24 @@ output_mask_dir <- file.path(output_root, "masks")
 dir.create(output_data_dir, showWarnings = FALSE, recursive = TRUE)
 dir.create(output_mask_dir, showWarnings = FALSE, recursive = TRUE)
 
+# Clear previous simulation artifacts to avoid mixing with old runs
+old_dataset_files <- list.files(output_data_dir, pattern = "\\.csv$", full.names = TRUE)
+old_mask_files <- list.files(output_mask_dir, pattern = "\\.csv$", full.names = TRUE)
+if (length(old_dataset_files) > 0) file.remove(old_dataset_files)
+if (length(old_mask_files) > 0) file.remove(old_mask_files)
+
 if (!file.exists(input_path)) {
   stop("Input file not found: ", input_path, ". Run 01_data_prep.R first.")
 }
 
 # ---- Runtime controls for balanced CPU usage --------------------------------
 # Optional environment variables:
-#   FAST_MODE        -> "1" enables quicker defaults
 #   N_REPS           -> override number of repetitions per mechanism x level
 #   REF_MAX_ROWS     -> cap complete-case reference rows used in simulations
-fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
-n_reps_env <- as.integer(Sys.getenv("N_REPS", unset = if (fast_mode) "20" else as.character(n_reps)))
-ref_max_rows <- as.integer(Sys.getenv("REF_MAX_ROWS", unset = if (fast_mode) "2000" else "0"))
+#
+# Project defaults are intentionally bounded to avoid long runtimes.
+n_reps_env <- as.integer(Sys.getenv("N_REPS", unset = "8"))
+ref_max_rows <- as.integer(Sys.getenv("REF_MAX_ROWS", unset = "1000"))
 
 if (is.na(n_reps_env) || n_reps_env <= 0) {
   stop("N_REPS must be a positive integer.")
@@ -130,7 +136,7 @@ apply_mcar_mask <- function(df, vars_to_mask, missing_rate, seed = NULL) {
   sampled_ids <- sample(cell_grid$cell_id, size = n_mask, replace = FALSE)
   mask_index <- cell_grid %>%
     filter(.data$cell_id %in% sampled_ids) %>%
-    select(.data$row_id, .data$variable)
+    select(all_of(c("row_id", "variable")))
 
   # Capture true values before masking for evaluation.
   mask_index <- mask_index %>%
@@ -208,7 +214,7 @@ apply_mar_mask <- function(df, vars_to_mask, missing_rate, seed = NULL) {
 
   mask_index <- mar_grid %>%
     slice(sampled_rows) %>%
-    select(.data$row_id, .data$variable)
+    select(all_of(c("row_id", "variable")))
 
   mask_index <- mask_index %>%
     mutate(

@@ -66,19 +66,19 @@ if (!dir.exists("imputed_data")) {
 
 # ---- Runtime controls for balanced CPU usage --------------------------------
 # Optional environment variables:
-#   FAST_MODE        -> "1" enables practical defaults for quicker evaluation
-#   MAX_FILES_EVAL   -> evaluate only first N simulation files
+#   MAX_FILES_PER_MECH_EVAL -> evaluate first N files per mechanism (balanced subset)
 #   METHODS_EVAL     -> comma-separated subset of methods to evaluate
 #   MICE_M_EVAL      -> m for pooled mice inference in evaluation
 #   MICE_MAXIT_EVAL  -> maxit for pooled mice inference in evaluation
 #   SKIP_PLOTS       -> "1" skips plot generation (tables only)
-fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
-max_files_eval <- as.integer(Sys.getenv("MAX_FILES_EVAL", unset = if (fast_mode) "20" else "0"))
-mice_m_eval <- as.integer(Sys.getenv("MICE_M_EVAL", unset = if (fast_mode) "5" else "20"))
-mice_maxit_eval <- as.integer(Sys.getenv("MICE_MAXIT_EVAL", unset = if (fast_mode) "5" else "10"))
+max_files_per_mech_eval <- as.integer(Sys.getenv("MAX_FILES_PER_MECH_EVAL", unset = "0"))
+mice_m_eval <- as.integer(Sys.getenv("MICE_M_EVAL", unset = "8"))
+mice_maxit_eval <- as.integer(Sys.getenv("MICE_MAXIT_EVAL", unset = "5"))
 skip_plots <- identical(Sys.getenv("SKIP_PLOTS", unset = "0"), "1")
 
-if (is.na(max_files_eval) || max_files_eval < 0) stop("MAX_FILES_EVAL must be a non-negative integer.")
+if (is.na(max_files_per_mech_eval) || max_files_per_mech_eval < 0) {
+  stop("MAX_FILES_PER_MECH_EVAL must be a non-negative integer.")
+}
 if (is.na(mice_m_eval) || mice_m_eval <= 0) stop("MICE_M_EVAL must be a positive integer.")
 if (is.na(mice_maxit_eval) || mice_maxit_eval <= 0) stop("MICE_MAXIT_EVAL must be a positive integer.")
 
@@ -257,10 +257,27 @@ truth_coef <- broom::tidy(truth_model) %>%
   select(term, true_estimate = estimate)
 
 # ---- Discover simulation files ----------------------------------------------
-sim_files <- list.files("sim_data/datasets", pattern = "^sim_.*\\.csv$", full.names = TRUE)
-if (length(sim_files) == 0) stop("No simulation datasets found in sim_data/datasets.")
-if (max_files_eval > 0) {
-  sim_files <- sim_files[seq_len(min(max_files_eval, length(sim_files)))]
+manifest_path <- "sim_data/simulation_manifest.csv"
+if (!file.exists(manifest_path)) {
+  stop("Missing simulation manifest: ", manifest_path, ". Run 03_generate_missingness.R first.")
+}
+sim_manifest <- readr::read_csv(manifest_path, show_col_types = FALSE)
+if (!all(c("dataset_file", "mechanism") %in% names(sim_manifest))) {
+  stop("simulation_manifest.csv must contain columns: dataset_file, mechanism")
+}
+
+if (max_files_per_mech_eval > 0) {
+  sim_files <- sim_manifest %>%
+    group_by(mechanism) %>%
+    slice_head(n = max_files_per_mech_eval) %>%
+    ungroup() %>%
+    pull(dataset_file)
+} else {
+  sim_files <- sim_manifest$dataset_file %>% unique()
+}
+
+if (length(sim_files) == 0) {
+  stop("No simulation files selected for evaluation.")
 }
 
 # ---- Main evaluation loop ----------------------------------------------------

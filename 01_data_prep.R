@@ -30,11 +30,11 @@ suppressPackageStartupMessages({
 
 # ---- Runtime controls for balanced CPU usage --------------------------------
 # Optional environment variables:
-#   FAST_MODE           -> "1" enables practical defaults for quicker runs
 #   MAX_ADULT_ROWS      -> keep only first N adult rows after preprocessing
 #   SAMPLE_ADULT_FRAC   -> random sample fraction in (0, 1], applied before MAX
-fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
-max_adult_rows <- as.integer(Sys.getenv("MAX_ADULT_ROWS", unset = if (fast_mode) "2500" else "0"))
+#
+# Project default is intentionally CPU-friendly for reproducible classroom runs.
+max_adult_rows <- as.integer(Sys.getenv("MAX_ADULT_ROWS", unset = "2000"))
 sample_adult_frac <- as.numeric(Sys.getenv("SAMPLE_ADULT_FRAC", unset = "1"))
 
 if (is.na(max_adult_rows) || max_adult_rows < 0) {

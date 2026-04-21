@@ -56,10 +56,10 @@ if (!file.exists(input_path)) {
 
 # ---- Runtime controls for balanced CPU usage --------------------------------
 # Optional environment variables:
-#   FAST_MODE            -> "1" enables practical default for plotting speed
 #   MAX_ROWS_EXPLORATION -> use only first N rows for exploration plots/tables
-fast_mode <- identical(Sys.getenv("FAST_MODE", unset = "0"), "1")
-max_rows_exploration <- as.integer(Sys.getenv("MAX_ROWS_EXPLORATION", unset = if (fast_mode) "2500" else "0"))
+#
+# Project default is intentionally CPU-friendly and aligned with 01_data_prep.R.
+max_rows_exploration <- as.integer(Sys.getenv("MAX_ROWS_EXPLORATION", unset = "2000"))
 if (is.na(max_rows_exploration) || max_rows_exploration < 0) {
   stop("MAX_ROWS_EXPLORATION must be a non-negative integer.")
 }
