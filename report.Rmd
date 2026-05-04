@@ -24,11 +24,11 @@ knitr::opts_chunk$set(
   fig.align = "center",
   out.width = "95%"
 )
-knitr::opts_knit$set(root.dir = "C:/ZHAW/Semester 6/DSHEAL/MDM/Imputation-methods-project")
+knitr::opts_knit$set(root.dir = here::here())
 ```
 
 ```{r packages-and-helpers, include=FALSE}
-required_pkgs <- c("dplyr", "readr", "tidyr", "ggplot2", "knitr", "mice", "broom")
+required_pkgs <- c("dplyr", "readr", "tidyr", "ggplot2", "knitr", "mice", "broom", "here")
 missing_pkgs  <- required_pkgs[!vapply(required_pkgs, requireNamespace, logical(1), quietly = TRUE)]
 if (length(missing_pkgs) > 0) {
   stop(
@@ -45,6 +45,7 @@ library(ggplot2)
 library(knitr)
 library(mice)
 library(broom)
+library(here)
 
 safe_read_csv <- function(path) {
   if (!file.exists(path)) { warning("File not found: ", path); return(NULL) }
