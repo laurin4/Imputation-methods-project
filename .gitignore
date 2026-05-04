@@ -1,8 +1,5 @@
 # Project-generated data artifacts
-data/
 sim_data/
-outputs/
-
 imputed_data/
 
 # R session/user files

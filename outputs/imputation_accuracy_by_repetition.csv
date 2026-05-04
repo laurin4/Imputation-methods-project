@@ -1,0 +1,2401 @@
+mechanism,missing_rate,repetition,method,variable,metric,value,note
+MAR,0.1,1,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,2,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,3,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,4,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,5,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,6,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,7,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.1,8,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,1,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,2,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,3,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,4,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,5,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,6,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,7,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.2,8,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,1,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,2,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,3,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,4,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,5,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,6,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,7,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MAR,0.3,8,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,1,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,2,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,3,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,4,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,5,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,6,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,7,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.1,8,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,1,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,2,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,3,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,4,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,5,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,6,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,7,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.2,8,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,1,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,2,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,3,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,4,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,5,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,6,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,7,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,age,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,age,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,bmi,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,bmi,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,income_ratio,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,income_ratio,rmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,sex,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,smoking_status,pfc,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,systolic_bp,nrmse,,not estimable: complete-case output drops rows
+MCAR,0.3,8,complete_case,systolic_bp,rmse,,not estimable: complete-case output drops rows
+MAR,0.1,1,knn,age,nrmse,0.9919686127255863,
+MAR,0.1,1,knn,age,rmse,17.02331896046573,
+MAR,0.1,1,knn,bmi,nrmse,1.137594433181509,
+MAR,0.1,1,knn,bmi,rmse,9.936189855898437,
+MAR,0.1,1,knn,income_ratio,nrmse,1.1081044437378271,
+MAR,0.1,1,knn,income_ratio,rmse,1.7303024095722195,
+MAR,0.1,1,knn,sex,pfc,0.4065934065934066,
+MAR,0.1,1,knn,smoking_status,pfc,0.5894736842105263,
+MAR,0.1,1,knn,systolic_bp,nrmse,1.0723761950519055,
+MAR,0.1,1,knn,systolic_bp,rmse,21.715771058004776,
+MAR,0.1,2,knn,age,nrmse,1.0878249703616587,
+MAR,0.1,2,knn,age,rmse,16.504241878983716,
+MAR,0.1,2,knn,bmi,nrmse,1.0733611190928172,
+MAR,0.1,2,knn,bmi,rmse,10.12382190239953,
+MAR,0.1,2,knn,income_ratio,nrmse,1.1762460913508246,
+MAR,0.1,2,knn,income_ratio,rmse,1.859226825926278,
+MAR,0.1,2,knn,sex,pfc,0.4791666666666667,
+MAR,0.1,2,knn,smoking_status,pfc,0.3942307692307692,
+MAR,0.1,2,knn,systolic_bp,nrmse,1.0010050082732636,
+MAR,0.1,2,knn,systolic_bp,rmse,18.889990630800888,
+MAR,0.1,3,knn,age,nrmse,1.1568585000761649,
+MAR,0.1,3,knn,age,rmse,18.752777572046938,
+MAR,0.1,3,knn,bmi,nrmse,1.1747273331708825,
+MAR,0.1,3,knn,bmi,rmse,10.99406118971961,
+MAR,0.1,3,knn,income_ratio,nrmse,1.1142799725931245,
+MAR,0.1,3,knn,income_ratio,rmse,1.8398040846153816,
+MAR,0.1,3,knn,sex,pfc,0.44642857142857145,
+MAR,0.1,3,knn,smoking_status,pfc,0.4479166666666667,
+MAR,0.1,3,knn,systolic_bp,nrmse,1.0797546427499605,
+MAR,0.1,3,knn,systolic_bp,rmse,20.151709135969686,
+MAR,0.1,4,knn,age,nrmse,0.9632863190488814,
+MAR,0.1,4,knn,age,rmse,16.151029974300997,
+MAR,0.1,4,knn,bmi,nrmse,1.13068735770596,
+MAR,0.1,4,knn,bmi,rmse,9.229694640555273,
+MAR,0.1,4,knn,income_ratio,nrmse,1.114046730565635,
+MAR,0.1,4,knn,income_ratio,rmse,1.6161522443517122,
+MAR,0.1,4,knn,sex,pfc,0.5252525252525253,
+MAR,0.1,4,knn,smoking_status,pfc,0.4423076923076923,
+MAR,0.1,4,knn,systolic_bp,nrmse,1.0400760578466943,
+MAR,0.1,4,knn,systolic_bp,rmse,22.305290958159063,
+MAR,0.1,5,knn,age,nrmse,0.8990652288751608,
+MAR,0.1,5,knn,age,rmse,15.392220585264965,
+MAR,0.1,5,knn,bmi,nrmse,1.06369381601927,
+MAR,0.1,5,knn,bmi,rmse,10.1740326405482,
+MAR,0.1,5,knn,income_ratio,nrmse,1.1879280283114833,
+MAR,0.1,5,knn,income_ratio,rmse,1.808988667736755,
+MAR,0.1,5,knn,sex,pfc,0.4659090909090909,
+MAR,0.1,5,knn,smoking_status,pfc,0.45132743362831856,
+MAR,0.1,5,knn,systolic_bp,nrmse,1.0271510148148957,
+MAR,0.1,5,knn,systolic_bp,rmse,22.319144428893924,
+MAR,0.1,6,knn,age,nrmse,1.1511161177846305,
+MAR,0.1,6,knn,age,rmse,18.405162319305962,
+MAR,0.1,6,knn,bmi,nrmse,1.1317420929704292,
+MAR,0.1,6,knn,bmi,rmse,11.438016341209789,
+MAR,0.1,6,knn,income_ratio,nrmse,1.2758072081173355,
+MAR,0.1,6,knn,income_ratio,rmse,1.9191106947192647,
+MAR,0.1,6,knn,sex,pfc,0.4367816091954023,
+MAR,0.1,6,knn,smoking_status,pfc,0.4563106796116505,
+MAR,0.1,6,knn,systolic_bp,nrmse,1.0097411618918688,
+MAR,0.1,6,knn,systolic_bp,rmse,21.88315674256363,
+MAR,0.1,7,knn,age,nrmse,1.1013240307261314,
+MAR,0.1,7,knn,age,rmse,17.936395560822294,
+MAR,0.1,7,knn,bmi,nrmse,0.996037935490172,
+MAR,0.1,7,knn,bmi,rmse,9.023480899695517,
+MAR,0.1,7,knn,income_ratio,nrmse,1.2665450331432009,
+MAR,0.1,7,knn,income_ratio,rmse,1.778335117314418,
+MAR,0.1,7,knn,sex,pfc,0.38144329896907214,
+MAR,0.1,7,knn,smoking_status,pfc,0.45098039215686275,
+MAR,0.1,7,knn,systolic_bp,nrmse,1.0015927976875916,
+MAR,0.1,7,knn,systolic_bp,rmse,18.93442965242487,
+MAR,0.1,8,knn,age,nrmse,1.269153604789815,
+MAR,0.1,8,knn,age,rmse,18.188155177588655,
+MAR,0.1,8,knn,bmi,nrmse,1.1380424672119793,
+MAR,0.1,8,knn,bmi,rmse,11.242859119819958,
+MAR,0.1,8,knn,income_ratio,nrmse,1.2150547483673548,
+MAR,0.1,8,knn,income_ratio,rmse,1.806879427440061,
+MAR,0.1,8,knn,sex,pfc,0.43243243243243246,
+MAR,0.1,8,knn,smoking_status,pfc,0.49504950495049505,
+MAR,0.1,8,knn,systolic_bp,nrmse,0.9361864057502799,
+MAR,0.1,8,knn,systolic_bp,rmse,17.647347927915135,
+MAR,0.2,1,knn,age,nrmse,1.1758172738977155,
+MAR,0.2,1,knn,age,rmse,18.267366599060058,
+MAR,0.2,1,knn,bmi,nrmse,1.0932157277431866,
+MAR,0.2,1,knn,bmi,rmse,10.026648277249764,
+MAR,0.2,1,knn,income_ratio,nrmse,1.2481392773932045,
+MAR,0.2,1,knn,income_ratio,rmse,1.913705541487909,
+MAR,0.2,1,knn,sex,pfc,0.4416243654822335,
+MAR,0.2,1,knn,smoking_status,pfc,0.5022222222222222,
+MAR,0.2,1,knn,systolic_bp,nrmse,1.0259267502169749,
+MAR,0.2,1,knn,systolic_bp,rmse,22.31014238941775,
+MAR,0.2,2,knn,age,nrmse,1.040711076201481,
+MAR,0.2,2,knn,age,rmse,17.402053346492114,
+MAR,0.2,2,knn,bmi,nrmse,1.123083105757089,
+MAR,0.2,2,knn,bmi,rmse,10.087107725609023,
+MAR,0.2,2,knn,income_ratio,nrmse,1.3058644814539768,
+MAR,0.2,2,knn,income_ratio,rmse,2.0624609029207206,
+MAR,0.2,2,knn,sex,pfc,0.475,
+MAR,0.2,2,knn,smoking_status,pfc,0.44660194174757284,
+MAR,0.2,2,knn,systolic_bp,nrmse,1.0973175986281793,
+MAR,0.2,2,knn,systolic_bp,rmse,23.231860733827858,
+MAR,0.2,3,knn,age,nrmse,1.0965731988491332,
+MAR,0.2,3,knn,age,rmse,17.83565465361664,
+MAR,0.2,3,knn,bmi,nrmse,1.0920077355918103,
+MAR,0.2,3,knn,bmi,rmse,9.049732961069441,
+MAR,0.2,3,knn,income_ratio,nrmse,1.269033797785454,
+MAR,0.2,3,knn,income_ratio,rmse,1.8373656013273942,
+MAR,0.2,3,knn,sex,pfc,0.510989010989011,
+MAR,0.2,3,knn,smoking_status,pfc,0.4279475982532751,
+MAR,0.2,3,knn,systolic_bp,nrmse,1.1063759503610198,
+MAR,0.2,3,knn,systolic_bp,rmse,23.62012802169355,
+MAR,0.2,4,knn,age,nrmse,1.1208583924692428,
+MAR,0.2,4,knn,age,rmse,18.39900976165359,
+MAR,0.2,4,knn,bmi,nrmse,1.147403164385197,
+MAR,0.2,4,knn,bmi,rmse,9.901652539081283,
+MAR,0.2,4,knn,income_ratio,nrmse,1.2303185677356903,
+MAR,0.2,4,knn,income_ratio,rmse,1.9786026366560778,
+MAR,0.2,4,knn,sex,pfc,0.47150259067357514,
+MAR,0.2,4,knn,smoking_status,pfc,0.40384615384615385,
+MAR,0.2,4,knn,systolic_bp,nrmse,1.034932812714814,
+MAR,0.2,4,knn,systolic_bp,rmse,20.03544713536967,
+MAR,0.2,5,knn,age,nrmse,1.1447320423374014,
+MAR,0.2,5,knn,age,rmse,17.36512651976999,
+MAR,0.2,5,knn,bmi,nrmse,1.0883058544288446,
+MAR,0.2,5,knn,bmi,rmse,9.034839972757311,
+MAR,0.2,5,knn,income_ratio,nrmse,1.144754132847257,
+MAR,0.2,5,knn,income_ratio,rmse,1.7700628597517456,
+MAR,0.2,5,knn,sex,pfc,0.44651162790697674,
+MAR,0.2,5,knn,smoking_status,pfc,0.470873786407767,
+MAR,0.2,5,knn,systolic_bp,nrmse,1.1034087873729659,
+MAR,0.2,5,knn,systolic_bp,rmse,21.925901647903146,
+MAR,0.2,6,knn,age,nrmse,0.9985356211040044,
+MAR,0.2,6,knn,age,rmse,16.27982996992798,
+MAR,0.2,6,knn,bmi,nrmse,1.1915391277200549,
+MAR,0.2,6,knn,bmi,rmse,10.305380158686711,
+MAR,0.2,6,knn,income_ratio,nrmse,1.307498612135239,
+MAR,0.2,6,knn,income_ratio,rmse,1.8876090637438914,
+MAR,0.2,6,knn,sex,pfc,0.42328042328042326,
+MAR,0.2,6,knn,smoking_status,pfc,0.4672131147540984,
+MAR,0.2,6,knn,systolic_bp,nrmse,1.081154951804456,
+MAR,0.2,6,knn,systolic_bp,rmse,19.98133632091679,
+MAR,0.2,7,knn,age,nrmse,1.13620106502971,
+MAR,0.2,7,knn,age,rmse,19.11805429430516,
+MAR,0.2,7,knn,bmi,nrmse,1.1075716195384415,
+MAR,0.2,7,knn,bmi,rmse,10.20434599808715,
+MAR,0.2,7,knn,income_ratio,nrmse,1.2045544993513804,
+MAR,0.2,7,knn,income_ratio,rmse,1.8275882566866193,
+MAR,0.2,7,knn,sex,pfc,0.43137254901960786,
+MAR,0.2,7,knn,smoking_status,pfc,0.47619047619047616,
+MAR,0.2,7,knn,systolic_bp,nrmse,1.114736601732789,
+MAR,0.2,7,knn,systolic_bp,rmse,25.24107148705885,
+MAR,0.2,8,knn,age,nrmse,1.0186794537886485,
+MAR,0.2,8,knn,age,rmse,18.391174353957037,
+MAR,0.2,8,knn,bmi,nrmse,1.1381868387213807,
+MAR,0.2,8,knn,bmi,rmse,9.568468516099625,
+MAR,0.2,8,knn,income_ratio,nrmse,1.2881535285985861,
+MAR,0.2,8,knn,income_ratio,rmse,1.8988211505189296,
+MAR,0.2,8,knn,sex,pfc,0.5076923076923077,
+MAR,0.2,8,knn,smoking_status,pfc,0.4392523364485981,
+MAR,0.2,8,knn,systolic_bp,nrmse,1.0548297226890562,
+MAR,0.2,8,knn,systolic_bp,rmse,18.49029805811843,
+MAR,0.3,1,knn,age,nrmse,1.065076511958279,
+MAR,0.3,1,knn,age,rmse,17.74621248475169,
+MAR,0.3,1,knn,bmi,nrmse,1.0837307753634304,
+MAR,0.3,1,knn,bmi,rmse,8.882965068258953,
+MAR,0.3,1,knn,income_ratio,nrmse,1.2441138593407974,
+MAR,0.3,1,knn,income_ratio,rmse,1.8939295532153178,
+MAR,0.3,1,knn,sex,pfc,0.4479166666666667,
+MAR,0.3,1,knn,smoking_status,pfc,0.43465045592705165,
+MAR,0.3,1,knn,systolic_bp,nrmse,1.0722330151724124,
+MAR,0.3,1,knn,systolic_bp,rmse,20.34933273765063,
+MAR,0.3,2,knn,age,nrmse,1.0331458637905657,
+MAR,0.3,2,knn,age,rmse,17.173769422126977,
+MAR,0.3,2,knn,bmi,nrmse,1.1211582719373854,
+MAR,0.3,2,knn,bmi,rmse,9.609420150633404,
+MAR,0.3,2,knn,income_ratio,nrmse,1.220402649217117,
+MAR,0.3,2,knn,income_ratio,rmse,1.8121614703527036,
+MAR,0.3,2,knn,sex,pfc,0.5316455696202531,
+MAR,0.3,2,knn,smoking_status,pfc,0.44336569579288027,
+MAR,0.3,2,knn,systolic_bp,nrmse,1.0794930132408302,
+MAR,0.3,2,knn,systolic_bp,rmse,20.113613751463834,
+MAR,0.3,3,knn,age,nrmse,1.1072006927484601,
+MAR,0.3,3,knn,age,rmse,18.707841493163592,
+MAR,0.3,3,knn,bmi,nrmse,1.1089394216603994,
+MAR,0.3,3,knn,bmi,rmse,9.02201679246997,
+MAR,0.3,3,knn,income_ratio,nrmse,1.2834914199901806,
+MAR,0.3,3,knn,income_ratio,rmse,2.0303339928319626,
+MAR,0.3,3,knn,sex,pfc,0.4444444444444444,
+MAR,0.3,3,knn,smoking_status,pfc,0.4820359281437126,
+MAR,0.3,3,knn,systolic_bp,nrmse,1.0772262524393257,
+MAR,0.3,3,knn,systolic_bp,rmse,20.9167472345758,
+MAR,0.3,4,knn,age,nrmse,1.1289558232547652,
+MAR,0.3,4,knn,age,rmse,18.616122045152153,
+MAR,0.3,4,knn,bmi,nrmse,1.1232956089669197,
+MAR,0.3,4,knn,bmi,rmse,9.545969881767203,
+MAR,0.3,4,knn,income_ratio,nrmse,1.2952321652961216,
+MAR,0.3,4,knn,income_ratio,rmse,1.9112124113650821,
+MAR,0.3,4,knn,sex,pfc,0.4261168384879725,
+MAR,0.3,4,knn,smoking_status,pfc,0.48220064724919093,
+MAR,0.3,4,knn,systolic_bp,nrmse,1.0493645019957303,
+MAR,0.3,4,knn,systolic_bp,rmse,20.08262562146322,
+MAR,0.3,5,knn,age,nrmse,1.1375799564343245,
+MAR,0.3,5,knn,age,rmse,18.34900262782415,
+MAR,0.3,5,knn,bmi,nrmse,1.0788806107678424,
+MAR,0.3,5,knn,bmi,rmse,8.871595939933927,
+MAR,0.3,5,knn,income_ratio,nrmse,1.2532945792192773,
+MAR,0.3,5,knn,income_ratio,rmse,1.8996692892080265,
+MAR,0.3,5,knn,sex,pfc,0.4965986394557823,
+MAR,0.3,5,knn,smoking_status,pfc,0.40569395017793597,
+MAR,0.3,5,knn,systolic_bp,nrmse,1.0624620274710623,
+MAR,0.3,5,knn,systolic_bp,rmse,22.03465902707008,
+MAR,0.3,6,knn,age,nrmse,1.0997790967049923,
+MAR,0.3,6,knn,age,rmse,18.49724374915867,
+MAR,0.3,6,knn,bmi,nrmse,1.0865929832353982,
+MAR,0.3,6,knn,bmi,rmse,8.675522192622488,
+MAR,0.3,6,knn,income_ratio,nrmse,1.215717188089652,
+MAR,0.3,6,knn,income_ratio,rmse,1.7834225683633338,
+MAR,0.3,6,knn,sex,pfc,0.48172757475083056,
+MAR,0.3,6,knn,smoking_status,pfc,0.4386503067484663,
+MAR,0.3,6,knn,systolic_bp,nrmse,1.0499770203774528,
+MAR,0.3,6,knn,systolic_bp,rmse,20.880499240631465,
+MAR,0.3,7,knn,age,nrmse,1.2006758885092867,
+MAR,0.3,7,knn,age,rmse,19.23794665626495,
+MAR,0.3,7,knn,bmi,nrmse,1.110892938213716,
+MAR,0.3,7,knn,bmi,rmse,8.974779477327933,
+MAR,0.3,7,knn,income_ratio,nrmse,1.2202453167400138,
+MAR,0.3,7,knn,income_ratio,rmse,1.8140590219546704,
+MAR,0.3,7,knn,sex,pfc,0.4750830564784053,
+MAR,0.3,7,knn,smoking_status,pfc,0.4311377245508982,
+MAR,0.3,7,knn,systolic_bp,nrmse,1.0493635762136455,
+MAR,0.3,7,knn,systolic_bp,rmse,20.96652413610887,
+MAR,0.3,8,knn,age,nrmse,1.1543274079020962,
+MAR,0.3,8,knn,age,rmse,18.57826414749713,
+MAR,0.3,8,knn,bmi,nrmse,1.165696399916522,
+MAR,0.3,8,knn,bmi,rmse,8.660043256609589,
+MAR,0.3,8,knn,income_ratio,nrmse,1.1533898523962212,
+MAR,0.3,8,knn,income_ratio,rmse,1.7605299873330567,
+MAR,0.3,8,knn,sex,pfc,0.4028268551236749,
+MAR,0.3,8,knn,smoking_status,pfc,0.3785488958990536,
+MAR,0.3,8,knn,systolic_bp,nrmse,1.0680491080822825,
+MAR,0.3,8,knn,systolic_bp,rmse,22.141868613082625,
+MCAR,0.1,1,knn,age,nrmse,1.0499910702776627,
+MCAR,0.1,1,knn,age,rmse,17.78614457310831,
+MCAR,0.1,1,knn,bmi,nrmse,1.1858812155723286,
+MCAR,0.1,1,knn,bmi,rmse,7.978928366161738,
+MCAR,0.1,1,knn,income_ratio,nrmse,1.1286903288227048,
+MCAR,0.1,1,knn,income_ratio,rmse,1.7959244289377674,
+MCAR,0.1,1,knn,sex,pfc,0.4020618556701031,
+MCAR,0.1,1,knn,smoking_status,pfc,0.4329896907216495,
+MCAR,0.1,1,knn,systolic_bp,nrmse,0.9172962369623859,
+MCAR,0.1,1,knn,systolic_bp,rmse,16.598859114222414,
+MCAR,0.1,2,knn,age,nrmse,1.0622642931426438,
+MCAR,0.1,2,knn,age,rmse,17.709000413692863,
+MCAR,0.1,2,knn,bmi,nrmse,1.1665263582525962,
+MCAR,0.1,2,knn,bmi,rmse,6.65109612364892,
+MCAR,0.1,2,knn,income_ratio,nrmse,1.1532253818916638,
+MCAR,0.1,2,knn,income_ratio,rmse,1.8640836266086056,
+MCAR,0.1,2,knn,sex,pfc,0.4125,
+MCAR,0.1,2,knn,smoking_status,pfc,0.5151515151515151,
+MCAR,0.1,2,knn,systolic_bp,nrmse,0.9482653419950614,
+MCAR,0.1,2,knn,systolic_bp,rmse,20.302554198457823,
+MCAR,0.1,3,knn,age,nrmse,0.9766729366812339,
+MCAR,0.1,3,knn,age,rmse,16.189502771858066,
+MCAR,0.1,3,knn,bmi,nrmse,1.1102882269447905,
+MCAR,0.1,3,knn,bmi,rmse,8.278462862658808,
+MCAR,0.1,3,knn,income_ratio,nrmse,1.2365643536291449,
+MCAR,0.1,3,knn,income_ratio,rmse,1.8388147377154773,
+MCAR,0.1,3,knn,sex,pfc,0.5619047619047619,
+MCAR,0.1,3,knn,smoking_status,pfc,0.47572815533980584,
+MCAR,0.1,3,knn,systolic_bp,nrmse,1.0542196105740171,
+MCAR,0.1,3,knn,systolic_bp,rmse,18.151615136826592,
+MCAR,0.1,4,knn,age,nrmse,1.016529339920997,
+MCAR,0.1,4,knn,age,rmse,17.08454624595302,
+MCAR,0.1,4,knn,bmi,nrmse,1.0954684766649692,
+MCAR,0.1,4,knn,bmi,rmse,8.126930539877893,
+MCAR,0.1,4,knn,income_ratio,nrmse,1.2159511582794764,
+MCAR,0.1,4,knn,income_ratio,rmse,1.8271472357958993,
+MCAR,0.1,4,knn,sex,pfc,0.44660194174757284,
+MCAR,0.1,4,knn,smoking_status,pfc,0.44036697247706424,
+MCAR,0.1,4,knn,systolic_bp,nrmse,1.1018307975910122,
+MCAR,0.1,4,knn,systolic_bp,rmse,20.860108207088434,
+MCAR,0.1,5,knn,age,nrmse,1.0928525137349836,
+MCAR,0.1,5,knn,age,rmse,18.012621837326886,
+MCAR,0.1,5,knn,bmi,nrmse,1.156641246766352,
+MCAR,0.1,5,knn,bmi,rmse,9.610067744915,
+MCAR,0.1,5,knn,income_ratio,nrmse,1.1346920864355303,
+MCAR,0.1,5,knn,income_ratio,rmse,1.7953012954858116,
+MCAR,0.1,5,knn,sex,pfc,0.4574468085106383,
+MCAR,0.1,5,knn,smoking_status,pfc,0.44339622641509435,
+MCAR,0.1,5,knn,systolic_bp,nrmse,1.0453182399267995,
+MCAR,0.1,5,knn,systolic_bp,rmse,20.764448435741798,
+MCAR,0.1,6,knn,age,nrmse,1.1303421186802363,
+MCAR,0.1,6,knn,age,rmse,18.302458851203575,
+MCAR,0.1,6,knn,bmi,nrmse,0.9924893806611788,
+MCAR,0.1,6,knn,bmi,rmse,9.557872634270101,
+MCAR,0.1,6,knn,income_ratio,nrmse,1.175707148993416,
+MCAR,0.1,6,knn,income_ratio,rmse,1.7917997199908084,
+MCAR,0.1,6,knn,sex,pfc,0.4230769230769231,
+MCAR,0.1,6,knn,smoking_status,pfc,0.36,
+MCAR,0.1,6,knn,systolic_bp,nrmse,0.9892214290941685,
+MCAR,0.1,6,knn,systolic_bp,rmse,22.011821804323716,
+MCAR,0.1,7,knn,age,nrmse,0.9466622707885222,
+MCAR,0.1,7,knn,age,rmse,16.905221585472713,
+MCAR,0.1,7,knn,bmi,nrmse,1.0928106499869503,
+MCAR,0.1,7,knn,bmi,rmse,8.517864792220918,
+MCAR,0.1,7,knn,income_ratio,nrmse,1.2325264017973008,
+MCAR,0.1,7,knn,income_ratio,rmse,1.888990872623246,
+MCAR,0.1,7,knn,sex,pfc,0.42342342342342343,
+MCAR,0.1,7,knn,smoking_status,pfc,0.35964912280701755,
+MCAR,0.1,7,knn,systolic_bp,nrmse,0.9738149388161753,
+MCAR,0.1,7,knn,systolic_bp,rmse,18.96493840983644,
+MCAR,0.1,8,knn,age,nrmse,0.9947101961679589,
+MCAR,0.1,8,knn,age,rmse,16.985655712983235,
+MCAR,0.1,8,knn,bmi,nrmse,1.0579913843359072,
+MCAR,0.1,8,knn,bmi,rmse,6.623891416682493,
+MCAR,0.1,8,knn,income_ratio,nrmse,1.186063617192307,
+MCAR,0.1,8,knn,income_ratio,rmse,1.9385402330862564,
+MCAR,0.1,8,knn,sex,pfc,0.4845360824742268,
+MCAR,0.1,8,knn,smoking_status,pfc,0.4482758620689655,
+MCAR,0.1,8,knn,systolic_bp,nrmse,1.0036551030282186,
+MCAR,0.1,8,knn,systolic_bp,rmse,19.815304168920328,
+MCAR,0.2,1,knn,age,nrmse,0.9850223914728843,
+MCAR,0.2,1,knn,age,rmse,16.915889613868124,
+MCAR,0.2,1,knn,bmi,nrmse,1.1207457075728442,
+MCAR,0.2,1,knn,bmi,rmse,7.832634160659927,
+MCAR,0.2,1,knn,income_ratio,nrmse,1.2661510138794005,
+MCAR,0.2,1,knn,income_ratio,rmse,1.8917897538855641,
+MCAR,0.2,1,knn,sex,pfc,0.4321608040201005,
+MCAR,0.2,1,knn,smoking_status,pfc,0.44554455445544555,
+MCAR,0.2,1,knn,systolic_bp,nrmse,1.0088021434421377,
+MCAR,0.2,1,knn,systolic_bp,rmse,19.276900713001066,
+MCAR,0.2,2,knn,age,nrmse,1.1385880015702297,
+MCAR,0.2,2,knn,age,rmse,18.481435327826944,
+MCAR,0.2,2,knn,bmi,nrmse,1.1155403992015336,
+MCAR,0.2,2,knn,bmi,rmse,9.155431937503776,
+MCAR,0.2,2,knn,income_ratio,nrmse,1.2307235941207963,
+MCAR,0.2,2,knn,income_ratio,rmse,2.0218474322030695,
+MCAR,0.2,2,knn,sex,pfc,0.47572815533980584,
+MCAR,0.2,2,knn,smoking_status,pfc,0.4,
+MCAR,0.2,2,knn,systolic_bp,nrmse,1.0683997890520822,
+MCAR,0.2,2,knn,systolic_bp,rmse,21.430502558486477,
+MCAR,0.2,3,knn,age,nrmse,1.1194502582368995,
+MCAR,0.2,3,knn,age,rmse,18.86948042916568,
+MCAR,0.2,3,knn,bmi,nrmse,1.076448657669341,
+MCAR,0.2,3,knn,bmi,rmse,8.027121365679907,
+MCAR,0.2,3,knn,income_ratio,nrmse,1.1857566258549648,
+MCAR,0.2,3,knn,income_ratio,rmse,1.8146832348149489,
+MCAR,0.2,3,knn,sex,pfc,0.40932642487046633,
+MCAR,0.2,3,knn,smoking_status,pfc,0.4272300469483568,
+MCAR,0.2,3,knn,systolic_bp,nrmse,0.9734068444979018,
+MCAR,0.2,3,knn,systolic_bp,rmse,20.46740860037771,
+MCAR,0.2,4,knn,age,nrmse,1.0730418139874138,
+MCAR,0.2,4,knn,age,rmse,17.849779666604892,
+MCAR,0.2,4,knn,bmi,nrmse,1.0559663770020966,
+MCAR,0.2,4,knn,bmi,rmse,8.209534286545763,
+MCAR,0.2,4,knn,income_ratio,nrmse,1.2690644274059744,
+MCAR,0.2,4,knn,income_ratio,rmse,1.868953584228351,
+MCAR,0.2,4,knn,sex,pfc,0.47593582887700536,
+MCAR,0.2,4,knn,smoking_status,pfc,0.4396135265700483,
+MCAR,0.2,4,knn,systolic_bp,nrmse,1.024934748441817,
+MCAR,0.2,4,knn,systolic_bp,rmse,19.52713669968992,
+MCAR,0.2,5,knn,age,nrmse,1.1764619142828765,
+MCAR,0.2,5,knn,age,rmse,19.973792352790216,
+MCAR,0.2,5,knn,bmi,nrmse,1.0093048737029708,
+MCAR,0.2,5,knn,bmi,rmse,8.377245813671724,
+MCAR,0.2,5,knn,income_ratio,nrmse,1.2002393919353376,
+MCAR,0.2,5,knn,income_ratio,rmse,1.8555197110400774,
+MCAR,0.2,5,knn,sex,pfc,0.4230769230769231,
+MCAR,0.2,5,knn,smoking_status,pfc,0.41919191919191917,
+MCAR,0.2,5,knn,systolic_bp,nrmse,1.0086896121634612,
+MCAR,0.2,5,knn,systolic_bp,rmse,23.099030659127337,
+MCAR,0.2,6,knn,age,nrmse,1.030072487733176,
+MCAR,0.2,6,knn,age,rmse,17.891137009848048,
+MCAR,0.2,6,knn,bmi,nrmse,1.0851287990865452,
+MCAR,0.2,6,knn,bmi,rmse,8.446207783729093,
+MCAR,0.2,6,knn,income_ratio,nrmse,1.195793800421737,
+MCAR,0.2,6,knn,income_ratio,rmse,1.850193212984291,
+MCAR,0.2,6,knn,sex,pfc,0.49514563106796117,
+MCAR,0.2,6,knn,smoking_status,pfc,0.4052631578947368,
+MCAR,0.2,6,knn,systolic_bp,nrmse,1.0340738910620206,
+MCAR,0.2,6,knn,systolic_bp,rmse,19.280449976474515,
+MCAR,0.2,7,knn,age,nrmse,1.0420167525542001,
+MCAR,0.2,7,knn,age,rmse,18.247650374391945,
+MCAR,0.2,7,knn,bmi,nrmse,1.1026386055326578,
+MCAR,0.2,7,knn,bmi,rmse,8.129381761615514,
+MCAR,0.2,7,knn,income_ratio,nrmse,1.17693921465844,
+MCAR,0.2,7,knn,income_ratio,rmse,1.80469780596483,
+MCAR,0.2,7,knn,sex,pfc,0.504950495049505,
+MCAR,0.2,7,knn,smoking_status,pfc,0.4223300970873786,
+MCAR,0.2,7,knn,systolic_bp,nrmse,1.0579436953543784,
+MCAR,0.2,7,knn,systolic_bp,rmse,20.618931124893543,
+MCAR,0.2,8,knn,age,nrmse,1.0049902157112909,
+MCAR,0.2,8,knn,age,rmse,16.28106786214305,
+MCAR,0.2,8,knn,bmi,nrmse,1.1511602218795043,
+MCAR,0.2,8,knn,bmi,rmse,8.903576611148367,
+MCAR,0.2,8,knn,income_ratio,nrmse,1.1468984715589534,
+MCAR,0.2,8,knn,income_ratio,rmse,1.808008679352891,
+MCAR,0.2,8,knn,sex,pfc,0.40588235294117647,
+MCAR,0.2,8,knn,smoking_status,pfc,0.358974358974359,
+MCAR,0.2,8,knn,systolic_bp,nrmse,0.9762662764853208,
+MCAR,0.2,8,knn,systolic_bp,rmse,17.634401094794875,
+MCAR,0.3,1,knn,age,nrmse,1.1161533628945024,
+MCAR,0.3,1,knn,age,rmse,19.213739491179204,
+MCAR,0.3,1,knn,bmi,nrmse,1.0952091699230844,
+MCAR,0.3,1,knn,bmi,rmse,8.679214634208943,
+MCAR,0.3,1,knn,income_ratio,nrmse,1.2078278114986694,
+MCAR,0.3,1,knn,income_ratio,rmse,1.8710307724405706,
+MCAR,0.3,1,knn,sex,pfc,0.4915254237288136,
+MCAR,0.3,1,knn,smoking_status,pfc,0.46464646464646464,
+MCAR,0.3,1,knn,systolic_bp,nrmse,1.0285101985614442,
+MCAR,0.3,1,knn,systolic_bp,rmse,20.584325304382286,
+MCAR,0.3,2,knn,age,nrmse,1.1255099332887155,
+MCAR,0.3,2,knn,age,rmse,18.787801400948474,
+MCAR,0.3,2,knn,bmi,nrmse,1.217822027699715,
+MCAR,0.3,2,knn,bmi,rmse,8.77573322234351,
+MCAR,0.3,2,knn,income_ratio,nrmse,1.2333007210131444,
+MCAR,0.3,2,knn,income_ratio,rmse,1.9894242417240526,
+MCAR,0.3,2,knn,sex,pfc,0.4241379310344828,
+MCAR,0.3,2,knn,smoking_status,pfc,0.4166666666666667,
+MCAR,0.3,2,knn,systolic_bp,nrmse,1.054028058109099,
+MCAR,0.3,2,knn,systolic_bp,rmse,19.917348470040064,
+MCAR,0.3,3,knn,age,nrmse,1.1148085575465596,
+MCAR,0.3,3,knn,age,rmse,19.751889118406357,
+MCAR,0.3,3,knn,bmi,nrmse,1.0887833369421287,
+MCAR,0.3,3,knn,bmi,rmse,7.907482128695277,
+MCAR,0.3,3,knn,income_ratio,nrmse,1.246695250249734,
+MCAR,0.3,3,knn,income_ratio,rmse,1.9448512323027367,
+MCAR,0.3,3,knn,sex,pfc,0.46621621621621623,
+MCAR,0.3,3,knn,smoking_status,pfc,0.44256756756756754,
+MCAR,0.3,3,knn,systolic_bp,nrmse,1.0497805185714233,
+MCAR,0.3,3,knn,systolic_bp,rmse,20.89516167161338,
+MCAR,0.3,4,knn,age,nrmse,1.0455492938752995,
+MCAR,0.3,4,knn,age,rmse,18.02229259287037,
+MCAR,0.3,4,knn,bmi,nrmse,1.0621083202926465,
+MCAR,0.3,4,knn,bmi,rmse,8.298983008240292,
+MCAR,0.3,4,knn,income_ratio,nrmse,1.1944056581011286,
+MCAR,0.3,4,knn,income_ratio,rmse,1.9311928994892236,
+MCAR,0.3,4,knn,sex,pfc,0.4588607594936709,
+MCAR,0.3,4,knn,smoking_status,pfc,0.4859154929577465,
+MCAR,0.3,4,knn,systolic_bp,nrmse,1.017104952629208,
+MCAR,0.3,4,knn,systolic_bp,rmse,22.684510810610938,
+MCAR,0.3,5,knn,age,nrmse,1.1083468798360485,
+MCAR,0.3,5,knn,age,rmse,18.59049082747277,
+MCAR,0.3,5,knn,bmi,nrmse,1.079913153298815,
+MCAR,0.3,5,knn,bmi,rmse,8.431174529528398,
+MCAR,0.3,5,knn,income_ratio,nrmse,1.2279678138043884,
+MCAR,0.3,5,knn,income_ratio,rmse,1.8198594998923774,
+MCAR,0.3,5,knn,sex,pfc,0.4551282051282051,
+MCAR,0.3,5,knn,smoking_status,pfc,0.41935483870967744,
+MCAR,0.3,5,knn,systolic_bp,nrmse,1.052127541406101,
+MCAR,0.3,5,knn,systolic_bp,rmse,21.18030731927623,
+MCAR,0.3,6,knn,age,nrmse,1.0411077156509974,
+MCAR,0.3,6,knn,age,rmse,17.959013164596595,
+MCAR,0.3,6,knn,bmi,nrmse,1.1074766953215236,
+MCAR,0.3,6,knn,bmi,rmse,7.684551525982309,
+MCAR,0.3,6,knn,income_ratio,nrmse,1.2404458761869905,
+MCAR,0.3,6,knn,income_ratio,rmse,1.9811837388521536,
+MCAR,0.3,6,knn,sex,pfc,0.4417808219178082,
+MCAR,0.3,6,knn,smoking_status,pfc,0.4477124183006536,
+MCAR,0.3,6,knn,systolic_bp,nrmse,1.0435689400311774,
+MCAR,0.3,6,knn,systolic_bp,rmse,19.071923024783008,
+MCAR,0.3,7,knn,age,nrmse,1.0524749721865392,
+MCAR,0.3,7,knn,age,rmse,18.352485539844352,
+MCAR,0.3,7,knn,bmi,nrmse,1.081708650645695,
+MCAR,0.3,7,knn,bmi,rmse,7.686220187402308,
+MCAR,0.3,7,knn,income_ratio,nrmse,1.1190478048010941,
+MCAR,0.3,7,knn,income_ratio,rmse,1.7721631307986752,
+MCAR,0.3,7,knn,sex,pfc,0.45182724252491696,
+MCAR,0.3,7,knn,smoking_status,pfc,0.45714285714285713,
+MCAR,0.3,7,knn,systolic_bp,nrmse,1.0670017501276334,
+MCAR,0.3,7,knn,systolic_bp,rmse,21.707175246791092,
+MCAR,0.3,8,knn,age,nrmse,1.0681301123805509,
+MCAR,0.3,8,knn,age,rmse,18.106937861995615,
+MCAR,0.3,8,knn,bmi,nrmse,1.1445543869215862,
+MCAR,0.3,8,knn,bmi,rmse,8.627410207968074,
+MCAR,0.3,8,knn,income_ratio,nrmse,1.2816755611694988,
+MCAR,0.3,8,knn,income_ratio,rmse,1.9168049892742023,
+MCAR,0.3,8,knn,sex,pfc,0.49174917491749176,
+MCAR,0.3,8,knn,smoking_status,pfc,0.49079754601226994,
+MCAR,0.3,8,knn,systolic_bp,nrmse,1.043062112611073,
+MCAR,0.3,8,knn,systolic_bp,rmse,19.566425027198715,
+MAR,0.1,1,mean_mode,age,nrmse,1.1051433564847342,
+MAR,0.1,1,mean_mode,age,rmse,18.96552734948652,
+MAR,0.1,1,mean_mode,bmi,nrmse,1.0560768365335087,
+MAR,0.1,1,mean_mode,bmi,rmse,9.224183631829787,
+MAR,0.1,1,mean_mode,income_ratio,nrmse,0.9949361676151274,
+MAR,0.1,1,mean_mode,income_ratio,rmse,1.5535904200401471,
+MAR,0.1,1,mean_mode,sex,pfc,0.4835164835164835,
+MAR,0.1,1,mean_mode,smoking_status,pfc,0.47368421052631576,
+MAR,0.1,1,mean_mode,systolic_bp,nrmse,1.0444066030036079,
+MAR,0.1,1,mean_mode,systolic_bp,rmse,21.149382825676263,
+MAR,0.1,2,mean_mode,age,nrmse,1.218992154610158,
+MAR,0.1,2,mean_mode,age,rmse,18.49428163207262,
+MAR,0.1,2,mean_mode,bmi,nrmse,1.0686060306599316,
+MAR,0.1,2,mean_mode,bmi,rmse,10.078972440677479,
+MAR,0.1,2,mean_mode,income_ratio,nrmse,0.9945103279567843,
+MAR,0.1,2,mean_mode,income_ratio,rmse,1.571967204817269,
+MAR,0.1,2,mean_mode,sex,pfc,0.59375,
+MAR,0.1,2,mean_mode,smoking_status,pfc,0.40384615384615385,
+MAR,0.1,2,mean_mode,systolic_bp,nrmse,1.0109401214946263,
+MAR,0.1,2,mean_mode,systolic_bp,rmse,19.077476401717483,
+MAR,0.1,3,mean_mode,age,nrmse,1.0710361725576816,
+MAR,0.1,3,mean_mode,age,rmse,17.361590129016072,
+MAR,0.1,3,mean_mode,bmi,nrmse,1.0816838983614512,
+MAR,0.1,3,mean_mode,bmi,rmse,10.123284468422552,
+MAR,0.1,3,mean_mode,income_ratio,nrmse,0.9941866217703444,
+MAR,0.1,3,mean_mode,income_ratio,rmse,1.6415161831782648,
+MAR,0.1,3,mean_mode,sex,pfc,0.4642857142857143,
+MAR,0.1,3,mean_mode,smoking_status,pfc,0.4583333333333333,
+MAR,0.1,3,mean_mode,systolic_bp,nrmse,1.0010951654207583,
+MAR,0.1,3,mean_mode,systolic_bp,rmse,18.68366922656172,
+MAR,0.1,4,mean_mode,age,nrmse,1.0133835825208761,
+MAR,0.1,4,mean_mode,age,rmse,16.990990418009513,
+MAR,0.1,4,mean_mode,bmi,nrmse,1.0210772964372654,
+MAR,0.1,4,mean_mode,bmi,rmse,8.33495801141743,
+MAR,0.1,4,mean_mode,income_ratio,nrmse,1.0039862720380206,
+MAR,0.1,4,mean_mode,income_ratio,rmse,1.4564870775472012,
+MAR,0.1,4,mean_mode,sex,pfc,0.47474747474747475,
+MAR,0.1,4,mean_mode,smoking_status,pfc,0.4326923076923077,
+MAR,0.1,4,mean_mode,systolic_bp,nrmse,1.0030452467621265,
+MAR,0.1,4,mean_mode,systolic_bp,rmse,21.51113459870207,
+MAR,0.1,5,mean_mode,age,nrmse,1.050828181935932,
+MAR,0.1,5,mean_mode,age,rmse,17.9904401305867,
+MAR,0.1,5,mean_mode,bmi,nrmse,1.0330140001597725,
+MAR,0.1,5,mean_mode,bmi,rmse,9.880585933178342,
+MAR,0.1,5,mean_mode,income_ratio,nrmse,0.9951061995454473,
+MAR,0.1,5,mean_mode,income_ratio,rmse,1.5153576607928099,
+MAR,0.1,5,mean_mode,sex,pfc,0.5,
+MAR,0.1,5,mean_mode,smoking_status,pfc,0.39823008849557523,
+MAR,0.1,5,mean_mode,systolic_bp,nrmse,1.0565463050173198,
+MAR,0.1,5,mean_mode,systolic_bp,rmse,22.957879841792668,
+MAR,0.1,6,mean_mode,age,nrmse,1.056135342760449,
+MAR,0.1,6,mean_mode,age,rmse,16.886517454096442,
+MAR,0.1,6,mean_mode,bmi,nrmse,1.0891688146029546,
+MAR,0.1,6,mean_mode,bmi,rmse,11.007747062819725,
+MAR,0.1,6,mean_mode,income_ratio,nrmse,1.0014432268409432,
+MAR,0.1,6,mean_mode,income_ratio,rmse,1.506403471117456,
+MAR,0.1,6,mean_mode,sex,pfc,0.5747126436781609,
+MAR,0.1,6,mean_mode,smoking_status,pfc,0.4854368932038835,
+MAR,0.1,6,mean_mode,systolic_bp,nrmse,1.025570843877789,
+MAR,0.1,6,mean_mode,systolic_bp,rmse,22.2262183361247,
+MAR,0.1,7,mean_mode,age,nrmse,1.0639475257713027,
+MAR,0.1,7,mean_mode,age,rmse,17.327673914106903,
+MAR,0.1,7,mean_mode,bmi,nrmse,1.0229580496659862,
+MAR,0.1,7,mean_mode,bmi,rmse,9.267360301701967,
+MAR,0.1,7,mean_mode,income_ratio,nrmse,1.0043074174147273,
+MAR,0.1,7,mean_mode,income_ratio,rmse,1.4101315801899539,
+MAR,0.1,7,mean_mode,sex,pfc,0.5567010309278351,
+MAR,0.1,7,mean_mode,smoking_status,pfc,0.5098039215686274,
+MAR,0.1,7,mean_mode,systolic_bp,nrmse,0.9979825898455112,
+MAR,0.1,7,mean_mode,systolic_bp,rmse,18.866181132093732,
+MAR,0.1,8,mean_mode,age,nrmse,1.1135725574959674,
+MAR,0.1,8,mean_mode,age,rmse,15.958533624931208,
+MAR,0.1,8,mean_mode,bmi,nrmse,1.0927094879445451,
+MAR,0.1,8,mean_mode,bmi,rmse,10.795009137003326,
+MAR,0.1,8,mean_mode,income_ratio,nrmse,1.003603392945639,
+MAR,0.1,8,mean_mode,income_ratio,rmse,1.4924350745998365,
+MAR,0.1,8,mean_mode,sex,pfc,0.5225225225225225,
+MAR,0.1,8,mean_mode,smoking_status,pfc,0.45544554455445546,
+MAR,0.1,8,mean_mode,systolic_bp,nrmse,1.006631348866361,
+MAR,0.1,8,mean_mode,systolic_bp,rmse,18.975252726890904,
+MAR,0.2,1,mean_mode,age,nrmse,1.105071010801661,
+MAR,0.2,1,mean_mode,age,rmse,17.168260511593612,
+MAR,0.2,1,mean_mode,bmi,nrmse,1.0426307027981334,
+MAR,0.2,1,mean_mode,bmi,rmse,9.562697530522945,
+MAR,0.2,1,mean_mode,income_ratio,nrmse,1.001659771125783,
+MAR,0.2,1,mean_mode,income_ratio,rmse,1.5357916295146294,
+MAR,0.2,1,mean_mode,sex,pfc,0.4873096446700508,
+MAR,0.2,1,mean_mode,smoking_status,pfc,0.5066666666666667,
+MAR,0.2,1,mean_mode,systolic_bp,nrmse,1.0436912716509672,
+MAR,0.2,1,mean_mode,systolic_bp,rmse,22.696455547339024,
+MAR,0.2,2,mean_mode,age,nrmse,1.072947451836698,
+MAR,0.2,2,mean_mode,age,rmse,17.941087802192474,
+MAR,0.2,2,mean_mode,bmi,nrmse,1.0934940749856845,
+MAR,0.2,2,mean_mode,bmi,rmse,9.82135024127191,
+MAR,0.2,2,mean_mode,income_ratio,nrmse,0.9983363788558426,
+MAR,0.2,2,mean_mode,income_ratio,rmse,1.5767560712433626,
+MAR,0.2,2,mean_mode,sex,pfc,0.56,
+MAR,0.2,2,mean_mode,smoking_status,pfc,0.470873786407767,
+MAR,0.2,2,mean_mode,systolic_bp,nrmse,1.0241352687291694,
+MAR,0.2,2,mean_mode,systolic_bp,rmse,21.68248095670926,
+MAR,0.2,3,mean_mode,age,nrmse,1.0676910753759774,
+MAR,0.2,3,mean_mode,age,rmse,17.365889771098118,
+MAR,0.2,3,mean_mode,bmi,nrmse,1.0511003022767345,
+MAR,0.2,3,mean_mode,bmi,rmse,8.71072313947366,
+MAR,0.2,3,mean_mode,income_ratio,nrmse,1.0130606901040398,
+MAR,0.2,3,mean_mode,income_ratio,rmse,1.4667559424361687,
+MAR,0.2,3,mean_mode,sex,pfc,0.5164835164835165,
+MAR,0.2,3,mean_mode,smoking_status,pfc,0.4148471615720524,
+MAR,0.2,3,mean_mode,systolic_bp,nrmse,1.023111779451138,
+MAR,0.2,3,mean_mode,systolic_bp,rmse,21.84251311975192,
+MAR,0.2,4,mean_mode,age,nrmse,1.0790652568790606,
+MAR,0.2,4,mean_mode,age,rmse,17.712970994526305,
+MAR,0.2,4,mean_mode,bmi,nrmse,1.0668580734383328,
+MAR,0.2,4,mean_mode,bmi,rmse,9.206579064439191,
+MAR,0.2,4,mean_mode,income_ratio,nrmse,0.9974717329052053,
+MAR,0.2,4,mean_mode,income_ratio,rmse,1.6041375400425033,
+MAR,0.2,4,mean_mode,sex,pfc,0.5025906735751295,
+MAR,0.2,4,mean_mode,smoking_status,pfc,0.46153846153846156,
+MAR,0.2,4,mean_mode,systolic_bp,nrmse,1.0482547609178425,
+MAR,0.2,4,mean_mode,systolic_bp,rmse,20.293349083865973,
+MAR,0.2,5,mean_mode,age,nrmse,1.151261720285425,
+MAR,0.2,5,mean_mode,age,rmse,17.464179118550447,
+MAR,0.2,5,mean_mode,bmi,nrmse,1.039346457360101,
+MAR,0.2,5,mean_mode,bmi,rmse,8.628391440041362,
+MAR,0.2,5,mean_mode,income_ratio,nrmse,0.9973196247514716,
+MAR,0.2,5,mean_mode,income_ratio,rmse,1.5420939539946361,
+MAR,0.2,5,mean_mode,sex,pfc,0.5162790697674419,
+MAR,0.2,5,mean_mode,smoking_status,pfc,0.48058252427184467,
+MAR,0.2,5,mean_mode,systolic_bp,nrmse,1.0470679741070539,
+MAR,0.2,5,mean_mode,systolic_bp,rmse,20.806349996178163,
+MAR,0.2,6,mean_mode,age,nrmse,1.0748124892325004,
+MAR,0.2,6,mean_mode,age,rmse,17.523425508760734,
+MAR,0.2,6,mean_mode,bmi,nrmse,1.0777458305042664,
+MAR,0.2,6,mean_mode,bmi,rmse,9.32120501912332,
+MAR,0.2,6,mean_mode,income_ratio,nrmse,1.0043373896365104,
+MAR,0.2,6,mean_mode,income_ratio,rmse,1.4499413935428855,
+MAR,0.2,6,mean_mode,sex,pfc,0.5238095238095238,
+MAR,0.2,6,mean_mode,smoking_status,pfc,0.46311475409836067,
+MAR,0.2,6,mean_mode,systolic_bp,nrmse,1.0081306399165662,
+MAR,0.2,6,mean_mode,systolic_bp,rmse,18.63173945415855,
+MAR,0.2,7,mean_mode,age,nrmse,1.0373685492443945,
+MAR,0.2,7,mean_mode,age,rmse,17.455069228561513,
+MAR,0.2,7,mean_mode,bmi,nrmse,1.0515909423678518,
+MAR,0.2,7,mean_mode,bmi,rmse,9.688581429025719,
+MAR,0.2,7,mean_mode,income_ratio,nrmse,0.9973877708305605,
+MAR,0.2,7,mean_mode,income_ratio,rmse,1.5132683314157334,
+MAR,0.2,7,mean_mode,sex,pfc,0.5147058823529411,
+MAR,0.2,7,mean_mode,smoking_status,pfc,0.4666666666666667,
+MAR,0.2,7,mean_mode,systolic_bp,nrmse,1.0319038667694653,
+MAR,0.2,7,mean_mode,systolic_bp,rmse,23.365483136027894,
+MAR,0.2,8,mean_mode,age,nrmse,1.0157563823722828,
+MAR,0.2,8,mean_mode,age,rmse,18.33840140770048,
+MAR,0.2,8,mean_mode,bmi,nrmse,1.023161042413056,
+MAR,0.2,8,mean_mode,bmi,rmse,8.601473754719398,
+MAR,0.2,8,mean_mode,income_ratio,nrmse,1.0011579292937691,
+MAR,0.2,8,mean_mode,income_ratio,rmse,1.475771178627217,
+MAR,0.2,8,mean_mode,sex,pfc,0.5025641025641026,
+MAR,0.2,8,mean_mode,smoking_status,pfc,0.46261682242990654,
+MAR,0.2,8,mean_mode,systolic_bp,nrmse,1.0055654920140902,
+MAR,0.2,8,mean_mode,systolic_bp,rmse,17.62673658540807,
+MAR,0.3,1,mean_mode,age,nrmse,1.0930558231023273,
+MAR,0.3,1,mean_mode,age,rmse,18.212401340823952,
+MAR,0.3,1,mean_mode,bmi,nrmse,1.033786283573099,
+MAR,0.3,1,mean_mode,bmi,rmse,8.473587401765466,
+MAR,0.3,1,mean_mode,income_ratio,nrmse,0.9983039210550493,
+MAR,0.3,1,mean_mode,income_ratio,rmse,1.5197301155206964,
+MAR,0.3,1,mean_mode,sex,pfc,0.4861111111111111,
+MAR,0.3,1,mean_mode,smoking_status,pfc,0.46504559270516715,
+MAR,0.3,1,mean_mode,systolic_bp,nrmse,1.0692421864735118,
+MAR,0.3,1,mean_mode,systolic_bp,rmse,20.2925714110602,
+MAR,0.3,2,mean_mode,age,nrmse,1.0513663125982513,
+MAR,0.3,2,mean_mode,age,rmse,17.47664416378523,
+MAR,0.3,2,mean_mode,bmi,nrmse,1.072550960242717,
+MAR,0.3,2,mean_mode,bmi,rmse,9.1928080699325,
+MAR,0.3,2,mean_mode,income_ratio,nrmse,1.0000267866723813,
+MAR,0.3,2,mean_mode,income_ratio,rmse,1.4849279565976337,
+MAR,0.3,2,mean_mode,sex,pfc,0.5791139240506329,
+MAR,0.3,2,mean_mode,smoking_status,pfc,0.41423948220064727,
+MAR,0.3,2,mean_mode,systolic_bp,nrmse,1.0258749610199487,
+MAR,0.3,2,mean_mode,systolic_bp,rmse,19.11457737119221,
+MAR,0.3,3,mean_mode,age,nrmse,1.075640858421835,
+MAR,0.3,3,mean_mode,age,rmse,18.174590040197657,
+MAR,0.3,3,mean_mode,bmi,nrmse,1.0464683840000926,
+MAR,0.3,3,mean_mode,bmi,rmse,8.513770138229452,
+MAR,0.3,3,mean_mode,income_ratio,nrmse,0.998297880355956,
+MAR,0.3,3,mean_mode,income_ratio,rmse,1.579191017478169,
+MAR,0.3,3,mean_mode,sex,pfc,0.5555555555555556,
+MAR,0.3,3,mean_mode,smoking_status,pfc,0.45209580838323354,
+MAR,0.3,3,mean_mode,systolic_bp,nrmse,1.046540852173329,
+MAR,0.3,3,mean_mode,systolic_bp,rmse,20.320921836056016,
+MAR,0.3,4,mean_mode,age,nrmse,1.0648466890652737,
+MAR,0.3,4,mean_mode,age,rmse,17.558982835896053,
+MAR,0.3,4,mean_mode,bmi,nrmse,1.061463144224814,
+MAR,0.3,4,mean_mode,bmi,rmse,9.020506378276416,
+MAR,0.3,4,mean_mode,income_ratio,nrmse,0.9987749843500395,
+MAR,0.3,4,mean_mode,income_ratio,rmse,1.473767558740596,
+MAR,0.3,4,mean_mode,sex,pfc,0.5395189003436426,
+MAR,0.3,4,mean_mode,smoking_status,pfc,0.44336569579288027,
+MAR,0.3,4,mean_mode,systolic_bp,nrmse,1.0133975255184646,
+MAR,0.3,4,mean_mode,systolic_bp,rmse,19.394293471904916,
+MAR,0.3,5,mean_mode,age,nrmse,1.0498690421837198,
+MAR,0.3,5,mean_mode,age,rmse,16.934238077015962,
+MAR,0.3,5,mean_mode,bmi,nrmse,1.0455657822489295,
+MAR,0.3,5,mean_mode,bmi,rmse,8.597649319262308,
+MAR,0.3,5,mean_mode,income_ratio,nrmse,1.0018620082069676,
+MAR,0.3,5,mean_mode,income_ratio,rmse,1.5185627709334166,
+MAR,0.3,5,mean_mode,sex,pfc,0.5510204081632653,
+MAR,0.3,5,mean_mode,smoking_status,pfc,0.4234875444839858,
+MAR,0.3,5,mean_mode,systolic_bp,nrmse,1.0393302554621493,
+MAR,0.3,5,mean_mode,systolic_bp,rmse,21.554923567609432,
+MAR,0.3,6,mean_mode,age,nrmse,1.0510920608801941,
+MAR,0.3,6,mean_mode,age,rmse,17.678373876314666,
+MAR,0.3,6,mean_mode,bmi,nrmse,1.0238994035384448,
+MAR,0.3,6,mean_mode,bmi,rmse,8.174967200654502,
+MAR,0.3,6,mean_mode,income_ratio,nrmse,1.0127829257915917,
+MAR,0.3,6,mean_mode,income_ratio,rmse,1.4857237722763645,
+MAR,0.3,6,mean_mode,sex,pfc,0.5049833887043189,
+MAR,0.3,6,mean_mode,smoking_status,pfc,0.4325153374233129,
+MAR,0.3,6,mean_mode,systolic_bp,nrmse,1.0275516900115962,
+MAR,0.3,6,mean_mode,systolic_bp,rmse,20.434535105619396,
+MAR,0.3,7,mean_mode,age,nrmse,1.077000948770178,
+MAR,0.3,7,mean_mode,age,rmse,17.25635285881496,
+MAR,0.3,7,mean_mode,bmi,nrmse,1.0581899321395916,
+MAR,0.3,7,mean_mode,bmi,rmse,8.548997801131387,
+MAR,0.3,7,mean_mode,income_ratio,nrmse,0.9988451857726447,
+MAR,0.3,7,mean_mode,income_ratio,rmse,1.4849179062023912,
+MAR,0.3,7,mean_mode,sex,pfc,0.47840531561461797,
+MAR,0.3,7,mean_mode,smoking_status,pfc,0.4311377245508982,
+MAR,0.3,7,mean_mode,systolic_bp,nrmse,1.0320322479871191,
+MAR,0.3,7,mean_mode,systolic_bp,rmse,20.620240236220287,
+MAR,0.3,8,mean_mode,age,nrmse,1.0860022829929634,
+MAR,0.3,8,mean_mode,age,rmse,17.47860887657224,
+MAR,0.3,8,mean_mode,bmi,nrmse,1.0204599166576291,
+MAR,0.3,8,mean_mode,bmi,rmse,7.581070869331102,
+MAR,0.3,8,mean_mode,income_ratio,nrmse,0.9982195442039922,
+MAR,0.3,8,mean_mode,income_ratio,rmse,1.5236786051671887,
+MAR,0.3,8,mean_mode,sex,pfc,0.5265017667844523,
+MAR,0.3,8,mean_mode,smoking_status,pfc,0.4605678233438486,
+MAR,0.3,8,mean_mode,systolic_bp,nrmse,1.0560675340063408,
+MAR,0.3,8,mean_mode,systolic_bp,rmse,21.89347700172333,
+MCAR,0.1,1,mean_mode,age,nrmse,1.0043493196980535,
+MCAR,0.1,1,mean_mode,age,rmse,17.013003927098808,
+MCAR,0.1,1,mean_mode,bmi,nrmse,1.0041942778631505,
+MCAR,0.1,1,mean_mode,bmi,rmse,6.756489691855573,
+MCAR,0.1,1,mean_mode,income_ratio,nrmse,0.9983194894861914,
+MCAR,0.1,1,mean_mode,income_ratio,rmse,1.5884838500592506,
+MCAR,0.1,1,mean_mode,sex,pfc,0.5051546391752577,
+MCAR,0.1,1,mean_mode,smoking_status,pfc,0.32989690721649484,
+MCAR,0.1,1,mean_mode,systolic_bp,nrmse,0.9967359103965775,
+MCAR,0.1,1,mean_mode,systolic_bp,rmse,18.036353234748336,
+MCAR,0.1,2,mean_mode,age,nrmse,1.0102021933746548,
+MCAR,0.1,2,mean_mode,age,rmse,16.841073521787788,
+MCAR,0.1,2,mean_mode,bmi,nrmse,1.052771427631087,
+MCAR,0.1,2,mean_mode,bmi,rmse,6.002508140402647,
+MCAR,0.1,2,mean_mode,income_ratio,nrmse,0.9952000641003097,
+MCAR,0.1,2,mean_mode,income_ratio,rmse,1.6086501162905353,
+MCAR,0.1,2,mean_mode,sex,pfc,0.5375,
+MCAR,0.1,2,mean_mode,smoking_status,pfc,0.43434343434343436,
+MCAR,0.1,2,mean_mode,systolic_bp,nrmse,0.996516572944539,
+MCAR,0.1,2,mean_mode,systolic_bp,rmse,21.33562288515372,
+MCAR,0.1,3,mean_mode,age,nrmse,0.9944730057672311,
+MCAR,0.1,3,mean_mode,age,rmse,16.484559854924424,
+MCAR,0.1,3,mean_mode,bmi,nrmse,1.0054408099497865,
+MCAR,0.1,3,mean_mode,bmi,rmse,7.496705993789476,
+MCAR,0.1,3,mean_mode,income_ratio,nrmse,0.9969588670172758,
+MCAR,0.1,3,mean_mode,income_ratio,rmse,1.4825129417544967,
+MCAR,0.1,3,mean_mode,sex,pfc,0.5904761904761905,
+MCAR,0.1,3,mean_mode,smoking_status,pfc,0.42718446601941745,
+MCAR,0.1,3,mean_mode,systolic_bp,nrmse,0.9972831516787958,
+MCAR,0.1,3,mean_mode,systolic_bp,rmse,17.17127984543785,
+MCAR,0.1,4,mean_mode,age,nrmse,1.001039682496338,
+MCAR,0.1,4,mean_mode,age,rmse,16.82421557155643,
+MCAR,0.1,4,mean_mode,bmi,nrmse,0.9956435605208882,
+MCAR,0.1,4,mean_mode,bmi,rmse,7.3863613889317135,
+MCAR,0.1,4,mean_mode,income_ratio,nrmse,1.0173657443237791,
+MCAR,0.1,4,mean_mode,income_ratio,rmse,1.5287431529444566,
+MCAR,0.1,4,mean_mode,sex,pfc,0.5145631067961165,
+MCAR,0.1,4,mean_mode,smoking_status,pfc,0.43119266055045874,
+MCAR,0.1,4,mean_mode,systolic_bp,nrmse,0.9951753647358939,
+MCAR,0.1,4,mean_mode,systolic_bp,rmse,18.840883590118285,
+MCAR,0.1,5,mean_mode,age,nrmse,0.9952779198043822,
+MCAR,0.1,5,mean_mode,age,rmse,16.404377138876328,
+MCAR,0.1,5,mean_mode,bmi,nrmse,0.9948371457013643,
+MCAR,0.1,5,mean_mode,bmi,rmse,8.265702431135287,
+MCAR,0.1,5,mean_mode,income_ratio,nrmse,0.9959997938707785,
+MCAR,0.1,5,mean_mode,income_ratio,rmse,1.575863392029927,
+MCAR,0.1,5,mean_mode,sex,pfc,0.5106382978723404,
+MCAR,0.1,5,mean_mode,smoking_status,pfc,0.41509433962264153,
+MCAR,0.1,5,mean_mode,systolic_bp,nrmse,1.0007728814104855,
+MCAR,0.1,5,mean_mode,systolic_bp,rmse,19.87958891197762,
+MCAR,0.1,6,mean_mode,age,nrmse,1.0028291327303915,
+MCAR,0.1,6,mean_mode,age,rmse,16.23777317792615,
+MCAR,0.1,6,mean_mode,bmi,nrmse,0.9954295319227284,
+MCAR,0.1,6,mean_mode,bmi,rmse,9.586186883098295,
+MCAR,0.1,6,mean_mode,income_ratio,nrmse,1.0041177196733142,
+MCAR,0.1,6,mean_mode,income_ratio,rmse,1.530294215263404,
+MCAR,0.1,6,mean_mode,sex,pfc,0.46153846153846156,
+MCAR,0.1,6,mean_mode,smoking_status,pfc,0.43,
+MCAR,0.1,6,mean_mode,systolic_bp,nrmse,0.9992165085271167,
+MCAR,0.1,6,mean_mode,systolic_bp,rmse,22.234228942834232,
+MCAR,0.1,7,mean_mode,age,nrmse,0.9966458470436246,
+MCAR,0.1,7,mean_mode,age,rmse,17.79781386288866,
+MCAR,0.1,7,mean_mode,bmi,nrmse,0.9999269330510971,
+MCAR,0.1,7,mean_mode,bmi,rmse,7.793886724961081,
+MCAR,0.1,7,mean_mode,income_ratio,nrmse,0.9960411499888848,
+MCAR,0.1,7,mean_mode,income_ratio,rmse,1.5265495638409825,
+MCAR,0.1,7,mean_mode,sex,pfc,0.5495495495495496,
+MCAR,0.1,7,mean_mode,smoking_status,pfc,0.37719298245614036,
+MCAR,0.1,7,mean_mode,systolic_bp,nrmse,1.0101550035308646,
+MCAR,0.1,7,mean_mode,systolic_bp,rmse,19.672657157673033,
+MCAR,0.1,8,mean_mode,age,nrmse,1.0030147021243618,
+MCAR,0.1,8,mean_mode,age,rmse,17.127463326482413,
+MCAR,0.1,8,mean_mode,bmi,nrmse,1.00498002703746,
+MCAR,0.1,8,mean_mode,bmi,rmse,6.2919969610236866,
+MCAR,0.1,8,mean_mode,income_ratio,nrmse,0.9959769554888954,
+MCAR,0.1,8,mean_mode,income_ratio,rmse,1.6278565259530555,
+MCAR,0.1,8,mean_mode,sex,pfc,0.5463917525773195,
+MCAR,0.1,8,mean_mode,smoking_status,pfc,0.4482758620689655,
+MCAR,0.1,8,mean_mode,systolic_bp,nrmse,1.019543395936828,
+MCAR,0.1,8,mean_mode,systolic_bp,rmse,20.12898897534346,
+MCAR,0.2,1,mean_mode,age,nrmse,1.0034695251214472,
+MCAR,0.2,1,mean_mode,age,rmse,17.23268411437157,
+MCAR,0.2,1,mean_mode,bmi,nrmse,0.997409005512049,
+MCAR,0.2,1,mean_mode,bmi,rmse,6.9706622973755605,
+MCAR,0.2,1,mean_mode,income_ratio,nrmse,0.997684610558773,
+MCAR,0.2,1,mean_mode,income_ratio,rmse,1.4906669924636413,
+MCAR,0.2,1,mean_mode,sex,pfc,0.5577889447236181,
+MCAR,0.2,1,mean_mode,smoking_status,pfc,0.4207920792079208,
+MCAR,0.2,1,mean_mode,systolic_bp,nrmse,0.9975630927305636,
+MCAR,0.2,1,mean_mode,systolic_bp,rmse,19.062137029077725,
+MCAR,0.2,2,mean_mode,age,nrmse,0.9988983698412942,
+MCAR,0.2,2,mean_mode,age,rmse,16.214008575388043,
+MCAR,0.2,2,mean_mode,bmi,nrmse,1.000252178604754,
+MCAR,0.2,2,mean_mode,bmi,rmse,8.209241680633442,
+MCAR,0.2,2,mean_mode,income_ratio,nrmse,0.9994437807839074,
+MCAR,0.2,2,mean_mode,income_ratio,rmse,1.6418981901885399,
+MCAR,0.2,2,mean_mode,sex,pfc,0.5533980582524272,
+MCAR,0.2,2,mean_mode,smoking_status,pfc,0.4142857142857143,
+MCAR,0.2,2,mean_mode,systolic_bp,nrmse,0.9978639070956188,
+MCAR,0.2,2,mean_mode,systolic_bp,rmse,20.015658214428484,
+MCAR,0.2,3,mean_mode,age,nrmse,0.9983939744601049,
+MCAR,0.2,3,mean_mode,age,rmse,16.828952803443922,
+MCAR,0.2,3,mean_mode,bmi,nrmse,0.9985067876364121,
+MCAR,0.2,3,mean_mode,bmi,rmse,7.445905674838705,
+MCAR,0.2,3,mean_mode,income_ratio,nrmse,0.9979628189327796,
+MCAR,0.2,3,mean_mode,income_ratio,rmse,1.5272833876683658,
+MCAR,0.2,3,mean_mode,sex,pfc,0.49740932642487046,
+MCAR,0.2,3,mean_mode,smoking_status,pfc,0.4460093896713615,
+MCAR,0.2,3,mean_mode,systolic_bp,nrmse,0.9987697571161539,
+MCAR,0.2,3,mean_mode,systolic_bp,rmse,21.00070369562764,
+MCAR,0.2,4,mean_mode,age,nrmse,1.0131723298700355,
+MCAR,0.2,4,mean_mode,age,rmse,16.85386591346103,
+MCAR,0.2,4,mean_mode,bmi,nrmse,0.998196410997235,
+MCAR,0.2,4,mean_mode,bmi,rmse,7.760405860699537,
+MCAR,0.2,4,mean_mode,income_ratio,nrmse,0.9977654050645366,
+MCAR,0.2,4,mean_mode,income_ratio,rmse,1.4694110005321857,
+MCAR,0.2,4,mean_mode,sex,pfc,0.5561497326203209,
+MCAR,0.2,4,mean_mode,smoking_status,pfc,0.42995169082125606,
+MCAR,0.2,4,mean_mode,systolic_bp,nrmse,0.9972034701836877,
+MCAR,0.2,4,mean_mode,systolic_bp,rmse,18.99879822523886,
+MCAR,0.2,5,mean_mode,age,nrmse,0.9990758968885446,
+MCAR,0.2,5,mean_mode,age,rmse,16.96215939237897,
+MCAR,0.2,5,mean_mode,bmi,nrmse,1.0080898424303315,
+MCAR,0.2,5,mean_mode,bmi,rmse,8.36716103561566,
+MCAR,0.2,5,mean_mode,income_ratio,nrmse,1.0045999346050307,
+MCAR,0.2,5,mean_mode,income_ratio,rmse,1.5530693234151347,
+MCAR,0.2,5,mean_mode,sex,pfc,0.4807692307692308,
+MCAR,0.2,5,mean_mode,smoking_status,pfc,0.4292929292929293,
+MCAR,0.2,5,mean_mode,systolic_bp,nrmse,1.0171872546254004,
+MCAR,0.2,5,mean_mode,systolic_bp,rmse,23.29362699618848,
+MCAR,0.2,6,mean_mode,age,nrmse,0.9974193664574983,
+MCAR,0.2,6,mean_mode,age,rmse,17.32399103371587,
+MCAR,0.2,6,mean_mode,bmi,nrmse,1.0030747217818052,
+MCAR,0.2,6,mean_mode,bmi,rmse,7.807531723337548,
+MCAR,0.2,6,mean_mode,income_ratio,nrmse,0.997854719395038,
+MCAR,0.2,6,mean_mode,income_ratio,rmse,1.5439317620796413,
+MCAR,0.2,6,mean_mode,sex,pfc,0.49514563106796117,
+MCAR,0.2,6,mean_mode,smoking_status,pfc,0.4368421052631579,
+MCAR,0.2,6,mean_mode,systolic_bp,nrmse,1.0004164605902226,
+MCAR,0.2,6,mean_mode,systolic_bp,rmse,18.652902554421622,
+MCAR,0.2,7,mean_mode,age,nrmse,1.0188998874633544,
+MCAR,0.2,7,mean_mode,age,rmse,17.84283109399578,
+MCAR,0.2,7,mean_mode,bmi,nrmse,0.9976845202713417,
+MCAR,0.2,7,mean_mode,bmi,rmse,7.355590764049075,
+MCAR,0.2,7,mean_mode,income_ratio,nrmse,0.9975939002947289,
+MCAR,0.2,7,mean_mode,income_ratio,rmse,1.5296928683171427,
+MCAR,0.2,7,mean_mode,sex,pfc,0.5099009900990099,
+MCAR,0.2,7,mean_mode,smoking_status,pfc,0.42718446601941745,
+MCAR,0.2,7,mean_mode,systolic_bp,nrmse,0.9974585827417124,
+MCAR,0.2,7,mean_mode,systolic_bp,rmse,19.440098662902987,
+MCAR,0.2,8,mean_mode,age,nrmse,0.9980696904676946,
+MCAR,0.2,8,mean_mode,age,rmse,16.168953794392728,
+MCAR,0.2,8,mean_mode,bmi,nrmse,0.9975483298131034,
+MCAR,0.2,8,mean_mode,bmi,rmse,7.71547505638511,
+MCAR,0.2,8,mean_mode,income_ratio,nrmse,0.9976737285145688,
+MCAR,0.2,8,mean_mode,income_ratio,rmse,1.572765859444238,
+MCAR,0.2,8,mean_mode,sex,pfc,0.4764705882352941,
+MCAR,0.2,8,mean_mode,smoking_status,pfc,0.4512820512820513,
+MCAR,0.2,8,mean_mode,systolic_bp,nrmse,0.9978410082187276,
+MCAR,0.2,8,mean_mode,systolic_bp,rmse,18.02410775788805,
+MCAR,0.3,1,mean_mode,age,nrmse,1.0062416100608151,
+MCAR,0.3,1,mean_mode,age,rmse,17.321691448167616,
+MCAR,0.3,1,mean_mode,bmi,nrmse,1.009356585723738,
+MCAR,0.3,1,mean_mode,bmi,rmse,7.99885783513288,
+MCAR,0.3,1,mean_mode,income_ratio,nrmse,0.9989397751868805,
+MCAR,0.3,1,mean_mode,income_ratio,rmse,1.547444959783142,
+MCAR,0.3,1,mean_mode,sex,pfc,0.4711864406779661,
+MCAR,0.3,1,mean_mode,smoking_status,pfc,0.4511784511784512,
+MCAR,0.3,1,mean_mode,systolic_bp,nrmse,1.0016770744680155,
+MCAR,0.3,1,mean_mode,systolic_bp,rmse,20.047294406638592,
+MCAR,0.3,2,mean_mode,age,nrmse,1.0034706381850818,
+MCAR,0.3,2,mean_mode,age,rmse,16.7506358711702,
+MCAR,0.3,2,mean_mode,bmi,nrmse,1.0002477354371373,
+MCAR,0.3,2,mean_mode,bmi,rmse,7.2078736324302755,
+MCAR,0.3,2,mean_mode,income_ratio,nrmse,0.9985582647790643,
+MCAR,0.3,2,mean_mode,income_ratio,rmse,1.6107636887566559,
+MCAR,0.3,2,mean_mode,sex,pfc,0.5379310344827586,
+MCAR,0.3,2,mean_mode,smoking_status,pfc,0.427536231884058,
+MCAR,0.3,2,mean_mode,systolic_bp,nrmse,0.9993204754918351,
+MCAR,0.3,2,mean_mode,systolic_bp,rmse,18.883571448111137,
+MCAR,0.3,3,mean_mode,age,nrmse,0.9998289632895488,
+MCAR,0.3,3,mean_mode,age,rmse,17.714710464483996,
+MCAR,0.3,3,mean_mode,bmi,nrmse,1.0022577438962426,
+MCAR,0.3,3,mean_mode,bmi,rmse,7.2790746600370095,
+MCAR,0.3,3,mean_mode,income_ratio,nrmse,1.0009655274586304,
+MCAR,0.3,3,mean_mode,income_ratio,rmse,1.5615115555950934,
+MCAR,0.3,3,mean_mode,sex,pfc,0.5101351351351351,
+MCAR,0.3,3,mean_mode,smoking_status,pfc,0.44594594594594594,
+MCAR,0.3,3,mean_mode,systolic_bp,nrmse,0.9986836569561116,
+MCAR,0.3,3,mean_mode,systolic_bp,rmse,19.878113664457633,
+MCAR,0.3,4,mean_mode,age,nrmse,0.999406254782285,
+MCAR,0.3,4,mean_mode,age,rmse,17.22691799261958,
+MCAR,0.3,4,mean_mode,bmi,nrmse,0.9984559359747339,
+MCAR,0.3,4,mean_mode,bmi,rmse,7.801623138445857,
+MCAR,0.3,4,mean_mode,income_ratio,nrmse,0.9992422581058767,
+MCAR,0.3,4,mean_mode,income_ratio,rmse,1.6156399968763877,
+MCAR,0.3,4,mean_mode,sex,pfc,0.49683544303797467,
+MCAR,0.3,4,mean_mode,smoking_status,pfc,0.38028169014084506,
+MCAR,0.3,4,mean_mode,systolic_bp,nrmse,0.999390811267695,
+MCAR,0.3,4,mean_mode,systolic_bp,rmse,22.28943198400884,
+MCAR,0.3,5,mean_mode,age,nrmse,0.998631718121078,
+MCAR,0.3,5,mean_mode,age,rmse,16.75021974934372,
+MCAR,0.3,5,mean_mode,bmi,nrmse,0.9984118806364365,
+MCAR,0.3,5,mean_mode,bmi,rmse,7.794872015667768,
+MCAR,0.3,5,mean_mode,income_ratio,nrmse,1.0055438854058083,
+MCAR,0.3,5,mean_mode,income_ratio,rmse,1.4902252093603796,
+MCAR,0.3,5,mean_mode,sex,pfc,0.5192307692307693,
+MCAR,0.3,5,mean_mode,smoking_status,pfc,0.43727598566308246,
+MCAR,0.3,5,mean_mode,systolic_bp,nrmse,1.0031125510440957,
+MCAR,0.3,5,mean_mode,systolic_bp,rmse,20.193589912628735,
+MCAR,0.3,6,mean_mode,age,nrmse,0.9991169618667042,
+MCAR,0.3,6,mean_mode,age,rmse,17.23467649062246,
+MCAR,0.3,6,mean_mode,bmi,nrmse,0.9982426354143494,
+MCAR,0.3,6,mean_mode,bmi,rmse,6.9265989972338655,
+MCAR,0.3,6,mean_mode,income_ratio,nrmse,1.0056421399882562,
+MCAR,0.3,6,mean_mode,income_ratio,rmse,1.606165890101985,
+MCAR,0.3,6,mean_mode,sex,pfc,0.5205479452054794,
+MCAR,0.3,6,mean_mode,smoking_status,pfc,0.477124183006536,
+MCAR,0.3,6,mean_mode,systolic_bp,nrmse,1.0009064653150517,
+MCAR,0.3,6,mean_mode,systolic_bp,rmse,18.292237656024913,
+MCAR,0.3,7,mean_mode,age,nrmse,0.9994380882604919,
+MCAR,0.3,7,mean_mode,age,rmse,17.427657234132706,
+MCAR,0.3,7,mean_mode,bmi,nrmse,0.9986891900251011,
+MCAR,0.3,7,mean_mode,bmi,rmse,7.09631471351305,
+MCAR,0.3,7,mean_mode,income_ratio,nrmse,0.9984472853050095,
+MCAR,0.3,7,mean_mode,income_ratio,rmse,1.5811759421466975,
+MCAR,0.3,7,mean_mode,sex,pfc,0.5016611295681063,
+MCAR,0.3,7,mean_mode,smoking_status,pfc,0.43214285714285716,
+MCAR,0.3,7,mean_mode,systolic_bp,nrmse,0.9990588544414668,
+MCAR,0.3,7,mean_mode,systolic_bp,rmse,20.324939141501062,
+MCAR,0.3,8,mean_mode,age,nrmse,0.9988603153412053,
+MCAR,0.3,8,mean_mode,age,rmse,16.932676509219885,
+MCAR,0.3,8,mean_mode,bmi,nrmse,1.0011824224556662,
+MCAR,0.3,8,mean_mode,bmi,rmse,7.546702498571601,
+MCAR,0.3,8,mean_mode,income_ratio,nrmse,0.9982006768263108,
+MCAR,0.3,8,mean_mode,income_ratio,rmse,1.492855208920162,
+MCAR,0.3,8,mean_mode,sex,pfc,0.49834983498349833,
+MCAR,0.3,8,mean_mode,smoking_status,pfc,0.4754601226993865,
+MCAR,0.3,8,mean_mode,systolic_bp,nrmse,0.9989456600024293,
+MCAR,0.3,8,mean_mode,systolic_bp,rmse,18.738860444038696,
+MAR,0.1,1,mice,age,nrmse,1.1655918228300601,
+MAR,0.1,1,mice,age,rmse,20.002892352840846,
+MAR,0.1,1,mice,bmi,nrmse,1.321628312678833,
+MAR,0.1,1,mice,bmi,rmse,11.543612952624494,
+MAR,0.1,1,mice,income_ratio,nrmse,1.5083222980714235,
+MAR,0.1,1,mice,income_ratio,rmse,2.3552416214134158,
+MAR,0.1,1,mice,sex,pfc,0.4725274725274725,
+MAR,0.1,1,mice,smoking_status,pfc,0.4842105263157895,
+MAR,0.1,1,mice,systolic_bp,nrmse,1.495616960160371,
+MAR,0.1,1,mice,systolic_bp,rmse,30.286456979530055,
+MAR,0.1,2,mice,age,nrmse,1.5084166434871695,
+MAR,0.1,2,mice,age,rmse,22.88536650351049,
+MAR,0.1,2,mice,bmi,nrmse,1.1971709062647364,
+MAR,0.1,2,mice,bmi,rmse,11.291581953333623,
+MAR,0.1,2,mice,income_ratio,nrmse,1.198076897985852,
+MAR,0.1,2,mice,income_ratio,rmse,1.893733568712424,
+MAR,0.1,2,mice,sex,pfc,0.5208333333333334,
+MAR,0.1,2,mice,smoking_status,pfc,0.5096153846153846,
+MAR,0.1,2,mice,systolic_bp,nrmse,1.285245699492604,
+MAR,0.1,2,mice,systolic_bp,rmse,24.253903847666578,
+MAR,0.1,3,mice,age,nrmse,1.3217484480521755,
+MAR,0.1,3,mice,age,rmse,21.42565806525932,
+MAR,0.1,3,mice,bmi,nrmse,1.286735621662864,
+MAR,0.1,3,mice,bmi,rmse,12.042326555362107,
+MAR,0.1,3,mice,income_ratio,nrmse,1.3781082618572817,
+MAR,0.1,3,mice,income_ratio,rmse,2.275414861228096,
+MAR,0.1,3,mice,sex,pfc,0.5625,
+MAR,0.1,3,mice,smoking_status,pfc,0.46875,
+MAR,0.1,3,mice,systolic_bp,nrmse,1.206728758591844,
+MAR,0.1,3,mice,systolic_bp,rmse,22.52145625159759,
+MAR,0.1,4,mice,age,nrmse,1.3861000440796574,
+MAR,0.1,4,mice,age,rmse,23.240175757312365,
+MAR,0.1,4,mice,bmi,nrmse,1.224545092105961,
+MAR,0.1,4,mice,bmi,rmse,9.99584650584537,
+MAR,0.1,4,mice,income_ratio,nrmse,1.317006549582978,
+MAR,0.1,4,mice,income_ratio,rmse,1.910586901371489,
+MAR,0.1,4,mice,sex,pfc,0.5252525252525253,
+MAR,0.1,4,mice,smoking_status,pfc,0.38461538461538464,
+MAR,0.1,4,mice,systolic_bp,nrmse,1.2215900885895001,
+MAR,0.1,4,mice,systolic_bp,rmse,26.198009416738646,
+MAR,0.1,5,mice,age,nrmse,1.1148161505742522,
+MAR,0.1,5,mice,age,rmse,19.085930086656173,
+MAR,0.1,5,mice,bmi,nrmse,1.2463420967614138,
+MAR,0.1,5,mice,bmi,rmse,11.921029325143873,
+MAR,0.1,5,mice,income_ratio,nrmse,1.5398544611343488,
+MAR,0.1,5,mice,income_ratio,rmse,2.344905755035797,
+MAR,0.1,5,mice,sex,pfc,0.5568181818181818,
+MAR,0.1,5,mice,smoking_status,pfc,0.504424778761062,
+MAR,0.1,5,mice,systolic_bp,nrmse,1.3211718046069438,
+MAR,0.1,5,mice,systolic_bp,rmse,28.707973703086658,
+MAR,0.1,6,mice,age,nrmse,1.2721370676802386,
+MAR,0.1,6,mice,age,rmse,20.34016278750547,
+MAR,0.1,6,mice,bmi,nrmse,1.1470068050688076,
+MAR,0.1,6,mice,bmi,rmse,11.59229002910175,
+MAR,0.1,6,mice,income_ratio,nrmse,1.4240615453222227,
+MAR,0.1,6,mice,income_ratio,rmse,2.1421196903246953,
+MAR,0.1,6,mice,sex,pfc,0.41379310344827586,
+MAR,0.1,6,mice,smoking_status,pfc,0.39805825242718446,
+MAR,0.1,6,mice,systolic_bp,nrmse,1.0654082506996383,
+MAR,0.1,6,mice,systolic_bp,rmse,23.08957644273733,
+MAR,0.1,7,mice,age,nrmse,1.2498368340608799,
+MAR,0.1,7,mice,age,rmse,20.355106414432157,
+MAR,0.1,7,mice,bmi,nrmse,1.1664565510637745,
+MAR,0.1,7,mice,bmi,rmse,10.567366998596144,
+MAR,0.1,7,mice,income_ratio,nrmse,1.451304892515745,
+MAR,0.1,7,mice,income_ratio,rmse,2.0377534069088,
+MAR,0.1,7,mice,sex,pfc,0.5154639175257731,
+MAR,0.1,7,mice,smoking_status,pfc,0.43137254901960786,
+MAR,0.1,7,mice,systolic_bp,nrmse,1.2477758231783016,
+MAR,0.1,7,mice,systolic_bp,rmse,23.588352073329588,
+MAR,0.1,8,mice,age,nrmse,1.3372872627378358,
+MAR,0.1,8,mice,age,rmse,19.16457405935244,
+MAR,0.1,8,mice,bmi,nrmse,1.289640835907457,
+MAR,0.1,8,mice,bmi,rmse,12.74051773199221,
+MAR,0.1,8,mice,income_ratio,nrmse,1.3341767196312195,
+MAR,0.1,8,mice,income_ratio,rmse,1.9840229179058164,
+MAR,0.1,8,mice,sex,pfc,0.45045045045045046,
+MAR,0.1,8,mice,smoking_status,pfc,0.48514851485148514,
+MAR,0.1,8,mice,systolic_bp,nrmse,1.2619212779101956,
+MAR,0.1,8,mice,systolic_bp,rmse,23.787531748095834,
+MAR,0.2,1,mice,age,nrmse,1.4518226718368368,
+MAR,0.2,1,mice,age,rmse,22.55535581252009,
+MAR,0.2,1,mice,bmi,nrmse,1.2390593670786443,
+MAR,0.2,1,mice,bmi,rmse,11.364282595875505,
+MAR,0.2,1,mice,income_ratio,nrmse,1.5372807083311808,
+MAR,0.2,1,mice,income_ratio,rmse,2.357030712550073,
+MAR,0.2,1,mice,sex,pfc,0.48223350253807107,
+MAR,0.2,1,mice,smoking_status,pfc,0.4488888888888889,
+MAR,0.2,1,mice,systolic_bp,nrmse,1.3093299564308478,
+MAR,0.2,1,mice,systolic_bp,rmse,28.473122234627763,
+MAR,0.2,2,mice,age,nrmse,1.240768484153651,
+MAR,0.2,2,mice,age,rmse,20.747275440458374,
+MAR,0.2,2,mice,bmi,nrmse,1.3138466743394634,
+MAR,0.2,2,mice,bmi,rmse,11.800473955185458,
+MAR,0.2,2,mice,income_ratio,nrmse,1.3400437913645737,
+MAR,0.2,2,mice,income_ratio,rmse,2.116443143329716,
+MAR,0.2,2,mice,sex,pfc,0.445,
+MAR,0.2,2,mice,smoking_status,pfc,0.42718446601941745,
+MAR,0.2,2,mice,systolic_bp,nrmse,1.2637279636331566,
+MAR,0.2,2,mice,systolic_bp,rmse,26.755017957674657,
+MAR,0.2,3,mice,age,nrmse,1.3039114094964195,
+MAR,0.2,3,mice,age,rmse,21.207990148853007,
+MAR,0.2,3,mice,bmi,nrmse,1.2837130114069295,
+MAR,0.2,3,mice,bmi,rmse,10.638441078063485,
+MAR,0.2,3,mice,income_ratio,nrmse,1.4627935537452408,
+MAR,0.2,3,mice,income_ratio,rmse,2.1178999032060037,
+MAR,0.2,3,mice,sex,pfc,0.45604395604395603,
+MAR,0.2,3,mice,smoking_status,pfc,0.44541484716157204,
+MAR,0.2,3,mice,systolic_bp,nrmse,1.2622556188984333,
+MAR,0.2,3,mice,systolic_bp,rmse,26.948018261563124,
+MAR,0.2,4,mice,age,nrmse,1.3263772203359114,
+MAR,0.2,4,mice,age,rmse,21.772623186443294,
+MAR,0.2,4,mice,bmi,nrmse,1.342418601278469,
+MAR,0.2,4,mice,bmi,rmse,11.584561525051328,
+MAR,0.2,4,mice,income_ratio,nrmse,1.3537713451865419,
+MAR,0.2,4,mice,income_ratio,rmse,2.1771398264315036,
+MAR,0.2,4,mice,sex,pfc,0.45595854922279794,
+MAR,0.2,4,mice,smoking_status,pfc,0.42788461538461536,
+MAR,0.2,4,mice,systolic_bp,nrmse,1.4235480515529821,
+MAR,0.2,4,mice,systolic_bp,rmse,27.558718190344624,
+MAR,0.2,5,mice,age,nrmse,1.4022297681703415,
+MAR,0.2,5,mice,age,rmse,21.271263870928465,
+MAR,0.2,5,mice,bmi,nrmse,1.3602543097200925,
+MAR,0.2,5,mice,bmi,rmse,11.2924872732806,
+MAR,0.2,5,mice,income_ratio,nrmse,1.4409601252173896,
+MAR,0.2,5,mice,income_ratio,rmse,2.2280679552443665,
+MAR,0.2,5,mice,sex,pfc,0.4325581395348837,
+MAR,0.2,5,mice,smoking_status,pfc,0.441747572815534,
+MAR,0.2,5,mice,systolic_bp,nrmse,1.2667293486462725,
+MAR,0.2,5,mice,systolic_bp,rmse,25.171254235754574,
+MAR,0.2,6,mice,age,nrmse,1.2885991825705216,
+MAR,0.2,6,mice,age,rmse,21.00894064093809,
+MAR,0.2,6,mice,bmi,nrmse,1.34941392552565,
+MAR,0.2,6,mice,bmi,rmse,11.670807252948867,
+MAR,0.2,6,mice,income_ratio,nrmse,1.375610854951869,
+MAR,0.2,6,mice,income_ratio,rmse,1.985941318707155,
+MAR,0.2,6,mice,sex,pfc,0.4708994708994709,
+MAR,0.2,6,mice,smoking_status,pfc,0.4344262295081967,
+MAR,0.2,6,mice,systolic_bp,nrmse,1.387447945847396,
+MAR,0.2,6,mice,systolic_bp,rmse,25.642082096994475,
+MAR,0.2,7,mice,age,nrmse,1.200947001885025,
+MAR,0.2,7,mice,age,rmse,20.207488527587802,
+MAR,0.2,7,mice,bmi,nrmse,1.2034245170349045,
+MAR,0.2,7,mice,bmi,rmse,11.087463724939616,
+MAR,0.2,7,mice,income_ratio,nrmse,1.4038220941644628,
+MAR,0.2,7,mice,income_ratio,rmse,2.1299233659860968,
+MAR,0.2,7,mice,sex,pfc,0.4803921568627451,
+MAR,0.2,7,mice,smoking_status,pfc,0.4238095238095238,
+MAR,0.2,7,mice,systolic_bp,nrmse,1.189503400205438,
+MAR,0.2,7,mice,systolic_bp,rmse,26.934022182472575,
+MAR,0.2,8,mice,age,nrmse,1.0895378099440436,
+MAR,0.2,8,mice,age,rmse,19.67044662909908,
+MAR,0.2,8,mice,bmi,nrmse,1.2479532777934588,
+MAR,0.2,8,mice,bmi,rmse,10.491249100669933,
+MAR,0.2,8,mice,income_ratio,nrmse,1.3529149631523498,
+MAR,0.2,8,mice,income_ratio,rmse,1.994283670271848,
+MAR,0.2,8,mice,sex,pfc,0.48205128205128206,
+MAR,0.2,8,mice,smoking_status,pfc,0.5186915887850467,
+MAR,0.2,8,mice,systolic_bp,nrmse,1.3928439496838498,
+MAR,0.2,8,mice,systolic_bp,rmse,24.41540963829393,
+MAR,0.3,1,mice,age,nrmse,1.287550854566362,
+MAR,0.3,1,mice,age,rmse,21.45306068955291,
+MAR,0.3,1,mice,bmi,nrmse,1.327479347792197,
+MAR,0.3,1,mice,bmi,rmse,10.8808875260729,
+MAR,0.3,1,mice,income_ratio,nrmse,1.4652921717955585,
+MAR,0.3,1,mice,income_ratio,rmse,2.230631969431723,
+MAR,0.3,1,mice,sex,pfc,0.5034722222222222,
+MAR,0.3,1,mice,smoking_status,pfc,0.47720364741641336,
+MAR,0.3,1,mice,systolic_bp,nrmse,1.336279290833413,
+MAR,0.3,1,mice,systolic_bp,rmse,25.36052475051654,
+MAR,0.3,2,mice,age,nrmse,1.239516689175667,
+MAR,0.3,2,mice,age,rmse,20.604228851751344,
+MAR,0.3,2,mice,bmi,nrmse,1.3722400001186335,
+MAR,0.3,2,mice,bmi,rmse,11.76143550710173,
+MAR,0.3,2,mice,income_ratio,nrmse,1.4796959750447087,
+MAR,0.3,2,mice,income_ratio,rmse,2.197183065385948,
+MAR,0.3,2,mice,sex,pfc,0.4873417721518987,
+MAR,0.3,2,mice,smoking_status,pfc,0.4368932038834951,
+MAR,0.3,2,mice,systolic_bp,nrmse,1.3926940129110361,
+MAR,0.3,2,mice,systolic_bp,rmse,25.9493198252126,
+MAR,0.3,3,mice,age,nrmse,1.3078364613378666,
+MAR,0.3,3,mice,age,rmse,22.09788828523365,
+MAR,0.3,3,mice,bmi,nrmse,1.3302128192908467,
+MAR,0.3,3,mice,bmi,rmse,10.822234432996897,
+MAR,0.3,3,mice,income_ratio,nrmse,1.3378814469527909,
+MAR,0.3,3,mice,income_ratio,rmse,2.116372682996389,
+MAR,0.3,3,mice,sex,pfc,0.4756944444444444,
+MAR,0.3,3,mice,smoking_status,pfc,0.47904191616766467,
+MAR,0.3,3,mice,systolic_bp,nrmse,1.3570730933648774,
+MAR,0.3,3,mice,systolic_bp,rmse,26.350597015695946,
+MAR,0.3,4,mice,age,nrmse,1.361071345592557,
+MAR,0.3,4,mice,age,rmse,22.443633098646632,
+MAR,0.3,4,mice,bmi,nrmse,1.3376293343494003,
+MAR,0.3,4,mice,bmi,rmse,11.36741676610945,
+MAR,0.3,4,mice,income_ratio,nrmse,1.4595271486369075,
+MAR,0.3,4,mice,income_ratio,rmse,2.15364200792636,
+MAR,0.3,4,mice,sex,pfc,0.4639175257731959,
+MAR,0.3,4,mice,smoking_status,pfc,0.517799352750809,
+MAR,0.3,4,mice,systolic_bp,nrmse,1.3977759326702426,
+MAR,0.3,4,mice,systolic_bp,rmse,26.75048632302818,
+MAR,0.3,5,mice,age,nrmse,1.3236293885590693,
+MAR,0.3,5,mice,age,rmse,21.349953461787987,
+MAR,0.3,5,mice,bmi,nrmse,1.2155744569888287,
+MAR,0.3,5,mice,bmi,rmse,9.99562445527167,
+MAR,0.3,5,mice,income_ratio,nrmse,1.3885844895635149,
+MAR,0.3,5,mice,income_ratio,rmse,2.1047336787633966,
+MAR,0.3,5,mice,sex,pfc,0.43197278911564624,
+MAR,0.3,5,mice,smoking_status,pfc,0.4875444839857651,
+MAR,0.3,5,mice,systolic_bp,nrmse,1.2941429191326383,
+MAR,0.3,5,mice,systolic_bp,rmse,26.839545525462547,
+MAR,0.3,6,mice,age,nrmse,1.2357164227543211,
+MAR,0.3,6,mice,age,rmse,20.78358094367054,
+MAR,0.3,6,mice,bmi,nrmse,1.317291386875687,
+MAR,0.3,6,mice,bmi,rmse,10.517453027316936,
+MAR,0.3,6,mice,income_ratio,nrmse,1.5166950036850213,
+MAR,0.3,6,mice,income_ratio,rmse,2.224948471071798,
+MAR,0.3,6,mice,sex,pfc,0.4883720930232558,
+MAR,0.3,6,mice,smoking_status,pfc,0.4570552147239264,
+MAR,0.3,6,mice,systolic_bp,nrmse,1.2777294937534884,
+MAR,0.3,6,mice,systolic_bp,rmse,25.40972726666072,
+MAR,0.3,7,mice,age,nrmse,1.304465336614569,
+MAR,0.3,7,mice,age,rmse,20.90092322241522,
+MAR,0.3,7,mice,bmi,nrmse,1.3957748067625977,
+MAR,0.3,7,mice,bmi,rmse,11.276308147972397,
+MAR,0.3,7,mice,income_ratio,nrmse,1.4891625270773285,
+MAR,0.3,7,mice,income_ratio,rmse,2.213840676412948,
+MAR,0.3,7,mice,sex,pfc,0.4950166112956811,
+MAR,0.3,7,mice,smoking_status,pfc,0.45808383233532934,
+MAR,0.3,7,mice,systolic_bp,nrmse,1.3896903550109163,
+MAR,0.3,7,mice,systolic_bp,rmse,27.76633097480594,
+MAR,0.3,8,mice,age,nrmse,1.3176831366253667,
+MAR,0.3,8,mice,age,rmse,21.207384670368057,
+MAR,0.3,8,mice,bmi,nrmse,1.350886319649077,
+MAR,0.3,8,mice,bmi,rmse,10.035832626540586,
+MAR,0.3,8,mice,income_ratio,nrmse,1.4742872560333447,
+MAR,0.3,8,mice,income_ratio,rmse,2.2503465925223316,
+MAR,0.3,8,mice,sex,pfc,0.4664310954063604,
+MAR,0.3,8,mice,smoking_status,pfc,0.501577287066246,
+MAR,0.3,8,mice,systolic_bp,nrmse,1.2110819155369141,
+MAR,0.3,8,mice,systolic_bp,rmse,25.10710083513586,
+MCAR,0.1,1,mice,age,nrmse,1.0943205424747107,
+MCAR,0.1,1,mice,age,rmse,18.537056103372826,
+MCAR,0.1,1,mice,bmi,nrmse,1.4668520107456076,
+MCAR,0.1,1,mice,bmi,rmse,9.869375586534597,
+MCAR,0.1,1,mice,income_ratio,nrmse,1.2998756510204923,
+MCAR,0.1,1,mice,income_ratio,rmse,2.0683072908794164,
+MCAR,0.1,1,mice,sex,pfc,0.4639175257731959,
+MCAR,0.1,1,mice,smoking_status,pfc,0.35051546391752575,
+MCAR,0.1,1,mice,systolic_bp,nrmse,1.4488459827920965,
+MCAR,0.1,1,mice,systolic_bp,rmse,26.217474113064814,
+MCAR,0.1,2,mice,age,nrmse,1.099034671731761,
+MCAR,0.1,2,mice,age,rmse,18.321999131478886,
+MCAR,0.1,2,mice,bmi,nrmse,1.600123545413775,
+MCAR,0.1,2,mice,bmi,rmse,9.123304788588767,
+MCAR,0.1,2,mice,income_ratio,nrmse,1.2981658547376136,
+MCAR,0.1,2,mice,income_ratio,rmse,2.0983666787400628,
+MCAR,0.1,2,mice,sex,pfc,0.375,
+MCAR,0.1,2,mice,smoking_status,pfc,0.3838383838383838,
+MCAR,0.1,2,mice,systolic_bp,nrmse,1.0930079430176067,
+MCAR,0.1,2,mice,systolic_bp,rmse,23.401522780293103,
+MCAR,0.1,3,mice,age,nrmse,1.1707274492491004,
+MCAR,0.1,3,mice,age,rmse,19.406184581210187,
+MCAR,0.1,3,mice,bmi,nrmse,1.2705292448022456,
+MCAR,0.1,3,mice,bmi,rmse,9.473242094946887,
+MCAR,0.1,3,mice,income_ratio,nrmse,1.3352758643268947,
+MCAR,0.1,3,mice,income_ratio,rmse,1.9856022301096,
+MCAR,0.1,3,mice,sex,pfc,0.580952380952381,
+MCAR,0.1,3,mice,smoking_status,pfc,0.4563106796116505,
+MCAR,0.1,3,mice,systolic_bp,nrmse,1.210338803602238,
+MCAR,0.1,3,mice,systolic_bp,rmse,20.839684566475327,
+MCAR,0.1,4,mice,age,nrmse,1.2986043647249643,
+MCAR,0.1,4,mice,age,rmse,21.825308383193704,
+MCAR,0.1,4,mice,bmi,nrmse,1.4805925512197742,
+MCAR,0.1,4,mice,bmi,rmse,10.984042971510991,
+MCAR,0.1,4,mice,income_ratio,nrmse,1.2539848476556885,
+MCAR,0.1,4,mice,income_ratio,rmse,1.8842985037047155,
+MCAR,0.1,4,mice,sex,pfc,0.5242718446601942,
+MCAR,0.1,4,mice,smoking_status,pfc,0.3853211009174312,
+MCAR,0.1,4,mice,systolic_bp,nrmse,1.2616525885924095,
+MCAR,0.1,4,mice,systolic_bp,rmse,23.885890261310273,
+MCAR,0.1,5,mice,age,nrmse,1.3891817636795671,
+MCAR,0.1,5,mice,age,rmse,22.896782006706232,
+MCAR,0.1,5,mice,bmi,nrmse,1.1450898174482893,
+MCAR,0.1,5,mice,bmi,rmse,9.514091556440368,
+MCAR,0.1,5,mice,income_ratio,nrmse,1.2884740966111483,
+MCAR,0.1,5,mice,income_ratio,rmse,2.038614036793438,
+MCAR,0.1,5,mice,sex,pfc,0.4787234042553192,
+MCAR,0.1,5,mice,smoking_status,pfc,0.44339622641509435,
+MCAR,0.1,5,mice,systolic_bp,nrmse,1.177563410065375,
+MCAR,0.1,5,mice,systolic_bp,rmse,23.391397733412756,
+MCAR,0.1,6,mice,age,nrmse,1.2187671772935225,
+MCAR,0.1,6,mice,age,rmse,19.734234213670415,
+MCAR,0.1,6,mice,bmi,nrmse,1.348849150802054,
+MCAR,0.1,6,mice,bmi,rmse,12.98968899558493,
+MCAR,0.1,6,mice,income_ratio,nrmse,1.3034203798364132,
+MCAR,0.1,6,mice,income_ratio,rmse,1.9864370762912467,
+MCAR,0.1,6,mice,sex,pfc,0.5673076923076923,
+MCAR,0.1,6,mice,smoking_status,pfc,0.43,
+MCAR,0.1,6,mice,systolic_bp,nrmse,1.0948271121112583,
+MCAR,0.1,6,mice,systolic_bp,rmse,24.361723866417833,
+MCAR,0.1,7,mice,age,nrmse,1.1108511520008986,
+MCAR,0.1,7,mice,age,rmse,19.837259234394864,
+MCAR,0.1,7,mice,bmi,nrmse,1.2251534433446185,
+MCAR,0.1,7,mice,bmi,rmse,9.549404904004152,
+MCAR,0.1,7,mice,income_ratio,nrmse,1.4872727201171005,
+MCAR,0.1,7,mice,income_ratio,rmse,2.2794194017312313,
+MCAR,0.1,7,mice,sex,pfc,0.44144144144144143,
+MCAR,0.1,7,mice,smoking_status,pfc,0.4473684210526316,
+MCAR,0.1,7,mice,systolic_bp,nrmse,1.0198571043811298,
+MCAR,0.1,7,mice,systolic_bp,rmse,19.861604500476155,
+MCAR,0.1,8,mice,age,nrmse,1.13689437963171,
+MCAR,0.1,8,mice,age,rmse,19.413590600401566,
+MCAR,0.1,8,mice,bmi,nrmse,1.3966632123112581,
+MCAR,0.1,8,mice,bmi,rmse,8.744254065766082,
+MCAR,0.1,8,mice,income_ratio,nrmse,1.2662749862013662,
+MCAR,0.1,8,mice,income_ratio,rmse,2.069640254806068,
+MCAR,0.1,8,mice,sex,pfc,0.4536082474226804,
+MCAR,0.1,8,mice,smoking_status,pfc,0.4827586206896552,
+MCAR,0.1,8,mice,systolic_bp,nrmse,1.321364701752278,
+MCAR,0.1,8,mice,systolic_bp,rmse,26.08788955916853,
+MCAR,0.2,1,mice,age,nrmse,1.2261124487841446,
+MCAR,0.2,1,mice,age,rmse,21.056153664495735,
+MCAR,0.2,1,mice,bmi,nrmse,1.3563301178416456,
+MCAR,0.2,1,mice,bmi,rmse,9.479079457859875,
+MCAR,0.2,1,mice,income_ratio,nrmse,1.4061847943464394,
+MCAR,0.2,1,mice,income_ratio,rmse,2.101017932974348,
+MCAR,0.2,1,mice,sex,pfc,0.5326633165829145,
+MCAR,0.2,1,mice,smoking_status,pfc,0.45544554455445546,
+MCAR,0.2,1,mice,systolic_bp,nrmse,1.2875350853692746,
+MCAR,0.2,1,mice,systolic_bp,rmse,24.603125763077298,
+MCAR,0.2,2,mice,age,nrmse,1.34549116996868,
+MCAR,0.2,2,mice,age,rmse,21.839864821730743,
+MCAR,0.2,2,mice,bmi,nrmse,1.2872776911576809,
+MCAR,0.2,2,mice,bmi,rmse,10.56490943268113,
+MCAR,0.2,2,mice,income_ratio,nrmse,1.3510826169408303,
+MCAR,0.2,2,mice,income_ratio,rmse,2.219574673635374,
+MCAR,0.2,2,mice,sex,pfc,0.4029126213592233,
+MCAR,0.2,2,mice,smoking_status,pfc,0.4,
+MCAR,0.2,2,mice,systolic_bp,nrmse,1.1488523852418946,
+MCAR,0.2,2,mice,systolic_bp,rmse,23.044261365021214,
+MCAR,0.2,3,mice,age,nrmse,1.321370043758759,
+MCAR,0.2,3,mice,age,rmse,22.273045181713854,
+MCAR,0.2,3,mice,bmi,nrmse,1.294203995054551,
+MCAR,0.2,3,mice,bmi,rmse,9.65093176180247,
+MCAR,0.2,3,mice,income_ratio,nrmse,1.3905029647911882,
+MCAR,0.2,3,mice,income_ratio,rmse,2.1280272554645534,
+MCAR,0.2,3,mice,sex,pfc,0.43523316062176165,
+MCAR,0.2,3,mice,smoking_status,pfc,0.4788732394366197,
+MCAR,0.2,3,mice,systolic_bp,nrmse,1.103168060426947,
+MCAR,0.2,3,mice,systolic_bp,rmse,23.195842083164187,
+MCAR,0.2,4,mice,age,nrmse,1.2548123419879758,
+MCAR,0.2,4,mice,age,rmse,20.873486508592432,
+MCAR,0.2,4,mice,bmi,nrmse,1.3238150720481212,
+MCAR,0.2,4,mice,bmi,rmse,10.291904609575957,
+MCAR,0.2,4,mice,income_ratio,nrmse,1.463122526579335,
+MCAR,0.2,4,mice,income_ratio,rmse,2.1547433141792087,
+MCAR,0.2,4,mice,sex,pfc,0.5133689839572193,
+MCAR,0.2,4,mice,smoking_status,pfc,0.4444444444444444,
+MCAR,0.2,4,mice,systolic_bp,nrmse,1.271060209936588,
+MCAR,0.2,4,mice,systolic_bp,rmse,24.216338172456155,
+MCAR,0.2,5,mice,age,nrmse,1.2979461682666982,
+MCAR,0.2,5,mice,age,rmse,22.036333633342913,
+MCAR,0.2,5,mice,bmi,nrmse,1.3529793553451406,
+MCAR,0.2,5,mice,bmi,rmse,11.229749242135245,
+MCAR,0.2,5,mice,income_ratio,nrmse,1.4234825900989718,
+MCAR,0.2,5,mice,income_ratio,rmse,2.200644323122936,
+MCAR,0.2,5,mice,sex,pfc,0.4519230769230769,
+MCAR,0.2,5,mice,smoking_status,pfc,0.4494949494949495,
+MCAR,0.2,5,mice,systolic_bp,nrmse,1.2657017393990406,
+MCAR,0.2,5,mice,systolic_bp,rmse,28.984618192887048,
+MCAR,0.2,6,mice,age,nrmse,1.1765535522346797,
+MCAR,0.2,6,mice,age,rmse,20.435339311680274,
+MCAR,0.2,6,mice,bmi,nrmse,1.3221750625995978,
+MCAR,0.2,6,mice,bmi,rmse,10.29128091944647,
+MCAR,0.2,6,mice,income_ratio,nrmse,1.3790479856902662,
+MCAR,0.2,6,mice,income_ratio,rmse,2.133733443511677,
+MCAR,0.2,6,mice,sex,pfc,0.470873786407767,
+MCAR,0.2,6,mice,smoking_status,pfc,0.5,
+MCAR,0.2,6,mice,systolic_bp,nrmse,1.2911912435050894,
+MCAR,0.2,6,mice,systolic_bp,rmse,24.074438389401987,
+MCAR,0.2,7,mice,age,nrmse,1.1873859496642436,
+MCAR,0.2,7,mice,age,rmse,20.793335247085167,
+MCAR,0.2,7,mice,bmi,nrmse,1.4144814392331744,
+MCAR,0.2,7,mice,bmi,rmse,10.42849357581763,
+MCAR,0.2,7,mice,income_ratio,nrmse,1.3958964346479432,
+MCAR,0.2,7,mice,income_ratio,rmse,2.140442940117652,
+MCAR,0.2,7,mice,sex,pfc,0.48514851485148514,
+MCAR,0.2,7,mice,smoking_status,pfc,0.4174757281553398,
+MCAR,0.2,7,mice,systolic_bp,nrmse,1.2872627608021243,
+MCAR,0.2,7,mice,systolic_bp,rmse,25.088274849758022,
+MCAR,0.2,8,mice,age,nrmse,1.3379502426803362,
+MCAR,0.2,8,mice,age,rmse,21.6750952961587,
+MCAR,0.2,8,mice,bmi,nrmse,1.4395391432288258,
+MCAR,0.2,8,mice,bmi,rmse,11.134025310185132,
+MCAR,0.2,8,mice,income_ratio,nrmse,1.420923384000239,
+MCAR,0.2,8,mice,income_ratio,rmse,2.2399906135334473,
+MCAR,0.2,8,mice,sex,pfc,0.5352941176470588,
+MCAR,0.2,8,mice,smoking_status,pfc,0.49230769230769234,
+MCAR,0.2,8,mice,systolic_bp,nrmse,1.4312522005495336,
+MCAR,0.2,8,mice,systolic_bp,rmse,25.852860003689546,
+MCAR,0.3,1,mice,age,nrmse,1.3456627227678855,
+MCAR,0.3,1,mice,age,rmse,23.164570262282908,
+MCAR,0.3,1,mice,bmi,nrmse,1.3353332217450862,
+MCAR,0.3,1,mice,bmi,rmse,10.582128015353685,
+MCAR,0.3,1,mice,income_ratio,nrmse,1.3569356773996275,
+MCAR,0.3,1,mice,income_ratio,rmse,2.1020118798945133,
+MCAR,0.3,1,mice,sex,pfc,0.4576271186440678,
+MCAR,0.3,1,mice,smoking_status,pfc,0.43097643097643096,
+MCAR,0.3,1,mice,systolic_bp,nrmse,1.315777433236276,
+MCAR,0.3,1,mice,systolic_bp,rmse,26.333614145764447,
+MCAR,0.3,2,mice,age,nrmse,1.3309084528569346,
+MCAR,0.3,2,mice,age,rmse,22.216457585635048,
+MCAR,0.3,2,mice,bmi,nrmse,1.3771095693132411,
+MCAR,0.3,2,mice,bmi,rmse,9.923573332842746,
+MCAR,0.3,2,mice,income_ratio,nrmse,1.3512673516774483,
+MCAR,0.3,2,mice,income_ratio,rmse,2.179714955707648,
+MCAR,0.3,2,mice,sex,pfc,0.4517241379310345,
+MCAR,0.3,2,mice,smoking_status,pfc,0.4528985507246377,
+MCAR,0.3,2,mice,systolic_bp,nrmse,1.3846870667697728,
+MCAR,0.3,2,mice,systolic_bp,rmse,26.165617336874114,
+MCAR,0.3,3,mice,age,nrmse,1.196698579051092,
+MCAR,0.3,3,mice,age,rmse,21.202795297509564,
+MCAR,0.3,3,mice,bmi,nrmse,1.395532576601199,
+MCAR,0.3,3,mice,bmi,rmse,10.135302897340903,
+MCAR,0.3,3,mice,income_ratio,nrmse,1.4382452913759338,
+MCAR,0.3,3,mice,income_ratio,rmse,2.2436703169646095,
+MCAR,0.3,3,mice,sex,pfc,0.5878378378378378,
+MCAR,0.3,3,mice,smoking_status,pfc,0.48986486486486486,
+MCAR,0.3,3,mice,systolic_bp,nrmse,1.2907891285799207,
+MCAR,0.3,3,mice,systolic_bp,rmse,25.69227285941806,
+MCAR,0.3,4,mice,age,nrmse,1.1956740102045764,
+MCAR,0.3,4,mice,age,rmse,20.610015217673354,
+MCAR,0.3,4,mice,bmi,nrmse,1.281615797538364,
+MCAR,0.3,4,mice,bmi,rmse,10.01414594316765,
+MCAR,0.3,4,mice,income_ratio,nrmse,1.3254867670893353,
+MCAR,0.3,4,mice,income_ratio,rmse,2.1431333781852517,
+MCAR,0.3,4,mice,sex,pfc,0.5,
+MCAR,0.3,4,mice,smoking_status,pfc,0.4295774647887324,
+MCAR,0.3,4,mice,systolic_bp,nrmse,1.2270690832399371,
+MCAR,0.3,4,mice,systolic_bp,rmse,27.367344748610616,
+MCAR,0.3,5,mice,age,nrmse,1.3165773596042796,
+MCAR,0.3,5,mice,age,rmse,22.08317610006918,
+MCAR,0.3,5,mice,bmi,nrmse,1.277904353476182,
+MCAR,0.3,5,mice,bmi,rmse,9.976945463891926,
+MCAR,0.3,5,mice,income_ratio,nrmse,1.4841729491247369,
+MCAR,0.3,5,mice,income_ratio,rmse,2.1995578471881654,
+MCAR,0.3,5,mice,sex,pfc,0.4583333333333333,
+MCAR,0.3,5,mice,smoking_status,pfc,0.46236559139784944,
+MCAR,0.3,5,mice,systolic_bp,nrmse,1.2094341655578087,
+MCAR,0.3,5,mice,systolic_bp,rmse,24.34703617273663,
+MCAR,0.3,6,mice,age,nrmse,1.1529646768386808,
+MCAR,0.3,6,mice,age,rmse,19.888535545732022,
+MCAR,0.3,6,mice,bmi,nrmse,1.491459447166361,
+MCAR,0.3,6,mice,bmi,rmse,10.348928351341574,
+MCAR,0.3,6,mice,income_ratio,nrmse,1.3315977921644602,
+MCAR,0.3,6,mice,income_ratio,rmse,2.126767433527243,
+MCAR,0.3,6,mice,sex,pfc,0.547945205479452,
+MCAR,0.3,6,mice,smoking_status,pfc,0.4934640522875817,
+MCAR,0.3,6,mice,systolic_bp,nrmse,1.3579789447173318,
+MCAR,0.3,6,mice,systolic_bp,rmse,24.817976953349387,
+MCAR,0.3,7,mice,age,nrmse,1.2820218228855065,
+MCAR,0.3,7,mice,age,rmse,22.355198544427743,
+MCAR,0.3,7,mice,bmi,nrmse,1.465071518248863,
+MCAR,0.3,7,mice,bmi,rmse,10.410254436655112,
+MCAR,0.3,7,mice,income_ratio,nrmse,1.2950442783698897,
+MCAR,0.3,7,mice,income_ratio,rmse,2.0508772842701086,
+MCAR,0.3,7,mice,sex,pfc,0.47840531561461797,
+MCAR,0.3,7,mice,smoking_status,pfc,0.45,
+MCAR,0.3,7,mice,systolic_bp,nrmse,1.2870953555630031,
+MCAR,0.3,7,mice,systolic_bp,rmse,26.184778459074643,
+MCAR,0.3,8,mice,age,nrmse,1.2920600920856953,
+MCAR,0.3,8,mice,age,rmse,21.902998080654065,
+MCAR,0.3,8,mice,bmi,nrmse,1.3809399632852564,
+MCAR,0.3,8,mice,bmi,rmse,10.409234958141406,
+MCAR,0.3,8,mice,income_ratio,nrmse,1.3967874870019046,
+MCAR,0.3,8,mice,income_ratio,rmse,2.0889601902044457,
+MCAR,0.3,8,mice,sex,pfc,0.46534653465346537,
+MCAR,0.3,8,mice,smoking_status,pfc,0.450920245398773,
+MCAR,0.3,8,mice,systolic_bp,nrmse,1.2832203568877347,
+MCAR,0.3,8,mice,systolic_bp,rmse,24.071466696807427,
+MAR,0.1,1,missforest,age,nrmse,0.8845021490045096,
+MAR,0.1,1,missforest,age,rmse,15.179071203018493,
+MAR,0.1,1,missforest,bmi,nrmse,0.9941157836483819,
+MAR,0.1,1,missforest,bmi,rmse,8.682991826402104,
+MAR,0.1,1,missforest,income_ratio,nrmse,1.0190774224854668,
+MAR,0.1,1,missforest,income_ratio,rmse,1.5912869311481999,
+MAR,0.1,1,missforest,sex,pfc,0.4065934065934066,
+MAR,0.1,1,missforest,smoking_status,pfc,0.47368421052631576,
+MAR,0.1,1,missforest,systolic_bp,nrmse,1.0046868514151188,
+MAR,0.1,1,missforest,systolic_bp,rmse,20.345052185033218,
+MAR,0.1,2,missforest,age,nrmse,0.9649103211008996,
+MAR,0.1,2,missforest,age,rmse,14.639407776861956,
+MAR,0.1,2,missforest,bmi,nrmse,0.9923143207446694,
+MAR,0.1,2,missforest,bmi,rmse,9.359397574332004,
+MAR,0.1,2,missforest,income_ratio,nrmse,0.9549264896063566,
+MAR,0.1,2,missforest,income_ratio,rmse,1.509399231435333,
+MAR,0.1,2,missforest,sex,pfc,0.4166666666666667,
+MAR,0.1,2,missforest,smoking_status,pfc,0.41346153846153844,
+MAR,0.1,2,missforest,systolic_bp,nrmse,0.8830348969176023,
+MAR,0.1,2,missforest,systolic_bp,rmse,16.663773699012435,
+MAR,0.1,3,missforest,age,nrmse,0.9451851503657167,
+MAR,0.1,3,missforest,age,rmse,15.32153404071722,
+MAR,0.1,3,missforest,bmi,nrmse,1.0213658752436572,
+MAR,0.1,3,missforest,bmi,rmse,9.558778971466108,
+MAR,0.1,3,missforest,income_ratio,nrmse,0.9727326721544451,
+MAR,0.1,3,missforest,income_ratio,rmse,1.6060932507866792,
+MAR,0.1,3,missforest,sex,pfc,0.42857142857142855,
+MAR,0.1,3,missforest,smoking_status,pfc,0.4375,
+MAR,0.1,3,missforest,systolic_bp,nrmse,0.9328384672976996,
+MAR,0.1,3,missforest,systolic_bp,rmse,17.409778777103295,
+MAR,0.1,4,missforest,age,nrmse,0.8180445895182306,
+MAR,0.1,4,missforest,age,rmse,13.715820960344448,
+MAR,0.1,4,missforest,bmi,nrmse,0.9322806536606817,
+MAR,0.1,4,missforest,bmi,rmse,7.61011936141506,
+MAR,0.1,4,missforest,income_ratio,nrmse,0.9414715313991027,
+MAR,0.1,4,missforest,income_ratio,rmse,1.365796682237343,
+MAR,0.1,4,missforest,sex,pfc,0.3838383838383838,
+MAR,0.1,4,missforest,smoking_status,pfc,0.4326923076923077,
+MAR,0.1,4,missforest,systolic_bp,nrmse,1.0484741174539083,
+MAR,0.1,4,missforest,systolic_bp,rmse,22.485394289650692,
+MAR,0.1,5,missforest,age,nrmse,0.860054089303596,
+MAR,0.1,5,missforest,age,rmse,14.724340162039896,
+MAR,0.1,5,missforest,bmi,nrmse,0.9516344738837855,
+MAR,0.1,5,missforest,bmi,rmse,9.102205966936964,
+MAR,0.1,5,missforest,income_ratio,nrmse,0.958743447498692,
+MAR,0.1,5,missforest,income_ratio,rmse,1.4599840987481454,
+MAR,0.1,5,missforest,sex,pfc,0.42045454545454547,
+MAR,0.1,5,missforest,smoking_status,pfc,0.45132743362831856,
+MAR,0.1,5,missforest,systolic_bp,nrmse,0.9409535954770056,
+MAR,0.1,5,missforest,systolic_bp,rmse,20.446145596344454,
+MAR,0.1,6,missforest,age,nrmse,0.9083596350532044,
+MAR,0.1,6,missforest,age,rmse,14.523735936940222,
+MAR,0.1,6,missforest,bmi,nrmse,0.9990305258827141,
+MAR,0.1,6,missforest,bmi,rmse,10.096759280572648,
+MAR,0.1,6,missforest,income_ratio,nrmse,0.988377687272218,
+MAR,0.1,6,missforest,income_ratio,rmse,1.4867498615759176,
+MAR,0.1,6,missforest,sex,pfc,0.40229885057471265,
+MAR,0.1,6,missforest,smoking_status,pfc,0.36893203883495146,
+MAR,0.1,6,missforest,systolic_bp,nrmse,0.9139977742980726,
+MAR,0.1,6,missforest,systolic_bp,rmse,19.808201658179904,
+MAR,0.1,7,missforest,age,nrmse,0.834047701530833,
+MAR,0.1,7,missforest,age,rmse,13.583476864105362,
+MAR,0.1,7,missforest,bmi,nrmse,1.005570490556568,
+MAR,0.1,7,missforest,bmi,rmse,9.10983988814568,
+MAR,0.1,7,missforest,income_ratio,nrmse,0.964949691077451,
+MAR,0.1,7,missforest,income_ratio,rmse,1.3548700418698114,
+MAR,0.1,7,missforest,sex,pfc,0.4845360824742268,
+MAR,0.1,7,missforest,smoking_status,pfc,0.4411764705882353,
+MAR,0.1,7,missforest,systolic_bp,nrmse,0.8107821676506279,
+MAR,0.1,7,missforest,systolic_bp,rmse,15.327284653268578,
+MAR,0.1,8,missforest,age,nrmse,0.9353334798364538,
+MAR,0.1,8,missforest,age,rmse,13.404201358965349,
+MAR,0.1,8,missforest,bmi,nrmse,1.0751221778483973,
+MAR,0.1,8,missforest,bmi,rmse,10.621261974305622,
+MAR,0.1,8,missforest,income_ratio,nrmse,1.0444860399411668,
+MAR,0.1,8,missforest,income_ratio,rmse,1.5532307003893504,
+MAR,0.1,8,missforest,sex,pfc,0.45045045045045046,
+MAR,0.1,8,missforest,smoking_status,pfc,0.5148514851485149,
+MAR,0.1,8,missforest,systolic_bp,nrmse,0.9048249242400742,
+MAR,0.1,8,missforest,systolic_bp,rmse,17.056176156624637,
+MAR,0.2,1,missforest,age,nrmse,0.9279970459205803,
+MAR,0.2,1,missforest,age,rmse,14.417259056317176,
+MAR,0.2,1,missforest,bmi,nrmse,0.9743720032593464,
+MAR,0.2,1,missforest,bmi,rmse,8.936649116866509,
+MAR,0.2,1,missforest,income_ratio,nrmse,1.0181668508289305,
+MAR,0.2,1,missforest,income_ratio,rmse,1.561101056494343,
+MAR,0.2,1,missforest,sex,pfc,0.41624365482233505,
+MAR,0.2,1,missforest,smoking_status,pfc,0.4444444444444444,
+MAR,0.2,1,missforest,systolic_bp,nrmse,0.9854272152080081,
+MAR,0.2,1,missforest,systolic_bp,rmse,21.42942610771034,
+MAR,0.2,2,missforest,age,nrmse,0.9503833046441656,
+MAR,0.2,2,missforest,age,rmse,15.891654605424195,
+MAR,0.2,2,missforest,bmi,nrmse,1.0318086321980675,
+MAR,0.2,2,missforest,bmi,rmse,9.267314922504355,
+MAR,0.2,2,missforest,income_ratio,nrmse,1.0130117156487215,
+MAR,0.2,2,missforest,income_ratio,rmse,1.5999340570162865,
+MAR,0.2,2,missforest,sex,pfc,0.435,
+MAR,0.2,2,missforest,smoking_status,pfc,0.41262135922330095,
+MAR,0.2,2,missforest,systolic_bp,nrmse,0.9717334457694202,
+MAR,0.2,2,missforest,systolic_bp,rmse,20.57305570487558,
+MAR,0.2,3,missforest,age,nrmse,0.9441326281871931,
+MAR,0.2,3,missforest,age,rmse,15.356223844638176,
+MAR,0.2,3,missforest,bmi,nrmse,0.9933820315095477,
+MAR,0.2,3,missforest,bmi,rmse,8.232397830601501,
+MAR,0.2,3,missforest,income_ratio,nrmse,1.0690110688842833,
+MAR,0.2,3,missforest,income_ratio,rmse,1.547763478666845,
+MAR,0.2,3,missforest,sex,pfc,0.4725274725274725,
+MAR,0.2,3,missforest,smoking_status,pfc,0.38427947598253276,
+MAR,0.2,3,missforest,systolic_bp,nrmse,0.9774838311852998,
+MAR,0.2,3,missforest,systolic_bp,rmse,20.86839760408599,
+MAR,0.2,4,missforest,age,nrmse,0.9661946172417414,
+MAR,0.2,4,missforest,age,rmse,15.860187436456895,
+MAR,0.2,4,missforest,bmi,nrmse,1.0438934926719303,
+MAR,0.2,4,missforest,bmi,rmse,9.008403474103927,
+MAR,0.2,4,missforest,income_ratio,nrmse,1.0098095958451538,
+MAR,0.2,4,missforest,income_ratio,rmse,1.6239793345044138,
+MAR,0.2,4,missforest,sex,pfc,0.42487046632124353,
+MAR,0.2,4,missforest,smoking_status,pfc,0.3894230769230769,
+MAR,0.2,4,missforest,systolic_bp,nrmse,1.0398572202076157,
+MAR,0.2,4,missforest,systolic_bp,rmse,20.13077960988677,
+MAR,0.2,5,missforest,age,nrmse,0.9654022948339703,
+MAR,0.2,5,missforest,age,rmse,14.644766086950346,
+MAR,0.2,5,missforest,bmi,nrmse,0.991029997194236,
+MAR,0.2,5,missforest,bmi,rmse,8.227280406895455,
+MAR,0.2,5,missforest,income_ratio,nrmse,1.029555100989492,
+MAR,0.2,5,missforest,income_ratio,rmse,1.591937686913435,
+MAR,0.2,5,missforest,sex,pfc,0.4604651162790698,
+MAR,0.2,5,missforest,smoking_status,pfc,0.44660194174757284,
+MAR,0.2,5,missforest,systolic_bp,nrmse,0.9656359464363439,
+MAR,0.2,5,missforest,systolic_bp,rmse,19.18820933051587,
+MAR,0.2,6,missforest,age,nrmse,0.9171229606078076,
+MAR,0.2,6,missforest,age,rmse,14.952501988566453,
+MAR,0.2,6,missforest,bmi,nrmse,1.0553766656412853,
+MAR,0.2,6,missforest,bmi,rmse,9.127738650808206,
+MAR,0.2,6,missforest,income_ratio,nrmse,1.0373236678784614,
+MAR,0.2,6,missforest,income_ratio,rmse,1.4975630102779132,
+MAR,0.2,6,missforest,sex,pfc,0.48148148148148145,
+MAR,0.2,6,missforest,smoking_status,pfc,0.4016393442622951,
+MAR,0.2,6,missforest,systolic_bp,nrmse,1.0130384972819622,
+MAR,0.2,6,missforest,systolic_bp,rmse,18.7224438887721,
+MAR,0.2,7,missforest,age,nrmse,0.9124648863847709,
+MAR,0.2,7,missforest,age,rmse,15.353403351276464,
+MAR,0.2,7,missforest,bmi,nrmse,0.9587547769588888,
+MAR,0.2,7,missforest,bmi,rmse,8.833257641148696,
+MAR,0.2,7,missforest,income_ratio,nrmse,1.0076515973999465,
+MAR,0.2,7,missforest,income_ratio,rmse,1.528840934329905,
+MAR,0.2,7,missforest,sex,pfc,0.47058823529411764,
+MAR,0.2,7,missforest,smoking_status,pfc,0.43333333333333335,
+MAR,0.2,7,missforest,systolic_bp,nrmse,0.994938347791745,
+MAR,0.2,7,missforest,systolic_bp,rmse,22.528469884985,
+MAR,0.2,8,missforest,age,nrmse,0.8086271269059823,
+MAR,0.2,8,missforest,age,rmse,14.598902945334917,
+MAR,0.2,8,missforest,bmi,nrmse,0.9562443657308922,
+MAR,0.2,8,missforest,bmi,rmse,8.038921024137316,
+MAR,0.2,8,missforest,income_ratio,nrmse,1.038984422774732,
+MAR,0.2,8,missforest,income_ratio,rmse,1.531529862881073,
+MAR,0.2,8,missforest,sex,pfc,0.4205128205128205,
+MAR,0.2,8,missforest,smoking_status,pfc,0.45794392523364486,
+MAR,0.2,8,missforest,systolic_bp,nrmse,0.9283033357531653,
+MAR,0.2,8,missforest,systolic_bp,rmse,16.272394489097472,
+MAR,0.3,1,missforest,age,nrmse,0.9534511819581496,
+MAR,0.3,1,missforest,age,rmse,15.886320915815825,
+MAR,0.3,1,missforest,bmi,nrmse,1.0053861162484614,
+MAR,0.3,1,missforest,bmi,rmse,8.240801086185506,
+MAR,0.3,1,missforest,income_ratio,nrmse,1.0547600146015033,
+MAR,0.3,1,missforest,income_ratio,rmse,1.605673908545695,
+MAR,0.3,1,missforest,sex,pfc,0.4409722222222222,
+MAR,0.3,1,missforest,smoking_status,pfc,0.45896656534954405,
+MAR,0.3,1,missforest,systolic_bp,nrmse,1.026247065300243,
+MAR,0.3,1,missforest,systolic_bp,rmse,19.47659016960424,
+MAR,0.3,2,missforest,age,nrmse,0.9137299816455632,
+MAR,0.3,2,missforest,age,rmse,15.188743979762242,
+MAR,0.3,2,missforest,bmi,nrmse,1.0264597581306107,
+MAR,0.3,2,missforest,bmi,rmse,8.797761502976673,
+MAR,0.3,2,missforest,income_ratio,nrmse,1.0372250757967245,
+MAR,0.3,2,missforest,income_ratio,rmse,1.5401632564860905,
+MAR,0.3,2,missforest,sex,pfc,0.4430379746835443,
+MAR,0.3,2,missforest,smoking_status,pfc,0.39805825242718446,
+MAR,0.3,2,missforest,systolic_bp,nrmse,1.024567245254643,
+MAR,0.3,2,missforest,systolic_bp,rmse,19.09021140543103,
+MAR,0.3,3,missforest,age,nrmse,0.885755000379949,
+MAR,0.3,3,missforest,age,rmse,14.966179354305854,
+MAR,0.3,3,missforest,bmi,nrmse,0.9824213768133577,
+MAR,0.3,3,missforest,bmi,rmse,7.992701842649352,
+MAR,0.3,3,missforest,income_ratio,nrmse,1.0451123373168227,
+MAR,0.3,3,missforest,income_ratio,rmse,1.6532460379038947,
+MAR,0.3,3,missforest,sex,pfc,0.4861111111111111,
+MAR,0.3,3,missforest,smoking_status,pfc,0.4101796407185629,
+MAR,0.3,3,missforest,systolic_bp,nrmse,0.9658483278850793,
+MAR,0.3,3,missforest,systolic_bp,rmse,18.75409673275465,
+MAR,0.3,4,missforest,age,nrmse,0.9077202099785215,
+MAR,0.3,4,missforest,age,rmse,14.968017227719253,
+MAR,0.3,4,missforest,bmi,nrmse,1.0303064879353687,
+MAR,0.3,4,missforest,bmi,rmse,8.755731460453003,
+MAR,0.3,4,missforest,income_ratio,nrmse,1.0746615622712505,
+MAR,0.3,4,missforest,income_ratio,rmse,1.5857439082052367,
+MAR,0.3,4,missforest,sex,pfc,0.46735395189003437,
+MAR,0.3,4,missforest,smoking_status,pfc,0.4045307443365696,
+MAR,0.3,4,missforest,systolic_bp,nrmse,0.995381671680249,
+MAR,0.3,4,missforest,systolic_bp,rmse,19.049507987742086,
+MAR,0.3,5,missforest,age,nrmse,0.9744978238074202,
+MAR,0.3,5,missforest,age,rmse,15.718511062640712,
+MAR,0.3,5,missforest,bmi,nrmse,1.0168199154513915,
+MAR,0.3,5,missforest,bmi,rmse,8.361273104298709,
+MAR,0.3,5,missforest,income_ratio,nrmse,1.05672629500202,
+MAR,0.3,5,missforest,income_ratio,rmse,1.6017227896768051,
+MAR,0.3,5,missforest,sex,pfc,0.445578231292517,
+MAR,0.3,5,missforest,smoking_status,pfc,0.4234875444839858,
+MAR,0.3,5,missforest,systolic_bp,nrmse,1.0362436201575114,
+MAR,0.3,5,missforest,systolic_bp,rmse,21.490909085472595,
+MAR,0.3,6,missforest,age,nrmse,0.8881017239813291,
+MAR,0.3,6,missforest,age,rmse,14.93703063801477,
+MAR,0.3,6,missforest,bmi,nrmse,1.0282584592874084,
+MAR,0.3,6,missforest,bmi,rmse,8.20977055892432,
+MAR,0.3,6,missforest,income_ratio,nrmse,1.0336505894998445,
+MAR,0.3,6,missforest,income_ratio,rmse,1.5163360419480587,
+MAR,0.3,6,missforest,sex,pfc,0.4584717607973422,
+MAR,0.3,6,missforest,smoking_status,pfc,0.3834355828220859,
+MAR,0.3,6,missforest,systolic_bp,nrmse,0.9686370479950072,
+MAR,0.3,6,missforest,systolic_bp,rmse,19.262921714073713,
+MAR,0.3,7,missforest,age,nrmse,0.910005043339959,
+MAR,0.3,7,missforest,age,rmse,14.580644658769456,
+MAR,0.3,7,missforest,bmi,nrmse,1.019072572358357,
+MAR,0.3,7,missforest,bmi,rmse,8.232973037902278,
+MAR,0.3,7,missforest,income_ratio,nrmse,0.9832574512259308,
+MAR,0.3,7,missforest,income_ratio,rmse,1.4617446392384619,
+MAR,0.3,7,missforest,sex,pfc,0.47840531561461797,
+MAR,0.3,7,missforest,smoking_status,pfc,0.45209580838323354,
+MAR,0.3,7,missforest,systolic_bp,nrmse,1.0172404991840205,
+MAR,0.3,7,missforest,systolic_bp,rmse,20.324697713756855,
+MAR,0.3,8,missforest,age,nrmse,0.9367453632085271,
+MAR,0.3,8,missforest,age,rmse,15.076400921866695,
+MAR,0.3,8,missforest,bmi,nrmse,1.0268375359832291,
+MAR,0.3,8,missforest,bmi,rmse,7.628450666710455,
+MAR,0.3,8,missforest,income_ratio,nrmse,1.0456452395471283,
+MAR,0.3,8,missforest,income_ratio,rmse,1.5960690104132982,
+MAR,0.3,8,missforest,sex,pfc,0.4204946996466431,
+MAR,0.3,8,missforest,smoking_status,pfc,0.43217665615141954,
+MAR,0.3,8,missforest,systolic_bp,nrmse,0.9855086208334107,
+MAR,0.3,8,missforest,systolic_bp,rmse,20.43071075517677,
+MCAR,0.1,1,missforest,age,nrmse,0.8717643995515866,
+MCAR,0.1,1,missforest,age,rmse,14.767104295480532,
+MCAR,0.1,1,missforest,bmi,nrmse,1.0189822288218193,
+MCAR,0.1,1,missforest,bmi,rmse,6.85598701066974,
+MCAR,0.1,1,missforest,income_ratio,nrmse,1.0192009081178477,
+MCAR,0.1,1,missforest,income_ratio,rmse,1.6217094823463494,
+MCAR,0.1,1,missforest,sex,pfc,0.38144329896907214,
+MCAR,0.1,1,missforest,smoking_status,pfc,0.35051546391752575,
+MCAR,0.1,1,missforest,systolic_bp,nrmse,0.8598301897212774,
+MCAR,0.1,1,missforest,systolic_bp,rmse,15.558986951261035,
+MCAR,0.1,2,missforest,age,nrmse,0.765889117951059,
+MCAR,0.1,2,missforest,age,rmse,12.768131993321996,
+MCAR,0.1,2,missforest,bmi,nrmse,1.0854126499534558,
+MCAR,0.1,2,missforest,bmi,rmse,6.188616157357082,
+MCAR,0.1,2,missforest,income_ratio,nrmse,0.9620768004412507,
+MCAR,0.1,2,missforest,income_ratio,rmse,1.5551093822621092,
+MCAR,0.1,2,missforest,sex,pfc,0.4375,
+MCAR,0.1,2,missforest,smoking_status,pfc,0.36363636363636365,
+MCAR,0.1,2,missforest,systolic_bp,nrmse,0.872013139425466,
+MCAR,0.1,2,missforest,systolic_bp,rmse,18.669979003666977,
+MCAR,0.1,3,missforest,age,nrmse,0.7835721546036208,
+MCAR,0.1,3,missforest,age,rmse,12.988630167241393,
+MCAR,0.1,3,missforest,bmi,nrmse,0.9976273818416665,
+MCAR,0.1,3,missforest,bmi,rmse,7.438447991179545,
+MCAR,0.1,3,missforest,income_ratio,nrmse,0.9614884115685214,
+MCAR,0.1,3,missforest,income_ratio,rmse,1.4297671254601585,
+MCAR,0.1,3,missforest,sex,pfc,0.5047619047619047,
+MCAR,0.1,3,missforest,smoking_status,pfc,0.44660194174757284,
+MCAR,0.1,3,missforest,systolic_bp,nrmse,0.916827913194732,
+MCAR,0.1,3,missforest,systolic_bp,rmse,15.7859968265523,
+MCAR,0.1,4,missforest,age,nrmse,0.8572634609057657,
+MCAR,0.1,4,missforest,age,rmse,14.407805724474764,
+MCAR,0.1,4,missforest,bmi,nrmse,0.9068165159953423,
+MCAR,0.1,4,missforest,bmi,rmse,6.727381932836847,
+MCAR,0.1,4,missforest,income_ratio,nrmse,1.0073676185650526,
+MCAR,0.1,4,missforest,income_ratio,rmse,1.5137194838449135,
+MCAR,0.1,4,missforest,sex,pfc,0.36893203883495146,
+MCAR,0.1,4,missforest,smoking_status,pfc,0.3944954128440367,
+MCAR,0.1,4,missforest,systolic_bp,nrmse,0.9572061048702839,
+MCAR,0.1,4,missforest,systolic_bp,rmse,18.122041031831326,
+MCAR,0.1,5,missforest,age,nrmse,0.9423640264867673,
+MCAR,0.1,5,missforest,age,rmse,15.532239372533608,
+MCAR,0.1,5,missforest,bmi,nrmse,0.9599174227132676,
+MCAR,0.1,5,missforest,bmi,rmse,7.975568472582913,
+MCAR,0.1,5,missforest,income_ratio,nrmse,1.0147605160752164,
+MCAR,0.1,5,missforest,income_ratio,rmse,1.6055464657734666,
+MCAR,0.1,5,missforest,sex,pfc,0.4574468085106383,
+MCAR,0.1,5,missforest,smoking_status,pfc,0.39622641509433965,
+MCAR,0.1,5,missforest,systolic_bp,nrmse,0.8699822005631935,
+MCAR,0.1,5,missforest,systolic_bp,rmse,17.281531933158103,
+MCAR,0.1,6,missforest,age,nrmse,0.8171393516419129,
+MCAR,0.1,6,missforest,age,rmse,13.231090934298008,
+MCAR,0.1,6,missforest,bmi,nrmse,0.9658276949770478,
+MCAR,0.1,6,missforest,bmi,rmse,9.301115231169119,
+MCAR,0.1,6,missforest,income_ratio,nrmse,1.0162307214628694,
+MCAR,0.1,6,missforest,income_ratio,rmse,1.5487546569076986,
+MCAR,0.1,6,missforest,sex,pfc,0.47115384615384615,
+MCAR,0.1,6,missforest,smoking_status,pfc,0.34,
+MCAR,0.1,6,missforest,systolic_bp,nrmse,0.8839090246446671,
+MCAR,0.1,6,missforest,systolic_bp,rmse,19.66844567806046,
+MCAR,0.1,7,missforest,age,nrmse,0.7977504702664041,
+MCAR,0.1,7,missforest,age,rmse,14.245997633913664,
+MCAR,0.1,7,missforest,bmi,nrmse,0.9369669875095915,
+MCAR,0.1,7,missforest,bmi,rmse,7.3031481844330015,
+MCAR,0.1,7,missforest,income_ratio,nrmse,0.9552284856839118,
+MCAR,0.1,7,missforest,income_ratio,rmse,1.463999382159593,
+MCAR,0.1,7,missforest,sex,pfc,0.43243243243243246,
+MCAR,0.1,7,missforest,smoking_status,pfc,0.34210526315789475,
+MCAR,0.1,7,missforest,systolic_bp,nrmse,0.8166931303388268,
+MCAR,0.1,7,missforest,systolic_bp,rmse,15.905008538317471,
+MCAR,0.1,8,missforest,age,nrmse,0.8093285703871302,
+MCAR,0.1,8,missforest,age,rmse,13.820081977882438,
+MCAR,0.1,8,missforest,bmi,nrmse,0.9317381414279009,
+MCAR,0.1,8,missforest,bmi,rmse,5.833442851213689,
+MCAR,0.1,8,missforest,income_ratio,nrmse,0.9807011858503659,
+MCAR,0.1,8,missforest,income_ratio,rmse,1.60288932047908,
+MCAR,0.1,8,missforest,sex,pfc,0.4329896907216495,
+MCAR,0.1,8,missforest,smoking_status,pfc,0.43103448275862066,
+MCAR,0.1,8,missforest,systolic_bp,nrmse,0.9384998499752102,
+MCAR,0.1,8,missforest,systolic_bp,rmse,18.528934823960164,
+MCAR,0.2,1,missforest,age,nrmse,0.8590872078990341,
+MCAR,0.2,1,missforest,age,rmse,14.753191910466617,
+MCAR,0.2,1,missforest,bmi,nrmse,1.0096466364065,
+MCAR,0.2,1,missforest,bmi,rmse,7.056188287028475,
+MCAR,0.2,1,missforest,income_ratio,nrmse,1.033381169556558,
+MCAR,0.2,1,missforest,income_ratio,rmse,1.5440021664047596,
+MCAR,0.2,1,missforest,sex,pfc,0.4472361809045226,
+MCAR,0.2,1,missforest,smoking_status,pfc,0.4504950495049505,
+MCAR,0.2,1,missforest,systolic_bp,nrmse,0.9077117110649472,
+MCAR,0.2,1,missforest,systolic_bp,rmse,17.345193647708513,
+MCAR,0.2,2,missforest,age,nrmse,0.8794497727794501,
+MCAR,0.2,2,missforest,age,rmse,14.275132073480725,
+MCAR,0.2,2,missforest,bmi,nrmse,0.9392190267125937,
+MCAR,0.2,2,missforest,bmi,rmse,7.708332104897804,
+MCAR,0.2,2,missforest,income_ratio,nrmse,0.9821207693397681,
+MCAR,0.2,2,missforest,income_ratio,rmse,1.6134397399128886,
+MCAR,0.2,2,missforest,sex,pfc,0.4854368932038835,
+MCAR,0.2,2,missforest,smoking_status,pfc,0.38571428571428573,
+MCAR,0.2,2,missforest,systolic_bp,nrmse,0.9403055100800127,
+MCAR,0.2,2,missforest,systolic_bp,rmse,18.86112281752455,
+MCAR,0.2,3,missforest,age,nrmse,0.8166146516219325,
+MCAR,0.2,3,missforest,age,rmse,13.764876173434331,
+MCAR,0.2,3,missforest,bmi,nrmse,0.9561640902506631,
+MCAR,0.2,3,missforest,bmi,rmse,7.130154460469063,
+MCAR,0.2,3,missforest,income_ratio,nrmse,0.9998260328727838,
+MCAR,0.2,3,missforest,income_ratio,rmse,1.5301348523164011,
+MCAR,0.2,3,missforest,sex,pfc,0.34196891191709844,
+MCAR,0.2,3,missforest,smoking_status,pfc,0.3615023474178404,
+MCAR,0.2,3,missforest,systolic_bp,nrmse,0.93705204607078,
+MCAR,0.2,3,missforest,systolic_bp,rmse,19.702991832406365,
+MCAR,0.2,4,missforest,age,nrmse,0.817204794708994,
+MCAR,0.2,4,missforest,age,rmse,13.593995441653611,
+MCAR,0.2,4,missforest,bmi,nrmse,0.9422981462663318,
+MCAR,0.2,4,missforest,bmi,rmse,7.325828841145579,
+MCAR,0.2,4,missforest,income_ratio,nrmse,0.9520414972714434,
+MCAR,0.2,4,missforest,income_ratio,rmse,1.4020733149826003,
+MCAR,0.2,4,missforest,sex,pfc,0.46524064171123,
+MCAR,0.2,4,missforest,smoking_status,pfc,0.43478260869565216,
+MCAR,0.2,4,missforest,systolic_bp,nrmse,0.8753420793453375,
+MCAR,0.2,4,missforest,systolic_bp,rmse,16.677085510422177,
+MCAR,0.2,5,missforest,age,nrmse,0.8654744944768007,
+MCAR,0.2,5,missforest,age,rmse,14.693894999442492,
+MCAR,0.2,5,missforest,bmi,nrmse,1.0055230176597736,
+MCAR,0.2,5,missforest,bmi,rmse,8.34585635095215,
+MCAR,0.2,5,missforest,income_ratio,nrmse,1.0135042699608692,
+MCAR,0.2,5,missforest,income_ratio,rmse,1.5668350520501764,
+MCAR,0.2,5,missforest,sex,pfc,0.3798076923076923,
+MCAR,0.2,5,missforest,smoking_status,pfc,0.42424242424242425,
+MCAR,0.2,5,missforest,systolic_bp,nrmse,0.8980895879373795,
+MCAR,0.2,5,missforest,systolic_bp,rmse,20.56628587848169,
+MCAR,0.2,6,missforest,age,nrmse,0.7972311129886686,
+MCAR,0.2,6,missforest,age,rmse,13.84695857898558,
+MCAR,0.2,6,missforest,bmi,nrmse,0.9750133168642846,
+MCAR,0.2,6,missforest,bmi,rmse,7.589112991076224,
+MCAR,0.2,6,missforest,income_ratio,nrmse,1.0274259706210243,
+MCAR,0.2,6,missforest,income_ratio,rmse,1.5896859115814006,
+MCAR,0.2,6,missforest,sex,pfc,0.4174757281553398,
+MCAR,0.2,6,missforest,smoking_status,pfc,0.4,
+MCAR,0.2,6,missforest,systolic_bp,nrmse,0.9478420113504349,
+MCAR,0.2,6,missforest,systolic_bp,rmse,17.672644714657995,
+MCAR,0.2,7,missforest,age,nrmse,0.7958843306635927,
+MCAR,0.2,7,missforest,age,rmse,13.93741412391619,
+MCAR,0.2,7,missforest,bmi,nrmse,0.9192863862955045,
+MCAR,0.2,7,missforest,bmi,rmse,6.7775878197571116,
+MCAR,0.2,7,missforest,income_ratio,nrmse,0.9827542913203621,
+MCAR,0.2,7,missforest,income_ratio,rmse,1.5069380739965303,
+MCAR,0.2,7,missforest,sex,pfc,0.504950495049505,
+MCAR,0.2,7,missforest,smoking_status,pfc,0.3592233009708738,
+MCAR,0.2,7,missforest,systolic_bp,nrmse,0.8768491224035632,
+MCAR,0.2,7,missforest,systolic_bp,rmse,17.08946491307014,
+MCAR,0.2,8,missforest,age,nrmse,0.8505074585809526,
+MCAR,0.2,8,missforest,age,rmse,13.778412400378295,
+MCAR,0.2,8,missforest,bmi,nrmse,0.9654727805822427,
+MCAR,0.2,8,missforest,bmi,rmse,7.467388730525666,
+MCAR,0.2,8,missforest,income_ratio,nrmse,0.9747990441896326,
+MCAR,0.2,8,missforest,income_ratio,rmse,1.536705450591547,
+MCAR,0.2,8,missforest,sex,pfc,0.4117647058823529,
+MCAR,0.2,8,missforest,smoking_status,pfc,0.4153846153846154,
+MCAR,0.2,8,missforest,systolic_bp,nrmse,0.9533051564954564,
+MCAR,0.2,8,missforest,systolic_bp,rmse,17.219651953869214,
+MCAR,0.3,1,missforest,age,nrmse,0.8771047454847295,
+MCAR,0.3,1,missforest,age,rmse,15.098697586250527,
+MCAR,0.3,1,missforest,bmi,nrmse,0.9610694310623432,
+MCAR,0.3,1,missforest,bmi,rmse,7.6161961565323235,
+MCAR,0.3,1,missforest,income_ratio,nrmse,1.0336760869833534,
+MCAR,0.3,1,missforest,income_ratio,rmse,1.601254540646865,
+MCAR,0.3,1,missforest,sex,pfc,0.4135593220338983,
+MCAR,0.3,1,missforest,smoking_status,pfc,0.4276094276094276,
+MCAR,0.3,1,missforest,systolic_bp,nrmse,0.86495864459978955,
+MCAR,0.3,1,missforest,systolic_bp,rmse,17.311048680103085,
+MCAR,0.3,2,missforest,age,nrmse,0.81131991801691306,
+MCAR,0.3,2,missforest,age,rmse,13.543121247980539,
+MCAR,0.3,2,missforest,bmi,nrmse,0.9871231934750438,
+MCAR,0.3,2,missforest,bmi,rmse,7.113297022461791,
+MCAR,0.3,2,missforest,income_ratio,nrmse,1.035709666284901,
+MCAR,0.3,2,missforest,income_ratio,rmse,1.6706922183605457,
+MCAR,0.3,2,missforest,sex,pfc,0.4103448275862069,
+MCAR,0.3,2,missforest,smoking_status,pfc,0.36594202898550726,
+MCAR,0.3,2,missforest,systolic_bp,nrmse,0.9500172760732026,
+MCAR,0.3,2,missforest,systolic_bp,rmse,17.9519178778348,
+MCAR,0.3,3,missforest,age,nrmse,0.9225035328944765,
+MCAR,0.3,3,missforest,age,rmse,16.344678527738004,
+MCAR,0.3,3,missforest,bmi,nrmse,0.947333240494459,
+MCAR,0.3,3,missforest,bmi,rmse,6.880175710777877,
+MCAR,0.3,3,missforest,income_ratio,nrmse,1.10687889426322,
+MCAR,0.3,3,missforest,income_ratio,rmse,1.7267369720759658,
+MCAR,0.3,3,missforest,sex,pfc,0.46283783783783783,
+MCAR,0.3,3,missforest,smoking_status,pfc,0.44932432432432434,
+MCAR,0.3,3,missforest,systolic_bp,nrmse,0.9400003155902298,
+MCAR,0.3,3,missforest,systolic_bp,rmse,18.710061977863916,
+MCAR,0.3,4,missforest,age,nrmse,0.845920325951033,
+MCAR,0.3,4,missforest,age,rmse,14.581257635437781,
+MCAR,0.3,4,missforest,bmi,nrmse,0.965388199112166,
+MCAR,0.3,4,missforest,bmi,rmse,7.543242160630149,
+MCAR,0.3,4,missforest,income_ratio,nrmse,1.0164591886615213,
+MCAR,0.3,4,missforest,income_ratio,rmse,1.6434774521115878,
+MCAR,0.3,4,missforest,sex,pfc,0.4588607594936709,
+MCAR,0.3,4,missforest,smoking_status,pfc,0.4859154929577465,
+MCAR,0.3,4,missforest,systolic_bp,nrmse,0.9495682484454996,
+MCAR,0.3,4,missforest,systolic_bp,rmse,21.178238432123287,
+MCAR,0.3,5,missforest,age,nrmse,0.8493473340538291,
+MCAR,0.3,5,missforest,age,rmse,14.246247371041324,
+MCAR,0.3,5,missforest,bmi,nrmse,0.959488010784503,
+MCAR,0.3,5,missforest,bmi,rmse,7.490982819500626,
+MCAR,0.3,5,missforest,income_ratio,nrmse,1.031839550802391,
+MCAR,0.3,5,missforest,income_ratio,rmse,1.5291956253110253,
+MCAR,0.3,5,missforest,sex,pfc,0.46794871794871795,
+MCAR,0.3,5,missforest,smoking_status,pfc,0.4121863799283154,
+MCAR,0.3,5,missforest,systolic_bp,nrmse,0.9617983168175626,
+MCAR,0.3,5,missforest,systolic_bp,rmse,19.36189589917378,
+MCAR,0.3,6,missforest,age,nrmse,0.8623780192471682,
+MCAR,0.3,6,missforest,age,rmse,14.87594219857878,
+MCAR,0.3,6,missforest,bmi,nrmse,1.0135842122899712,
+MCAR,0.3,6,missforest,bmi,rmse,7.033051023257138,
+MCAR,0.3,6,missforest,income_ratio,nrmse,1.0193058781691642,
+MCAR,0.3,6,missforest,income_ratio,rmse,1.6279889913074643,
+MCAR,0.3,6,missforest,sex,pfc,0.4315068493150685,
+MCAR,0.3,6,missforest,smoking_status,pfc,0.5032679738562091,
+MCAR,0.3,6,missforest,systolic_bp,nrmse,0.9723220837978974,
+MCAR,0.3,6,missforest,systolic_bp,rmse,17.769838892422474,
+MCAR,0.3,7,missforest,age,nrmse,0.8652338457295248,
+MCAR,0.3,7,missforest,age,rmse,15.087476721033719,
+MCAR,0.3,7,missforest,bmi,nrmse,0.9739450065428679,
+MCAR,0.3,7,missforest,bmi,rmse,6.920491729673178,
+MCAR,0.3,7,missforest,income_ratio,nrmse,1.024832277702308,
+MCAR,0.3,7,missforest,income_ratio,rmse,1.6229601362912962,
+MCAR,0.3,7,missforest,sex,pfc,0.4485049833887043,
+MCAR,0.3,7,missforest,smoking_status,pfc,0.425,
+MCAR,0.3,7,missforest,systolic_bp,nrmse,0.9603467358224125,
+MCAR,0.3,7,missforest,systolic_bp,rmse,19.537376475424967,
+MCAR,0.3,8,missforest,age,nrmse,0.8838601344905752,
+MCAR,0.3,8,missforest,age,rmse,14.983193852898385,
+MCAR,0.3,8,missforest,bmi,nrmse,0.97232338554236,
+MCAR,0.3,8,missforest,bmi,rmse,7.329169148909079,
+MCAR,0.3,8,missforest,income_ratio,nrmse,1.0154939240318943,
+MCAR,0.3,8,missforest,income_ratio,rmse,1.5187180587151352,
+MCAR,0.3,8,missforest,sex,pfc,0.44884488448844884,
+MCAR,0.3,8,missforest,smoking_status,pfc,0.46319018404907975,
+MCAR,0.3,8,missforest,systolic_bp,nrmse,0.917182289867979,
+MCAR,0.3,8,missforest,systolic_bp,rmse,17.205090947127303,

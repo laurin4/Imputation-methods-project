@@ -1,0 +1,8 @@
+variable,n_missing,n_total,pct_missing
+income_ratio,387,2000,19.35
+systolic_bp,210,2000,10.5
+hba1c,192,2000,9.6
+bmi,141,2000,7.05
+age,0,2000,0
+sex,0,2000,0
+smoking_status,0,2000,0

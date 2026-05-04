@@ -1,0 +1,7 @@
+metric,value
+n_observations,2000
+n_variables,7
+n_complete_cases,1409
+pct_complete_cases,70.45
+n_any_missing,591
+pct_any_missing,29.55
