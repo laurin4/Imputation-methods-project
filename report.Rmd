@@ -2,6 +2,7 @@
 title: "Missing-Data Imputation in NHANES 2017-2018: Controlled Benchmarking and Real-Data Application"
 author: "Laurin Seelig, Luca Meier, Ravidu Nakandalage"
 date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+subtitle: "Data Science in Health | Supervisor: Dr. Dr. Georg Spinner"
 output:
   html_document:
     toc: true
